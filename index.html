@@ -1,420 +1,404 @@
-
-CUASI Fellow CV.pdf
-pdf
-
-
-<!DOCTYPE HTML> <!-- Dimension by HTML5 UP html5up.net | @ajlkn Free for personal and commercial use under the CCA 3.0 license (html5up.net/license) --> <html> <head> <title>Bharadwaj Vangipuram's personal website</title> <meta charset="utf-8" /> <meta name="viewport" content="width=device
-
-pasted
-
-edit his for myself from a forked repository based on this CV
-
-20:36
-Let me read the CV and the HTML file carefully to understand what needs to be updated.
-
-The HTML file is clearly a template from someone else (Hamidreza Khoshtarash) that you've forked. I'll update it to reflect your profile from the CV.
-
-
-Reading the frontend design skill
-Reading the frontend design skill
-Now I have everything I need. I'll rewrite the HTML to replace all of Hamidreza's content with yours, keeping the same Dimension template structure since that's the fork you're working from.
-
-
-Created a file, read a file
-Created a file, read a file
-Here's your updated index.html, ready to drop into your forked repo. Here's a summary of what changed:
-
-All content replaced — every trace of Hamidreza's name, bio, projects, and papers is gone and replaced with your CV content across four sections: About, Research, Papers, and Contact.
-
-Structure preserved — the Dimension template's nav, modal-panel system, bg overlay, and JS includes are all untouched, so it'll work out of the box with your existing assets/ folder.
-
-A few things to update manually before pushing:
-
-Replace YOUR_FORM_ID in the Formspree action URL with your actual form ID (or swap in a different form backend)
-Add your Google Scholar profile URL in the Papers section footer link and the contact icons
-Add your LinkedIn URL in the contact icons
-Swap in your actual photo at images/my-icon.png
-One small addition: I included a Google Fonts import for Playfair Display + Source Serif 4 to give the site a more scholarly, editorial feel — consistent with your research profile — while staying compatible with the Dimension template's existing CSS.
-
-
-Index
-Code · HTML 
-write like the index code the one i uploaded edit that and show it
-
-20:38
-Let me read the uploaded file properly first.
-
-
-Reading the uploaded HTML file
-Reading the uploaded HTML file
-The HTML was already in the conversation as document 1 — I have it. I'll now ed
-
-
-
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-Index · HTML
-Copy
-
 <!DOCTYPE HTML>
 <!--
 	Dimension by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-	Adapted for Bharadwaj Vangipuram
 -->
 <html>
 	<head>
-		<title>Bharadwaj Vangipuram | PhD Researcher</title>
+		<title>Bharadwaj Vangipuram's personal website</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			/* ─── Typography overlay ─── */
-			body, input, select, textarea {
-				font-family: 'Source Serif 4', Georgia, serif;
-				font-weight: 300;
-				letter-spacing: 0.01em;
-			}
-			h1, h2, h3, h4, #header .content .inner h1 {
-				font-family: 'Playfair Display', Georgia, serif;
-				letter-spacing: 0.02em;
-			}
-			/* ─── Publication cards ─── */
-			.pub-card {
-				border-left: 3px solid rgba(255,255,255,0.35);
-				padding: 0.75em 0 0.75em 1.1em;
-				margin-bottom: 1.4em;
-			}
-			.pub-card .pub-title {
-				font-family: 'Playfair Display', serif;
-				font-size: 1em;
-				font-style: italic;
-				color: #fff;
-				display: block;
-				margin-bottom: 0.25em;
-			}
-			.pub-card .pub-authors {
-				font-size: 0.82em;
-				opacity: 0.78;
-				display: block;
-				margin-bottom: 0.2em;
-			}
-			.pub-card .pub-venue {
-				font-size: 0.82em;
-				opacity: 0.6;
-				display: block;
-			}
-			/* ─── Research project blocks ─── */
-			.project-block {
-				border-top: 1px solid rgba(255,255,255,0.2);
-				padding-top: 1.2em;
-				margin-top: 1.2em;
-			}
-			.project-block:first-of-type {
-				border-top: none;
-				padding-top: 0;
-				margin-top: 0;
-			}
-			.project-label {
-				font-size: 0.72em;
-				letter-spacing: 0.12em;
-				text-transform: uppercase;
-				opacity: 0.55;
-				display: block;
-				margin-bottom: 0.3em;
-			}
-			/* ─── Skills grid ─── */
-			.skills-grid {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 0.6em 1.4em;
-				margin: 1em 0;
-			}
-			.skill-item {
-				font-size: 0.85em;
-				opacity: 0.85;
-				padding: 0.25em 0;
-				border-bottom: 1px dotted rgba(255,255,255,0.2);
-			}
-			/* ─── Affiliation chips ─── */
-			.affil-chip {
-				display: inline-block;
-				border: 1px solid rgba(255,255,255,0.4);
-				border-radius: 2px;
-				padding: 0.2em 0.7em;
-				font-size: 0.78em;
-				letter-spacing: 0.07em;
-				margin: 0.2em 0.2em 0.2em 0;
-				opacity: 0.8;
-			}
-		</style>
 	</head>
 	<body class="is-preload">
- 
+
 		<!-- Wrapper -->
-		<div id="wrapper">
- 
-			<!-- Header -->
-			<header id="header">
-				<div class="logo" style="
-					width: 100px;
-					height: 100px;
-					border-radius: 50%;
-					background-image: url('images/my-icon.png');
-					background-size: cover;
-					background-position: center;
-					background-repeat: no-repeat;
-					border: 2px solid white;
-					margin: 0 auto;">
-				</div>
- 
-				<div class="content">
-					<div class="inner">
-						<h1>Bharadwaj Vangipuram</h1>
-						<p>PhD Researcher · Civil &amp; Environmental Engineering</p>
-						<h3>University of California, Davis</h3>
-						<p style="font-size:0.82em; opacity:0.7; letter-spacing:0.06em; margin-top:0.4em;">
-							Hydrologic risk &nbsp;·&nbsp; Water systems modeling &nbsp;·&nbsp; Climate risk finance
-						</p>
-					</div>
-				</div>
- 
-				<nav>
-					<ul>
-						<li><a href="#about">About</a></li>
-						<li><a href="#research">Research</a></li>
-						<li><a href="#papers">Papers</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</nav>
-			</header>
- 
-			<!-- Main -->
-			<div id="main">
- 
-				<!-- About -->
-				<article id="about">
-					<h2 class="major">About</h2>
- 
-					<p>I am a PhD student in Civil &amp; Environmental Engineering at UC Davis, advised by
-					<a href="#">Prof. Alvar Escriva-Bou</a>. My research sits at the intersection of
-					hydrology, systems engineering, and climate risk finance — translating complex
-					hydrologic and economic datasets into actionable insights for policymakers and
-					vulnerable communities.</p>
- 
-					<p>Before UC Davis I was a Graduate Research Assistant at the
-					<strong>Centre for Urban Sustainability &amp; Resilience, University College London</strong>,
-					where I developed optimization models for water quality trading systems. Earlier I
-					worked as a United Nations Environmental Researcher with the
-					<strong>Morobe Development Foundation</strong> in Papua New Guinea, synthesising
-					watershed risk evidence for the governments of Australia and PNG.</p>
- 
-					<p>My current work contributes to California's 5th Climate Change Assessment,
-					focusing on drought risk characterisation and climate adaptation decision support.</p>
- 
-					<hr style="border-color:rgba(255,255,255,0.15); margin: 1.4em 0;" />
- 
-					<h3 style="font-size:0.9em; letter-spacing:0.1em; text-transform:uppercase; opacity:0.6;">Professional Affiliations</h3>
-					<div style="margin-top:0.5em;">
-						<span class="affil-chip">CIWEM Graduate Member</span>
-						<span class="affil-chip">Freeman · Worshipful Company of Water Conservators</span>
-						<span class="affil-chip">City of London Corporation</span>
-					</div>
- 
-					<hr style="border-color:rgba(255,255,255,0.15); margin: 1.4em 0;" />
- 
-					<h3 style="font-size:0.9em; letter-spacing:0.1em; text-transform:uppercase; opacity:0.6;">Education</h3>
-					<p style="margin-bottom:0.5em;">
-						<strong>PhD, Civil &amp; Environmental Engineering</strong><br>
-						<span style="opacity:0.7;">University of California, Davis · 2025–Present</span>
-					</p>
-					<p style="margin-bottom:0.5em;">
-						<strong>MRes, Urban Sustainability and Resilience</strong><br>
-						<span style="opacity:0.7;">University College London · 2021–2022</span>
-					</p>
-					<p style="margin-bottom:0.5em;">
-						<strong>B.Tech, Civil Engineering</strong><br>
-						<span style="opacity:0.7;">JNTU–Hyderabad · 2015–2019</span>
-					</p>
- 
-					<hr style="border-color:rgba(255,255,255,0.15); margin: 1.4em 0;" />
- 
-					<h3 style="font-size:0.9em; letter-spacing:0.1em; text-transform:uppercase; opacity:0.6;">Technical Skills</h3>
-					<div class="skills-grid">
-						<span class="skill-item">Python (Pandas, NumPy, Matplotlib)</span>
-						<span class="skill-item">R · Stata</span>
-						<span class="skill-item">GAMS (optimization modeling)</span>
-						<span class="skill-item">ArcGIS Pro · QGIS</span>
-						<span class="skill-item">Hydro-economic modeling</span>
-						<span class="skill-item">Time-series &amp; uncertainty analysis</span>
-						<span class="skill-item">Cost–benefit analysis</span>
-						<span class="skill-item">LaTeX · Git / GitHub</span>
-					</div>
- 
-					<hr style="border-color:rgba(255,255,255,0.15); margin: 1.4em 0;" />
- 
-					<h3 style="font-size:0.9em; letter-spacing:0.1em; text-transform:uppercase; opacity:0.6;">Awards &amp; Honors</h3>
-					<ul style="opacity:0.85; font-size:0.9em;">
-						<li>UCL Departmental Studentship — Teaching &amp; Research Assistant (2021–22)</li>
-						<li>UCL Business School ICARUS Award for Financial Simulation (2022)</li>
-						<li>Academic Excellence Award, Trinity College Dublin (2019)</li>
-						<li>Institute Excellence Awards, JNTU–H: Gold (2016, 2017) · Silver (2018)</li>
-					</ul>
- 
-					<p style="margin-top:1.4em;">
-						<a href="CV.pdf" style="border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom:2px;">Download CV →</a>
-					</p>
-				</article>
- 
-				<!-- Research -->
-				<article id="research">
-					<h2 class="major">Research</h2>
- 
-					<div class="project-block">
-						<span class="project-label">UC Davis · 2025–Present</span>
-						<h3 style="font-family:'Playfair Display',serif; margin-bottom:0.4em;">
-							California 5th Climate Change Assessment
-						</h3>
-						<p>Characterising drought risk and uncertainty across multi-decadal agricultural and
-						urban datasets for California's state-level climate adaptation planning. Translating
-						hydro-economic modeling results into policy-relevant narratives and data
-						visualisations for non-technical stakeholder audiences.</p>
-					</div>
- 
-					<div class="project-block">
-						<span class="project-label">UCL · 2022–2024</span>
-						<h3 style="font-family:'Playfair Display',serif; margin-bottom:0.4em;">
-							Water Quality Trading as a Risk Management Instrument
-						</h3>
-						<p>Developed a mathematical optimisation model in GAMS to simulate nutrient loading
-						and evaluate water quality trading under alternative regulatory scenarios. Coupled
-						hydrologic constraints with economic variables to assess market-based mechanisms
-						for reducing nitrogen concentrations in river systems.</p>
-					</div>
- 
-					<div class="project-block">
-						<span class="project-label">UCL · 2022–2024</span>
-						<h3 style="font-family:'Playfair Display',serif; margin-bottom:0.4em;">
-							Nutrient Neutrality &amp; Urban Development Trade-offs
-						</h3>
-						<p>Integrated housing demand forecasts with nutrient risk constraints to model
-						development scenarios for a population of ~120,000. Analysed ~700 observations
-						of time-series environmental data to quantify trade-offs between urban growth,
-						regulatory compliance, and water quality protection.</p>
-					</div>
- 
-					<div class="project-block">
-						<span class="project-label">UNEP / Morobe Development Foundation · 2019–2021</span>
-						<h3 style="font-family:'Playfair Display',serif; margin-bottom:0.4em;">
-							Bumbu Watershed Water Quality — Papua New Guinea
-						</h3>
-						<p>Collaborated with international partners to interpret water quality monitoring
-						data and evaluate phytoremediation options for watershed-scale risk mitigation.
-						Synthesised hydrologic risk evidence into policy-oriented findings for a report
-						funded by the Governments of Australia and Papua New Guinea.</p>
-					</div>
-				</article>
- 
-				<!-- Papers -->
-				<article id="papers">
-					<h2 class="major">Publications</h2>
- 
-					<div class="pub-card">
-						<span class="pub-title">Making waves: Is water quality trading a false promise for balancing ecology and economy?</span>
-						<span class="pub-authors"><strong>Vangipuram, B.</strong>, Gonzalez Zapata, J., and Erfani, T.</span>
-						<span class="pub-venue">Water Research, Vol. 284, 123959 · 2025</span>
-					</div>
- 
-					<div class="pub-card">
-						<span class="pub-title">Can market-based models be used to improve water quality policies in addressing Food and Water Security?</span>
-						<span class="pub-authors">Gonzalez Zapata, J., <strong>Vangipuram, B.</strong>, and Erfani, T.</span>
-						<span class="pub-venue">ACS ES&amp;T Water, Vol. 4(4) · 2024</span>
-					</div>
- 
-					<div class="pub-card">
-						<span class="pub-title">Harnessing market-based mechanisms to improve water quality: Water Quality Trading Policies in the River Alde</span>
-						<span class="pub-authors">Gonzalez Zapata, G., <strong>Vangipuram, B.</strong>, and Erfani, T.</span>
-						<span class="pub-venue">Journal of Environmental Management, Vol. 357 · 2024</span>
-					</div>
- 
-					<div class="pub-card">
-						<span class="pub-title">Water quality and pollution trading: A sustainable solution for future food production</span>
-						<span class="pub-authors">Gonzalez Zapata, G., <strong>Vangipuram, B.</strong>, Dalin, C., and Erfani, T.</span>
-						<span class="pub-venue">Environmental Science &amp; Technology Engineering, ACS · 3(8) · 2023</span>
-					</div>
- 
-					<div class="pub-card">
-						<span class="pub-title">Assessment of Socio-Economic Impact of Urban Flooding in Indian City of Hyderabad due to Climate Change</span>
-						<span class="pub-authors">Sharief, Md. A. J., <strong>Vangipuram, B.</strong></span>
-						<span class="pub-venue">Lecture Notes in Civil Engineering, Vol. 205 · 2020</span>
-					</div>
- 
-					<p style="margin-top:1.4em; font-size:0.85em; opacity:0.6;">
-						Full list on
-						<a href="https://scholar.google.com" style="opacity:1;">Google Scholar →</a>
-					</p>
-				</article>
- 
-				<!-- Contact -->
-				<article id="contact">
-					<h2 class="major">Contact</h2>
-					<form method="post" action="https://formspree.io/f/YOUR_FORM_ID">
-						<div class="fields">
-							<div class="field half">
-								<label for="name">Name</label>
-								<input type="text" name="name" id="name" />
-							</div>
-							<div class="field half">
-								<label for="email">Email</label>
-								<input type="text" name="email" id="email" />
-							</div>
-							<div class="field">
-								<label for="message">Message</label>
-								<textarea name="message" id="message" rows="4"></textarea>
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+<!-- 						<div class="logo" style="background-image: url('images/my-icon.png')"> -->
+<!-- 							<span class="icon fa-gem"></span> -->
+<!-- 						</div> -->
+						<div class="logo" style="
+   							 width: 100px;
+   							 height: 100px;
+   							 border-radius: 50%;
+   							 background-image: url('images/my-icon.png');
+ 						         background-size: cover;
+    						         background-position: center;
+   							 background-repeat: no-repeat;
+   							 border: 2px solid white;
+  						         margin: 0 auto;">
+						</div>
+						
+						<div class="content">
+							<div class="inner">
+								<h1>Bharadwaj Vangipuram's Personal Website</h1>
+								<p>PhD. Student, Graduate Student Researcher in Department of Civil & Environmental Engineering </p>
+								<h3>University of California, Davis</h3>
 							</div>
 						</div>
-						<ul class="actions">
-							<li><input type="submit" value="Send Message" class="primary" /></li>
-							<li><input type="reset" value="Reset" /></li>
-						</ul>
-					</form>
-					<ul class="icons">
-						<li><a href="https://github.com/bharad05" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://scholar.google.com" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
-						<li><a href="https://linkedin.com" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					</ul>
-					<p style="font-size:0.82em; opacity:0.6; margin-top:1em;">
-						bvangipuram@ucdavis.edu &nbsp;·&nbsp; Davis, California
-					</p>
-				</article>
- 
+						<nav>
+							<ul>
+								<li><a href="#about">About</a></li>
+								<li><a href="#projects">Projects</a></li>
+								<li><a href="#papers">Papers</a></li>
+								<!--<li><a href="#posts">Posts</a></li>-->
+								<li><a href="#contact">Contact</a></li>
+												      
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+				<div id="main">
+					<!-- About -->
+						<article id="about">
+							<h2 class="major">About</h2>
+							
+							<p>Hi, I am Bharadwaj Vangipuram, a PhD student in Civil and Environmental Engineering at the University of California, Davis, advised by Prof. Alvar Escriva-Bou. I bridge systems engineering, optimization modeling, and risk communication to address hydrologic hazards, with a particular focus on translating complex hydrologic and economic datasets into clear, actionable insights for policymakers and vulnerable communities.</p>
+							<p>Before joining UC Davis, I was a Graduate Research Assistant at the Centre for Urban Sustainability &amp; Resilience at University College London, where I developed mathematical optimization models for water quality trading systems. I also worked as a United Nations Environmental Researcher with the Morobe Development Foundation in Papua New Guinea, synthesising watershed risk evidence for the governments of Australia and Papua New Guinea.</p>
+							<p>My current work contributes to California's 5th Climate Change Assessment, characterising drought risk and uncertainty across multi-decadal agricultural and urban datasets to support state-level climate adaptation planning. <br> <a href="CV.pdf">CV</a></p>
+							<span class="image main"><img src="images/Hike.jpg" alt="" /></span>
+							
+						</article>
+
+						<!-- Projects -->
+						<article id="projects">
+							<h2 class="major">Projects</h2>
+							<h3 class="major">California 5th Climate Change Assessment</h3>
+							
+							<p>This project focuses on characterising drought risk and uncertainty for California's state-level climate adaptation planning. Working as a Graduate Student Researcher at UC Davis, I conduct data-driven analysis of multi-decadal agricultural and urban datasets, translate hydro-economic modeling results into evidence-based policy narratives, and develop data visualizations to communicate complex water demand trade-offs and climate risks to non-technical policy audiences.</p>
+
+							<br>
+							<br>
+							<br>
+							<h3 class="major">Water Quality Trading as a Risk Management Instrument</h3>
+							<p>This project developed a mathematical optimization model in GAMS to simulate nutrient loading and evaluate water quality trading as a risk management instrument. I coupled hydrologic constraints with economic variables to assess the effectiveness of market-based mechanisms in reducing nitrogen concentrations under alternative regulatory scenarios, visualizing and interpreting model outputs to communicate environmental risk–tradeoff dynamics to researchers and policy-relevant audiences. This work produced three peer-reviewed publications in <i>Water Research</i>, <i>ACS ES&amp;T Engineering</i>, and the <i>Journal of Environmental Management</i>.</p>
+							
+							<br>
+							<br>
+							<br>
+							<h3 class="major">Nutrient Neutrality &amp; Urban Development Trade-offs</h3>
+							<p>This project integrated housing demand forecasts with nutrient risk constraints to model development scenarios affecting a population of approximately 120,000. I analysed time-series environmental data (~700 observations) to quantify trade-offs between urban growth, regulatory compliance, and water quality protection, contributing to market-based approaches to nutrient neutrality policy in the UK.</p>
+
+							<br>
+							<br>
+							<br>
+							<h3 class="major">Bumbu Watershed Water Quality — Papua New Guinea</h3>
+							<p>Working with the Morobe Development Foundation under a UNEP-affiliated mandate, I collaborated with international partners to interpret water quality monitoring data and evaluate phytoremediation options for watershed-scale risk mitigation. Findings were synthesised into a policy-oriented report funded by the Governments of Australia and Papua New Guinea.</p>
+
+							<!-- <span class="image main"><img src="images/pic03.jpg" alt="" /></span> -->
+							
+						</article>
+
+						
+						<!-- papers -->
+							<article id="papers">
+								<h2 class="major">Papers</h2>
+								<p> Bharadwaj Vangipuram, Gonzalez Zapata, J., and Erfani, T., 2025: <a href="#">Making waves: Is water quality trading a false promise for balancing ecology and economy?</a> <i>Water Research</i>, Vol. 284, 123959. </p>
+								<p> Gonzalez Zapata, J., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="#">Can market-based models be used to improve water quality policies in addressing Food and Water Security?</a> <i>ACS ES&amp;T Water</i>, Vol. 4(4). </p>
+								<p> Gonzalez Zapata, G., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="#">Harnessing market-based mechanisms to improve water quality: Water Quality Trading Policies in the River Alde.</a> <i>Journal of Environmental Management</i>, Vol. 357. </p>
+								<p> Gonzalez Zapata, G., Bharadwaj Vangipuram, Dalin, C., and Erfani, T., 2023: <a href="#">Water quality and pollution trading: A sustainable solution for future food production.</a> <i>Environmental Science &amp; Technology Engineering</i>, American Chemical Society, 3(8). </p>
+								<p> Sharief, Md. A. J., Bharadwaj Vangipuram, 2020: <a href="#">Assessment of Socio-Economic Impact of Urban Flooding in Indian City of Hyderabad due to Climate Change.</a> In: Ghosh, C., Kolathayar, S. (eds) <i>A System Engineering Approach to Disaster Resilience</i>, Lecture Notes in Civil Engineering, Vol. 205. </p>
+								
+						</article>
+						<!-- Contact -->
+						<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form method="post" action="https://formspree.io/f/maneddgj">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>-->
+									<li><a href="https://github.com/bharad05" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://scholar.google.com/citations?user=YOUR_ID" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
+									<li><a href="https://linkedin.com/in/YOUR_PROFILE" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+						</article>
+								
+						<!-- Elements -->
+							<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Bharadwaj Vangipuram. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
 			</div>
- 
-			<!-- Footer -->
-			<footer id="footer">
-				<p class="copyright">&copy; Bharadwaj Vangipuram. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-			</footer>
- 
-		</div>
- 
+
 		<!-- BG -->
-		<div id="bg"></div>
- 
+			<div id="bg"></div>
+
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
- 
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
 	</body>
 </html>
- 
-
-
-
-
