@@ -222,8 +222,9 @@
 	}, { passive: true });
 
 	window.addEventListener('resize', function () {
-		applySplit();
-	});
+	target = Math.max(0, Math.min(100, target));
+	applySplit();
+});
 
 	applySplit();
 })();
