@@ -1104,119 +1104,80 @@ input, select, textarea {
 		line-height: calc(2.75rem - 2px);
 	}
 
-/* BG */
+<script>
+(function () {
+	var bg2022 = document.getElementById('bg-2022');
+	var labelL = document.getElementById('bg-label-left');
+	var labelR = document.getElementById('bg-label-right');
 
-#bg {
-	-webkit-backface-visibility: hidden;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	z-index: 1;
-	overflow: hidden;
-}
+	var pos = 50;
+	var target = 50;
+	var ticking = false;
 
-/* 2000 image — full background, always visible */
-#bg-2000 {
-	position: absolute;
-	inset: 0;
-	background-image: url('/images/bg1.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	transform: scale(1);
-	-webkit-transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-}
-
-/* 2022 image — clipped to right side of cursor */
-#bg-2022 {
-	position: absolute;
-	inset: 0;
-	background-image: url('/images/bg2.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	clip-path: inset(0 0 0 50%);
-	transform: scale(1);
-	-webkit-transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-}
-
-/* Year labels */
-#bg-label-left,
-#bg-label-right {
-	position: absolute;
-	top: 22px;
-	padding: 5px 12px;
-	background: rgba(0, 0, 0, 0.5);
-	color: rgba(255, 255, 255, 0.92);
-	font-family: "Source Sans Pro", sans-serif;
-	font-size: 0.6rem;
-	font-weight: 600;
-	letter-spacing: 0.2rem;
-	text-transform: uppercase;
-	border-radius: 3px;
-	pointer-events: none;
-	z-index: 7;
-	transition: opacity 0.3s ease;
-}
-
-#bg-label-left {
-	left: 18px;
-}
-
-#bg-label-right {
-	right: 18px;
-}
-
-/* Dark overlay — keeps text readable but does not hide the images */
-#bg-overlay {
-	position: absolute;
-	inset: 0;
-	background-image:
-		linear-gradient(to top, rgba(19, 21, 25, 0.65), rgba(19, 21, 25, 0.4)),
-		url("/images/overlay.png");
-	background-size: auto, 256px 256px;
-	background-position: center, center;
-	background-repeat: no-repeat, repeat;
-	background-color: transparent;
-	z-index: 5;
-	pointer-events: none;
-	-webkit-transition: background-color 2.5s ease-in-out;
-	transition: background-color 2.5s ease-in-out;
-}
-
-/* IMPORTANT: do not black out the background during preload */
-body.is-preload #bg-overlay {
-	background-color: transparent;
-}
-
-/* Blur/scale when article is open */
-body.is-article-visible #bg-2000,
-body.is-article-visible #bg-2022 {
-	-moz-transform: scale(1.0825);
-	-webkit-transform: scale(1.0825);
-	-ms-transform: scale(1.0825);
-	transform: scale(1.0825);
-	-moz-filter: blur(0.2rem);
-	-webkit-filter: blur(0.2rem);
-	-ms-filter: blur(0.2rem);
-	filter: blur(0.2rem);
-}
-
-/* Mobile: just show bg1, no interaction */
-@media screen and (max-width: 736px) {
-	#bg-2022 {
-		display: none;
+	function getClientXFromTouchEvent(e) {
+		if (e.touches && e.touches.length > 0) return e.touches[0].clientX;
+		if (e.changedTouches && e.changedTouches.length > 0) return e.changedTouches[0].clientX;
+		return null;
 	}
 
-	#bg-label-left,
-	#bg-label-right {
-		display: none;
+	function update(x) {
+		if (typeof x !== 'number') return;
+		target = Math.max(0, Math.min(100, (x / window.innerWidth) * 100));
+		if (!ticking) {
+			ticking = true;
+			requestAnimationFrame(animateStep);
+		}
 	}
-}
+
+	function applySplit() {
+		var pct = pos.toFixed(3) + '%';
+
+		if (bg2022) {
+			bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
+			bg2022.style.webkitClipPath = 'inset(0 0 0 ' + pct + ')';
+		}
+
+		if (labelL) {
+			labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
+		}
+
+		if (labelR) {
+			labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
+		}
+	}
+
+	function animateStep() {
+		pos += (target - pos) * 0.12;
+		applySplit();
+
+		if (Math.abs(target - pos) > 0.1) {
+			requestAnimationFrame(animateStep);
+		} else {
+			pos = target;
+			applySplit();
+			ticking = false;
+		}
+	}
+
+	document.addEventListener('mousemove', function (e) {
+		update(e.clientX);
+	});
+
+	document.addEventListener('touchstart', function (e) {
+		update(getClientXFromTouchEvent(e));
+	}, { passive: true });
+
+	document.addEventListener('touchmove', function (e) {
+		update(getClientXFromTouchEvent(e));
+	}, { passive: true });
+
+	window.addEventListener('resize', function () {
+		applySplit();
+	});
+
+	applySplit();
+})();
+</script>
 /* Wrapper */
 
 	#wrapper {
