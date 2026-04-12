@@ -134,13 +134,13 @@
 		<div id="bg">
 			<div id="bg-2000"></div>
 			<div id="bg-2022"></div>
-			<div id="bg-divider">
-				<div id="bg-handle"></div>
-			</div>
 			<div id="bg-label-left">Lake Mead 2000</div>
 			<div id="bg-label-right">Lake Mead 2022</div>
 			<div id="bg-overlay"></div>
 		</div>
+
+		<!-- Custom cursor -->
+		<div id="bg-cursor"></div>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
@@ -152,42 +152,51 @@
 		<!-- Split background interaction -->
 		<script>
 			(function() {
-				var bg2022   = document.getElementById('bg-2022');
-				var divider  = document.getElementById('bg-divider');
-				var labelL   = document.getElementById('bg-label-left');
-				var labelR   = document.getElementById('bg-label-right');
-				var pos      = 50; // percentage
-				var target   = 50;
-				var rafId    = null;
+				var bg2022  = document.getElementById('bg-2022');
+				var labelL  = document.getElementById('bg-label-left');
+				var labelR  = document.getElementById('bg-label-right');
+				var cursor  = document.getElementById('bg-cursor');
+				var pos     = 50;
+				var target  = 50;
+				var cursorX = -100;
+				var cursorY = -100;
 
-				function update(x) {
-					target = Math.max(5, Math.min(95, (x / window.innerWidth) * 100));
+				function update(x, y) {
+					target  = Math.max(0, Math.min(100, (x / window.innerWidth) * 100));
+					cursorX = x;
+					cursorY = y;
 				}
 
 				function animate() {
 					// smooth lerp toward target
-					pos += (target - pos) * 0.12;
-					var pct = pos.toFixed(2) + '%';
-					bg2022.style.clipPath  = 'inset(0 0 0 ' + pct + ')';
-					divider.style.left     = pct;
+					pos += (target - pos) * 0.08;
+					var pct = pos.toFixed(3) + '%';
+					bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
+
+					// move custom cursor
+					cursor.style.transform = 'translate(' + cursorX + 'px, ' + cursorY + 'px) translate(-50%, -50%)';
 
 					// fade labels based on available space
-					labelL.style.opacity  = pos < 15 ? (pos / 15).toFixed(2) : '1';
-					labelR.style.opacity  = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
+					labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
+					labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
 
-					rafId = requestAnimationFrame(animate);
+					requestAnimationFrame(animate);
 				}
 
 				document.addEventListener('mousemove', function(e) {
-					update(e.clientX);
+					update(e.clientX, e.clientY);
+					cursor.style.opacity = '1';
+				});
+
+				document.addEventListener('mouseleave', function() {
+					cursor.style.opacity = '0';
 				});
 
 				// Touch support
 				document.addEventListener('touchmove', function(e) {
-					update(e.touches[0].clientX);
+					update(e.touches[0].clientX, e.touches[0].clientY);
 				}, { passive: true });
 
-				// Start animation loop
 				animate();
 			})();
 		</script>
