@@ -155,56 +155,78 @@
 
 		<!-- Split background interaction -->
 		<script>
-			(function () {
-				var bg2022 = document.getElementById('bg-2022');
-				var labelL = document.getElementById('bg-label-left');
-				var labelR = document.getElementById('bg-label-right');
+(function () {
+	var bg2022 = document.getElementById('bg-2022');
+	var labelL = document.getElementById('bg-label-left');
+	var labelR = document.getElementById('bg-label-right');
 
-				var pos = 50;
-				var target = 50;
+	var pos = 50;
+	var target = 50;
+	var ticking = false;
 
-				function update(x) {
-					target = Math.max(0, Math.min(100, (x / window.innerWidth) * 100));
-				}
+	function getClientXFromTouchEvent(e) {
+		if (e.touches && e.touches.length > 0) return e.touches[0].clientX;
+		if (e.changedTouches && e.changedTouches.length > 0) return e.changedTouches[0].clientX;
+		return null;
+	}
 
-				function animate() {
-					pos += (target - pos) * 0.08;
-					var pct = pos.toFixed(3) + '%';
+	function update(x) {
+		if (typeof x !== 'number') return;
+		target = Math.max(0, Math.min(100, (x / window.innerWidth) * 100));
+		if (!ticking) {
+			ticking = true;
+			requestAnimationFrame(animateStep);
+		}
+	}
 
-					if (bg2022) {
-						bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
-					}
+	function applySplit() {
+		var pct = pos.toFixed(3) + '%';
 
-					if (labelL) {
-						labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
-					}
+		if (bg2022) {
+			bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
+			bg2022.style.webkitClipPath = 'inset(0 0 0 ' + pct + ')';
+		}
 
-					if (labelR) {
-						labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
-					}
+		if (labelL) {
+			labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
+		}
 
-					requestAnimationFrame(animate);
-				}
+		if (labelR) {
+			labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
+		}
+	}
 
-				document.addEventListener('mousemove', function (e) {
-					update(e.clientX);
-				});
+	function animateStep() {
+		pos += (target - pos) * 0.12;
+		applySplit();
 
-				document.addEventListener('touchstart', function (e) {
-					if (e.touches && e.touches.length > 0) {
-						update(e.touches[0].clientX);
-					}
-				}, { passive: true });
+		if (Math.abs(target - pos) > 0.1) {
+			requestAnimationFrame(animateStep);
+		} else {
+			pos = target;
+			applySplit();
+			ticking = false;
+		}
+	}
 
-				document.addEventListener('touchmove', function (e) {
-					if (e.touches && e.touches.length > 0) {
-						update(e.touches[0].clientX);
-					}
-				}, { passive: true });
+	document.addEventListener('mousemove', function (e) {
+		update(e.clientX);
+	});
 
-				animate();
-			})();
-		</script>
+	document.addEventListener('touchstart', function (e) {
+		update(getClientXFromTouchEvent(e));
+	}, { passive: true });
 
+	document.addEventListener('touchmove', function (e) {
+		update(getClientXFromTouchEvent(e));
+	}, { passive: true });
+
+	window.addEventListener('resize', function () {
+		applySplit();
+	});
+
+	applySplit();
+})();
+</script>
 	</body>
 </html>
