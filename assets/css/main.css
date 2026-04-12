@@ -1104,100 +1104,152 @@ input, select, textarea {
 		line-height: calc(2.75rem - 2px);
 	}
 
-/* BG */
+/* ═══════════════════════════════════════════════════════
+   Interactive Lake Mead Split Background
+   Replace the original #bg block with this
+   ═══════════════════════════════════════════════════════ */
 
-	#bg {
-		-moz-transform: scale(1.0);
-		-webkit-transform: scale(1.0);
-		-ms-transform: scale(1.0);
-		transform: scale(1.0);
-		-webkit-backface-visibility: hidden;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100vh;
-		z-index: 1;
+#bg {
+	-webkit-backface-visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	overflow: hidden;
+}
+
+/* 2000 image — full background, always visible */
+#bg-2000 {
+	position: absolute;
+	inset: 0;
+	background-image: url('images/bg1.jpg');
+	background-size: cover;
+	background-position: center;
+	transform: scale(1.0);
+	-webkit-transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+}
+
+/* 2022 image — clipped to right side of cursor */
+#bg-2022 {
+	position: absolute;
+	inset: 0;
+	background-image: url('images/bg2.jpg');
+	background-size: cover;
+	background-position: center;
+	clip-path: inset(0 0 0 50%);
+	transform: scale(1.0);
+	-webkit-transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+}
+
+/* Divider line */
+#bg-divider {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 2px;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.75);
+	box-shadow: 0 0 14px rgba(255, 255, 255, 0.45), 0 0 4px rgba(255,255,255,0.8);
+	transform: translateX(-50%);
+	pointer-events: none;
+	z-index: 6;
+}
+
+/* Handle knob */
+#bg-handle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.9);
+	border: 2px solid rgba(255, 255, 255, 1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+
+#bg-handle::before {
+	content: '◀▶';
+	font-size: 9px;
+	color: #1b1f22;
+	font-weight: 900;
+	letter-spacing: -1px;
+}
+
+/* Year labels */
+#bg-label-left,
+#bg-label-right {
+	position: absolute;
+	top: 22px;
+	padding: 5px 12px;
+	background: rgba(0, 0, 0, 0.5);
+	color: rgba(255, 255, 255, 0.92);
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 0.6rem;
+	font-weight: 600;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+	border-radius: 3px;
+	pointer-events: none;
+	z-index: 7;
+	transition: opacity 0.3s ease;
+}
+
+#bg-label-left  { left: 18px; }
+#bg-label-right { right: 18px; }
+
+/* Dark overlay — keeps text readable */
+#bg-overlay {
+	position: absolute;
+	inset: 0;
+	background-image: linear-gradient(to top, rgba(19, 21, 25, 0.65), rgba(19, 21, 25, 0.4)),
+	                  url("images/overlay.png");
+	background-size: auto, 256px 256px;
+	background-position: center, center;
+	background-repeat: no-repeat, repeat;
+	z-index: 5;
+	pointer-events: none;
+	-webkit-transition: background-color 2.5s ease-in-out;
+	transition: background-color 2.5s ease-in-out;
+}
+
+body.is-preload #bg-overlay {
+	background-color: #000000;
+}
+
+/* Blur/scale when article is open */
+body.is-article-visible #bg-2000,
+body.is-article-visible #bg-2022 {
+	-moz-transform: scale(1.0825);
+	-webkit-transform: scale(1.0825);
+	-ms-transform: scale(1.0825);
+	transform: scale(1.0825);
+	-moz-filter: blur(0.2rem);
+	-webkit-filter: blur(0.2rem);
+	-ms-filter: blur(0.2rem);
+	filter: blur(0.2rem);
+}
+
+/* Mobile: disable interaction, just show 2022 */
+@media screen and (max-width: 736px) {
+	#bg-2022 {
+		clip-path: inset(0 0 0 50%);
 	}
-
-		#bg:before, #bg:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-
-		#bg:before {
-			-moz-transition: background-color 2.5s ease-in-out;
-			-webkit-transition: background-color 2.5s ease-in-out;
-			-ms-transition: background-color 2.5s ease-in-out;
-			transition: background-color 2.5s ease-in-out;
-			-moz-transition-delay: 0.75s;
-			-webkit-transition-delay: 0.75s;
-			-ms-transition-delay: 0.75s;
-			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto,
- 256px 256px;
-			background-position: center,
- center;
-			background-repeat: no-repeat,
- repeat;
-			z-index: 2;
-		}
-
-		#bg:after {
-    ...
-    background-image: url("../../images/bg.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1;
+	#bg-divider,
+	#bg-label-left,
+	#bg-label-right {
+		display: none;
+	}
 }
-		#bg:after {
-			-moz-transform: scale(1.125);
-			-webkit-transform: scale(1.125);
-			-ms-transform: scale(1.125);
-			transform: scale(1.125);
-			-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
-			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
-			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
-			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/bg.jpg");
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
-			z-index: 1;
-		}
-
-	#bg:after {
-    ...
-    background-image: url("../../images/bg.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1;
-    filter: grayscale(100%);
-}
-
-		body.is-article-visible #bg:after {
-			-moz-transform: scale(1.0825);
-			-webkit-transform: scale(1.0825);
-			-ms-transform: scale(1.0825);
-			transform: scale(1.0825);
-			-moz-filter: blur(0.2rem);
-			-webkit-filter: blur(0.2rem);
-			-ms-filter: blur(0.2rem);
-			filter: blur(0.2rem);
-		}
-
-		body.is-preload #bg:before {
-			background-color: #000000;
-		}
-
 /* Wrapper */
 
 	#wrapper {
