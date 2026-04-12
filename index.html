@@ -190,6 +190,12 @@
 					update(e.clientX);
 				});
 
+				document.addEventListener('touchstart', function (e) {
+					if (e.touches && e.touches.length > 0) {
+						update(e.touches[0].clientX);
+					}
+				}, { passive: true });
+
 				document.addEventListener('touchmove', function (e) {
 					if (e.touches && e.touches.length > 0) {
 						update(e.touches[0].clientX);
