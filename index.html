@@ -151,7 +151,6 @@
 				var bg2022  = document.getElementById('bg-2022');
 				var labelL  = document.getElementById('bg-label-left');
 				var labelR  = document.getElementById('bg-label-right');
-				var cursor  = document.getElementById('bg-cursor');
 				var pos     = 50;
 				var target  = 50;
 				var cursorX = -100;
@@ -168,9 +167,6 @@
 					pos += (target - pos) * 0.08;
 					var pct = pos.toFixed(3) + '%';
 					bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
-
-					// move custom cursor
-					cursor.style.transform = 'translate(' + cursorX + 'px, ' + cursorY + 'px) translate(-50%, -50%)';
 
 					// fade labels based on available space
 					labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
