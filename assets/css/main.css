@@ -1144,29 +1144,6 @@ input, select, textarea {
 	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
 }
 
-/* Hide default cursor site-wide */
-* {
-	cursor: none !important;
-}
-
-/* Custom circular cursor */
-#bg-cursor {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
-	border: 1.5px solid rgba(255, 255, 255, 0.9);
-	background: rgba(255, 255, 255, 0.08);
-	pointer-events: none;
-	z-index: 9999;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-	backdrop-filter: invert(0.15);
-	-webkit-backdrop-filter: invert(0.15);
-}
-
 /* Year labels */
 #bg-label-left,
 #bg-label-right {
