@@ -1121,10 +1121,11 @@ input, select, textarea {
 #bg-2000 {
 	position: absolute;
 	inset: 0;
-	background-image: url('../../images/bg1.jpg');
+	background-image: url('/images/bg1.jpg');
 	background-size: cover;
 	background-position: center;
-	transform: scale(1.0);
+	background-repeat: no-repeat;
+	transform: scale(1);
 	-webkit-transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
 	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
 }
@@ -1133,11 +1134,12 @@ input, select, textarea {
 #bg-2022 {
 	position: absolute;
 	inset: 0;
-	background-image: url('../../images/bg2.jpg');
+	background-image: url('/images/bg2.jpg');
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 	clip-path: inset(0 0 0 50%);
-	transform: scale(1.0);
+	transform: scale(1);
 	-webkit-transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
 	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
 }
@@ -1184,26 +1186,34 @@ input, select, textarea {
 	transition: opacity 0.3s ease;
 }
 
-#bg-label-left  { left: 18px; }
-#bg-label-right { right: 18px; }
+#bg-label-left {
+	left: 18px;
+}
 
-/* Dark overlay — keeps text readable */
+#bg-label-right {
+	right: 18px;
+}
+
+/* Dark overlay — keeps text readable but does not hide the images */
 #bg-overlay {
 	position: absolute;
 	inset: 0;
-	background-image: linear-gradient(to top, rgba(19, 21, 25, 0.65), rgba(19, 21, 25, 0.4)),
-	                  url("../../images/overlay.png");
+	background-image:
+		linear-gradient(to top, rgba(19, 21, 25, 0.65), rgba(19, 21, 25, 0.4)),
+		url("/images/overlay.png");
 	background-size: auto, 256px 256px;
 	background-position: center, center;
 	background-repeat: no-repeat, repeat;
+	background-color: transparent;
 	z-index: 5;
 	pointer-events: none;
 	-webkit-transition: background-color 2.5s ease-in-out;
 	transition: background-color 2.5s ease-in-out;
 }
 
+/* IMPORTANT: do not black out the background during preload */
 body.is-preload #bg-overlay {
-	background-color: #000000;
+	background-color: transparent;
 }
 
 /* Blur/scale when article is open */
@@ -1224,12 +1234,12 @@ body.is-article-visible #bg-2022 {
 	#bg-2022 {
 		display: none;
 	}
+
 	#bg-label-left,
 	#bg-label-right {
 		display: none;
 	}
 }
-
 /* Wrapper */
 
 	#wrapper {
