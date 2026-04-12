@@ -1104,10 +1104,7 @@ input, select, textarea {
 		line-height: calc(2.75rem - 2px);
 	}
 
-/* ═══════════════════════════════════════════════════════
-   Interactive Lake Mead Split Background
-   Replace the original #bg block with this
-   ═══════════════════════════════════════════════════════ */
+/* BG */
 
 #bg {
 	-webkit-backface-visibility: hidden;
@@ -1124,7 +1121,7 @@ input, select, textarea {
 #bg-2000 {
 	position: absolute;
 	inset: 0;
-	background-image: url('images/bg1.jpg');
+	background-image: url('../../images/bg1.jpg');
 	background-size: cover;
 	background-position: center;
 	transform: scale(1.0);
@@ -1136,18 +1133,13 @@ input, select, textarea {
 #bg-2022 {
 	position: absolute;
 	inset: 0;
-	background-image: url('images/bg2.jpg');
+	background-image: url('../../images/bg2.jpg');
 	background-size: cover;
 	background-position: center;
 	clip-path: inset(0 0 0 50%);
 	transform: scale(1.0);
 	-webkit-transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
 	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-}
-
-/* Divider — invisible, no line, no handle */
-#bg-divider {
-	display: none;
 }
 
 /* Hide default cursor site-wide */
@@ -1200,7 +1192,7 @@ input, select, textarea {
 	position: absolute;
 	inset: 0;
 	background-image: linear-gradient(to top, rgba(19, 21, 25, 0.65), rgba(19, 21, 25, 0.4)),
-	                  url("images/overlay.png");
+	                  url("../../images/overlay.png");
 	background-size: auto, 256px 256px;
 	background-position: center, center;
 	background-repeat: no-repeat, repeat;
@@ -1227,12 +1219,11 @@ body.is-article-visible #bg-2022 {
 	filter: blur(0.2rem);
 }
 
-/* Mobile: disable interaction, just show 2022 */
+/* Mobile: just show bg1, no interaction */
 @media screen and (max-width: 736px) {
 	#bg-2022 {
-		clip-path: inset(0 0 0 50%);
+		display: none;
 	}
-	#bg-divider,
 	#bg-label-left,
 	#bg-label-right {
 		display: none;
@@ -1601,7 +1592,7 @@ body.is-article-visible #bg-2022 {
 			-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
 			-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
-			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
+			padding: 4.5rem 2.5rem 1.5rem 2.5rem;
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
@@ -1661,7 +1652,7 @@ body.is-article-visible #bg-2022 {
 		@media screen and (max-width: 736px) {
 
 			#main article {
-				padding: 3.5rem 2rem 0.5rem 2rem ;
+				padding: 3.5rem 2rem 0.5rem 2rem;
 			}
 
 				#main article .close:before {
@@ -1677,7 +1668,7 @@ body.is-article-visible #bg-2022 {
 		@media screen and (max-width: 480px) {
 
 			#main article {
-				padding: 3rem 1.5rem 0.5rem 1.5rem ;
+				padding: 3rem 1.5rem 0.5rem 1.5rem;
 			}
 
 		}
