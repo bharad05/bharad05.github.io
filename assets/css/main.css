@@ -1202,7 +1202,19 @@ body.is-article-visible #bg-2022 {
 
 	#bg-label-left,
 	#bg-label-right {
-		display: none;
+		display: block;
+		font-size: 0.5rem;
+		letter-spacing: 0.12rem;
+		padding: 4px 8px;
+		top: 12px;
+	}
+
+	#bg-label-left {
+		left: 10px;
+	}
+
+	#bg-label-right {
+		right: 10px;
 	}
 
 	#bg-2000,
