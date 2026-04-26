@@ -1,20 +1,13 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Bharadwaj's personal website</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css?v=3" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- About section styles -->
 		<style>
-		/* ── Intro ── */
 		.about-intro {
 			font-size: 0.95rem;
 			line-height: 1.85;
@@ -26,14 +19,13 @@
 			font-size: 0.6rem;
 			letter-spacing: 0.3rem;
 			text-transform: uppercase;
-			color: rgba(255,255,255,0.4);
-			border-bottom: 1px solid rgba(255,255,255,0.12);
+			color: rgba(255,255,255,0.45);
+			border-bottom: 1px solid rgba(255,255,255,0.14);
 			padding-bottom: 0.5rem;
 			margin-bottom: 1.4rem;
 			font-weight: 400;
 		}
 
-		/* ── Photo ── */
 		.about-photo-wrap {
 			display: flex;
 			justify-content: center;
@@ -41,28 +33,56 @@
 		}
 
 		.about-photo {
-			width: 130px;
-			height: 130px;
+			width: 132px;
+			height: 132px;
 			border-radius: 50%;
 			object-fit: cover;
-			border: 2px solid rgba(255,255,255,0.3);
-			display: block;
+			border: 2px solid rgba(255,255,255,0.32);
+			box-shadow: 0 18px 40px rgba(0,0,0,0.35);
 		}
 
-		/* ── Education cards ── */
-		.edu-section { margin-bottom: 2.5rem; }
+		.edu-section {
+			margin-bottom: 2.6rem;
+		}
 
 		.edu-cards {
 			display: flex;
+			justify-content: center;
+			align-items: center;
 			gap: 0.8rem;
-			justify-content: space-between;
+			perspective: 1300px;
+			transform-style: preserve-3d;
 		}
 
 		.edu-card {
-			flex: 1;
-			height: 175px;
-			perspective: 900px;
+			width: 31%;
+			min-width: 0;
+			height: 190px;
+			perspective: 1000px;
 			cursor: pointer;
+			transform-style: preserve-3d;
+			transition: transform 0.35s ease, opacity 0.35s ease;
+		}
+
+		.edu-card:nth-child(1) {
+			transform: rotateY(16deg) translateX(10px) scale(0.94);
+			opacity: 0.92;
+		}
+
+		.edu-card:nth-child(2) {
+			transform: translateY(-10px) scale(1.04);
+			z-index: 2;
+		}
+
+		.edu-card:nth-child(3) {
+			transform: rotateY(-16deg) translateX(-10px) scale(0.94);
+			opacity: 0.92;
+		}
+
+		.edu-card:hover {
+			transform: translateY(-12px) scale(1.04);
+			opacity: 1;
+			z-index: 3;
 		}
 
 		.edu-card-inner {
@@ -70,7 +90,7 @@
 			width: 100%;
 			height: 100%;
 			transform-style: preserve-3d;
-			transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+			transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 		}
 
 		.edu-card:hover .edu-card-inner,
@@ -84,86 +104,73 @@
 			inset: 0;
 			backface-visibility: hidden;
 			-webkit-backface-visibility: hidden;
-			border-radius: 6px;
+			border-radius: 18px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			padding: 1rem 0.75rem;
 			text-align: center;
-		}
-
-		.edu-card-front {
-			background: rgba(255,255,255,0.05);
-			border: 1px solid rgba(255,255,255,0.13);
+			background:
+				linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.035));
+			border: 1px solid rgba(255,255,255,0.18);
+			box-shadow: 0 24px 55px rgba(0,0,0,0.34);
+			backdrop-filter: blur(13px);
+			-webkit-backdrop-filter: blur(13px);
 		}
 
 		.edu-card-back {
-			background: rgba(255,255,255,0.09);
-			border: 1px solid rgba(255,255,255,0.22);
 			transform: rotateY(180deg);
+			background:
+				linear-gradient(145deg, rgba(255,255,255,0.14), rgba(255,255,255,0.055));
+			border-color: rgba(255,255,255,0.25);
 		}
 
 		.edu-logo {
-			width: 52px;
-			height: 52px;
-			border-radius: 50%;
+			width: 66px;
+			height: 66px;
+			border-radius: 18px;
+			background: rgba(255,255,255,0.1);
+			border: 1px solid rgba(255,255,255,0.2);
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			font-weight: 800;
-			margin-bottom: 0.55rem;
-			line-height: 1.2;
-			flex-shrink: 0;
+			margin-bottom: 0.75rem;
+			overflow: hidden;
+			box-shadow: inset 0 0 25px rgba(255,255,255,0.06), 0 14px 35px rgba(0,0,0,0.28);
 		}
 
-		.ucd-logo {
-			background: #002855;
-			color: #DAAA00;
-			border: 2px solid #DAAA00;
-			font-size: 0.72rem;
-		}
-
-		.ucl-logo {
-			background: #500778;
-			color: #fff;
-			border: 2px solid #9b30d9;
-			font-size: 0.9rem;
-			letter-spacing: 0.05rem;
-		}
-
-		.jntu-logo {
-			background: #1a3a5c;
-			color: #fff;
-			border: 2px solid #4a90d9;
-			font-size: 0.65rem;
-			letter-spacing: 0.03rem;
+		.edu-logo img {
+			width: 82%;
+			height: 82%;
+			object-fit: contain;
+			display: block;
 		}
 
 		.edu-degree-short {
 			font-size: 0.95rem;
 			font-weight: 700;
 			color: #fff;
-			letter-spacing: 0.08rem;
+			letter-spacing: 0.1rem;
 		}
 
 		.edu-uni-short {
 			font-size: 0.5rem;
-			color: rgba(255,255,255,0.45);
-			letter-spacing: 0.06rem;
+			color: rgba(255,255,255,0.52);
+			letter-spacing: 0.08rem;
 			text-transform: uppercase;
-			margin-top: 0.2rem;
+			margin-top: 0.25rem;
 			line-height: 1.4;
 		}
 
 		.edu-card-front::after {
-			content: 'hover to flip';
+			content: 'hover / tap';
 			position: absolute;
-			bottom: 6px;
+			bottom: 8px;
 			font-size: 0.42rem;
 			letter-spacing: 0.1rem;
 			text-transform: uppercase;
-			color: rgba(255,255,255,0.2);
+			color: rgba(255,255,255,0.25);
 		}
 
 		.edu-back-degree {
@@ -172,19 +179,19 @@
 			color: #fff;
 			letter-spacing: 0.06rem;
 			text-transform: uppercase;
-			margin-bottom: 0.2rem;
+			margin-bottom: 0.25rem;
 		}
 
 		.edu-back-field {
 			font-size: 0.6rem;
-			color: rgba(255,255,255,0.75);
+			color: rgba(255,255,255,0.78);
 			margin-bottom: 0.35rem;
 			line-height: 1.4;
 		}
 
 		.edu-back-years {
 			font-size: 0.55rem;
-			color: rgba(255,255,255,0.45);
+			color: rgba(255,255,255,0.5);
 			letter-spacing: 0.12rem;
 			margin-bottom: 0.45rem;
 			font-style: italic;
@@ -192,19 +199,18 @@
 
 		.edu-back-detail {
 			font-size: 0.52rem;
-			color: rgba(255,255,255,0.55);
+			color: rgba(255,255,255,0.58);
 			line-height: 1.55;
 			margin-bottom: 0.35rem;
 		}
 
 		.edu-back-advisor {
 			font-size: 0.5rem;
-			color: rgba(255,255,255,0.35);
+			color: rgba(255,255,255,0.4);
 			font-style: italic;
 			line-height: 1.4;
 		}
 
-		/* ── Research interests ── */
 		.research-section {
 			margin-bottom: 1rem;
 			position: relative;
@@ -240,15 +246,14 @@
 			color: #fff;
 		}
 
-		/* ── Side panel ── */
 		.interest-panel {
 			position: fixed;
 			top: 0;
-			right: -340px;
-			width: 310px;
+			right: -360px;
+			width: 330px;
 			height: 100vh;
 			background: rgba(18, 22, 26, 0.97);
-			border-left: 1px solid rgba(255,255,255,0.1);
+			border-left: 1px solid rgba(255,255,255,0.12);
 			z-index: 10000;
 			padding: 2.5rem 1.6rem 2rem;
 			transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -257,16 +262,21 @@
 			-webkit-backdrop-filter: blur(16px);
 		}
 
-		.interest-panel.open { right: 0; }
+		.interest-panel.open {
+			right: 0;
+		}
 
 		.panel-backdrop {
 			display: none;
 			position: fixed;
 			inset: 0;
 			z-index: 9999;
+			background: rgba(0,0,0,0.15);
 		}
 
-		.panel-backdrop.active { display: block; }
+		.panel-backdrop.active {
+			display: block;
+		}
 
 		.panel-close {
 			position: absolute;
@@ -274,9 +284,9 @@
 			right: 1rem;
 			background: transparent;
 			border: 1px solid rgba(255,255,255,0.18);
-			color: rgba(255,255,255,0.5);
-			width: 26px;
-			height: 26px;
+			color: rgba(255,255,255,0.55);
+			width: 28px;
+			height: 28px;
 			border-radius: 50%;
 			font-size: 0.6rem;
 			cursor: pointer;
@@ -286,7 +296,6 @@
 			padding: 0;
 			box-shadow: none;
 			line-height: 1;
-			transition: all 0.2s ease;
 		}
 
 		.panel-close:hover {
@@ -295,15 +304,29 @@
 		}
 
 		.panel-title {
-			font-size: 0.6rem;
+			font-size: 0.62rem;
 			letter-spacing: 0.25rem;
 			text-transform: uppercase;
-			color: rgba(255,255,255,0.45);
+			color: rgba(255,255,255,0.5);
 			border-bottom: 1px solid rgba(255,255,255,0.08);
 			padding-bottom: 0.75rem;
 			margin-bottom: 1.5rem;
 			padding-right: 2rem;
 			line-height: 1.5;
+		}
+
+		.panel-section-label {
+			font-size: 0.5rem;
+			letter-spacing: 0.25rem;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.28);
+			margin: 1.2rem 0 0.6rem;
+			padding-bottom: 0.3rem;
+			border-bottom: 1px solid rgba(255,255,255,0.06);
+		}
+
+		.panel-section-label:first-child {
+			margin-top: 0;
 		}
 
 		.panel-project-item {
@@ -314,45 +337,36 @@
 			transition: all 0.2s ease;
 		}
 
-		.panel-project-item:last-child { border-bottom: none; }
+		.panel-project-item:last-child {
+			border-bottom: none;
+		}
 
 		.proj-name {
 			font-size: 0.65rem;
 			font-weight: 600;
-			color: rgba(255,255,255,0.82);
+			color: rgba(255,255,255,0.84);
 			letter-spacing: 0.07rem;
 			text-transform: uppercase;
 			margin-bottom: 0.3rem;
-			transition: color 0.2s ease;
 		}
 
-		.panel-project-item:hover .proj-name { color: #fff; }
+		.panel-project-item:hover .proj-name {
+			color: #fff;
+		}
 
 		.proj-desc {
 			font-size: 0.58rem;
-			color: rgba(255,255,255,0.42);
+			color: rgba(255,255,255,0.46);
 			line-height: 1.65;
 		}
 
 		.proj-arrow {
 			font-size: 0.52rem;
-			color: rgba(255,255,255,0.28);
+			color: rgba(255,255,255,0.32);
 			margin-top: 0.35rem;
 			letter-spacing: 0.1rem;
 			text-transform: uppercase;
 		}
-
-		.panel-section-label {
-			font-size: 0.5rem;
-			letter-spacing: 0.25rem;
-			text-transform: uppercase;
-			color: rgba(255,255,255,0.25);
-			margin: 1.2rem 0 0.6rem;
-			padding-bottom: 0.3rem;
-			border-bottom: 1px solid rgba(255,255,255,0.06);
-		}
-
-		.panel-section-label:first-child { margin-top: 0; }
 
 		.proj-badge {
 			display: inline-block;
@@ -369,34 +383,51 @@
 		}
 
 		.proj-badge-project {
-			background: rgba(74, 144, 217, 0.2);
-			color: rgba(74, 144, 217, 0.9);
-			border: 1px solid rgba(74, 144, 217, 0.3);
+			background: rgba(74,144,217,0.2);
+			color: rgba(130,185,240,0.95);
+			border: 1px solid rgba(74,144,217,0.3);
 		}
 
 		.proj-badge-blog {
-			background: rgba(180, 120, 60, 0.2);
-			color: rgba(220, 160, 80, 0.9);
-			border: 1px solid rgba(180, 120, 60, 0.3);
+			background: rgba(180,120,60,0.22);
+			color: rgba(230,170,95,0.95);
+			border: 1px solid rgba(180,120,60,0.35);
 		}
 
-		/* ── Mobile ── */
 		@media screen and (max-width: 736px) {
-			.edu-cards { flex-direction: column; gap: 0.7rem; }
-			.edu-card { height: 155px; }
-			.edu-card-front::after { display: none; }
-			.interest-panel { width: 88vw; right: -90vw; }
+			.edu-cards {
+				flex-direction: column;
+				gap: 0.85rem;
+			}
+
+			.edu-card,
+			.edu-card:nth-child(1),
+			.edu-card:nth-child(2),
+			.edu-card:nth-child(3),
+			.edu-card:hover {
+				width: 100%;
+				height: 165px;
+				transform: none;
+				opacity: 1;
+			}
+
+			.edu-card-front::after {
+				display: none;
+			}
+
+			.interest-panel {
+				width: 88vw;
+				right: -90vw;
+			}
 		}
 		</style>
 	</head>
+
 	<body class="is-preload">
 
-		<!-- Wrapper -->
 		<div id="wrapper">
 
-			<!-- Header -->
 			<header id="header">
-
 				<div class="content">
 					<div class="inner">
 						<h1>Bharadwaj's Personal Website</h1>
@@ -415,51 +446,49 @@
 				</nav>
 			</header>
 
-			<!-- Main -->
 			<div id="main">
 
-				<!-- About -->
 				<article id="about">
 					<h2 class="major">About</h2>
 
-					<!-- 1. Intro -->
 					<p class="about-intro">
 						I am a PhD researcher at UC Davis working at the intersection of water systems, hydrologic risk, and climate risk finance. My work translates complex drought and water-scarcity data into actionable insights for policymakers, insurers, and vulnerable communities — bridging the gap between physical hydrology and real-world financial decision-making.
 					</p>
 
-					<!-- 2. Photo -->
 					<div class="about-photo-wrap">
 						<img class="about-photo" src="images/IMG_1955.jpeg" alt="Bharadwaj Vangipuram" />
 					</div>
 
-					<!-- 3. Education -->
 					<div class="edu-section">
 						<p class="about-subhead">Education</p>
+
 						<div class="edu-cards">
 
-							<!-- UC Davis -->
 							<div class="edu-card">
 								<div class="edu-card-inner">
 									<div class="edu-card-front">
-										<div class="edu-logo ucd-logo">UC<br>Davis</div>
+										<div class="edu-logo">
+											<img src="images/ucdavis-logo.png" alt="UC Davis logo" />
+										</div>
 										<div class="edu-degree-short">PhD</div>
 										<div class="edu-uni-short">University of California, Davis</div>
 									</div>
 									<div class="edu-card-back">
 										<div class="edu-back-degree">Doctor of Philosophy</div>
 										<div class="edu-back-field">Civil &amp; Environmental Engineering</div>
-										<div class="edu-back-years">2022 — Present</div>
+										<div class="edu-back-years">2025 — Present</div>
 										<div class="edu-back-detail">Hydrologic risk · Climate risk finance · Water systems modeling</div>
 										<div class="edu-back-advisor">Advisor: Prof. Alvar Escriva-Bou</div>
 									</div>
 								</div>
 							</div>
 
-							<!-- UCL -->
 							<div class="edu-card">
 								<div class="edu-card-inner">
 									<div class="edu-card-front">
-										<div class="edu-logo ucl-logo">UCL</div>
+										<div class="edu-logo">
+											<img src="images/ucl-logo.png" alt="UCL logo" />
+										</div>
 										<div class="edu-degree-short">MRes</div>
 										<div class="edu-uni-short">University College London</div>
 									</div>
@@ -473,11 +502,12 @@
 								</div>
 							</div>
 
-							<!-- JNTU H -->
 							<div class="edu-card">
 								<div class="edu-card-inner">
 									<div class="edu-card-front">
-										<div class="edu-logo jntu-logo">JNTU<br>H</div>
+										<div class="edu-logo">
+											<img src="images/jntuh-logo.png" alt="JNTUH logo" />
+										</div>
 										<div class="edu-degree-short">BTech</div>
 										<div class="edu-uni-short">JNTU Hyderabad</div>
 									</div>
@@ -494,7 +524,6 @@
 						</div>
 					</div>
 
-					<!-- 4. Research interests -->
 					<div class="research-section">
 						<p class="about-subhead">Research Interests</p>
 						<div class="interest-tags">
@@ -506,17 +535,15 @@
 						</div>
 					</div>
 
-					<!-- Side panel (fixed, outside article flow) -->
 					<div class="interest-panel" id="interest-panel">
 						<button class="panel-close" id="panel-close">✕</button>
 						<div class="panel-title" id="panel-title"></div>
 						<div class="panel-projects" id="panel-projects"></div>
 					</div>
-					<div class="panel-backdrop" id="panel-backdrop"></div>
 
+					<div class="panel-backdrop" id="panel-backdrop"></div>
 				</article>
 
-				<!-- Work -->
 				<article id="work">
 					<h2 class="major">Work</h2>
 
@@ -526,17 +553,18 @@
 					<p>This project focuses on characterising drought risk and uncertainty for California's state-level climate adaptation planning. Working as a Graduate Student Researcher at UC Davis, I conduct data-driven analysis of multi-decadal agricultural and urban datasets, translate hydro-economic modeling results into evidence-based policy narratives, and develop data visualizations to communicate complex water demand trade-offs and climate risks to non-technical policy audiences.</p>
 
 					<h4>Water Quality Trading as a Risk Management Instrument</h4>
-					<p>This project developed a mathematical optimization model in GAMS to simulate nutrient loading and evaluate water quality trading as a risk management instrument. I coupled hydrologic constraints with economic variables to assess the effectiveness of market-based mechanisms in reducing nitrogen concentrations under alternative regulatory scenarios, visualizing and interpreting model outputs to communicate environmental risk–tradeoff dynamics to researchers and policy-relevant audiences. This work produced three peer-reviewed publications in <i>Water Research</i>, <i>ACS ES&amp;T Engineering</i>, and the <i>Journal of Environmental Management</i>.</p>
+					<p>This project developed a mathematical optimization model in GAMS to simulate nutrient loading and evaluate water quality trading as a risk management instrument. I coupled hydrologic constraints with economic variables to assess the effectiveness of market-based mechanisms in reducing nitrogen concentrations under alternative regulatory scenarios, visualizing and interpreting model outputs to communicate environmental risk–tradeoff dynamics to researchers and policy-relevant audiences.</p>
 
 					<h4>Nutrient Neutrality &amp; Urban Development Trade-offs</h4>
-					<p>This project integrated housing demand forecasts with nutrient risk constraints to model development scenarios affecting a population of approximately 120,000. I analysed time-series environmental data (~700 observations) to quantify trade-offs between urban growth, regulatory compliance, and water quality protection, contributing to market-based approaches to nutrient neutrality policy in the UK.</p>
+					<p>This project integrated housing demand forecasts with nutrient risk constraints to model development scenarios affecting a population of approximately 120,000. I analysed time-series environmental data to quantify trade-offs between urban growth, regulatory compliance, and water quality protection.</p>
 
 					<h4>Bumbu Watershed Water Quality — Papua New Guinea</h4>
-					<p>Working with the Morobe Development Foundation under a UNEP-affiliated mandate, I collaborated with international partners to interpret water quality monitoring data and evaluate phytoremediation options for watershed-scale risk mitigation. Findings were synthesised into a policy-oriented report funded by the Governments of Australia and Papua New Guinea.</p>
+					<p>Working with the Morobe Development Foundation under a UNEP-affiliated mandate, I collaborated with international partners to interpret water quality monitoring data and evaluate phytoremediation options for watershed-scale risk mitigation.</p>
 
 					<hr />
 
 					<h3 class="major">Selected Papers</h3>
+
 					<p>Bharadwaj Vangipuram, Gonzalez Zapata, J., and Erfani, T., 2025: <a href="https://doi.org/10.1016/j.watres.2025.123959">Making waves: Is water quality trading a false promise for balancing ecology and economy?</a> <i>Water Research</i>, Vol. 284, 123959.</p>
 
 					<p>Gonzalez Zapata, J., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="#">Can market-based models be used to improve water quality policies in addressing Food and Water Security?</a> <i>ACS ES&amp;T Water</i>, Vol. 4(4).</p>
@@ -548,7 +576,6 @@
 					<p>Sharief, Md. A. J., Bharadwaj Vangipuram, 2020: <a href="#">Assessment of Socio-Economic Impact of Urban Flooding in Indian City of Hyderabad due to Climate Change.</a> In: Ghosh, C., Kolathayar, S. (eds) <i>A System Engineering Approach to Disaster Resilience</i>, Lecture Notes in Civil Engineering, Vol. 205.</p>
 				</article>
 
-				<!-- Blog -->
 				<article id="blog">
 					<h2 class="major">Blog</h2>
 
@@ -561,9 +588,9 @@
 					<p>I will be adding posts here regularly as the site develops. This space is intended to make academic work more accessible, concise, and policy-relevant.</p>
 				</article>
 
-				<!-- Contact -->
 				<article id="contact">
 					<h2 class="major">Contact</h2>
+
 					<form method="post" action="https://formspree.io/f/maneddgj">
 						<div class="fields">
 							<div class="field half">
@@ -579,11 +606,13 @@
 								<textarea name="message" id="message" rows="4"></textarea>
 							</div>
 						</div>
+
 						<ul class="actions">
 							<li><input type="submit" value="Send Message" class="primary" /></li>
 							<li><input type="reset" value="Reset" /></li>
 						</ul>
 					</form>
+
 					<ul class="icons">
 						<li><a href="https://github.com/bharad05" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 						<li><a href="https://scholar.google.com/citations?user=YOUR_ID" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
@@ -593,14 +622,12 @@
 
 			</div>
 
-			<!-- Footer -->
 			<footer id="footer">
 				<p class="copyright">&copy; Bharadwaj Vangipuram. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 			</footer>
 
 		</div>
 
-		<!-- Interactive Lake Mead Split Background -->
 		<div id="bg">
 			<div id="bg-2000"></div>
 			<div id="bg-2022"></div>
@@ -609,14 +636,12 @@
 			<div id="bg-overlay"></div>
 		</div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js?v=3"></script>
+		<script src="assets/js/browser.min.js?v=3"></script>
+		<script src="assets/js/breakpoints.min.js?v=3"></script>
+		<script src="assets/js/util.js?v=3"></script>
+		<script src="assets/js/main.js?v=3"></script>
 
-		<!-- Split background interaction -->
 		<script>
 (function () {
 	var bg2022 = document.getElementById('bg-2022');
@@ -636,6 +661,7 @@
 	function update(x) {
 		if (typeof x !== 'number') return;
 		target = Math.max(0, Math.min(100, (x / window.innerWidth) * 100));
+
 		if (!ticking) {
 			ticking = true;
 			requestAnimationFrame(animateStep);
@@ -644,17 +670,25 @@
 
 	function applySplit() {
 		var pct = pos.toFixed(3) + '%';
+
 		if (bg2022) {
 			bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
 			bg2022.style.webkitClipPath = 'inset(0 0 0 ' + pct + ')';
 		}
-		if (labelL) labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
-		if (labelR) labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
+
+		if (labelL) {
+			labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
+		}
+
+		if (labelR) {
+			labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
+		}
 	}
 
 	function animateStep() {
 		pos += (target - pos) * 0.12;
 		applySplit();
+
 		if (Math.abs(target - pos) > 0.1) {
 			requestAnimationFrame(animateStep);
 		} else {
@@ -664,92 +698,101 @@
 		}
 	}
 
-	document.addEventListener('mousemove', function (e) { update(e.clientX); });
-	document.addEventListener('touchstart', function (e) { update(getClientXFromTouchEvent(e)); }, { passive: true });
-	document.addEventListener('touchmove', function (e) { update(getClientXFromTouchEvent(e)); }, { passive: true });
-	window.addEventListener('resize', function () { target = Math.max(0, Math.min(100, target)); applySplit(); });
+	document.addEventListener('mousemove', function (e) {
+		update(e.clientX);
+	});
+
+	document.addEventListener('touchstart', function (e) {
+		update(getClientXFromTouchEvent(e));
+	}, { passive: true });
+
+	document.addEventListener('touchmove', function (e) {
+		update(getClientXFromTouchEvent(e));
+	}, { passive: true });
+
+	window.addEventListener('resize', function () {
+		target = Math.max(0, Math.min(100, target));
+		applySplit();
+	});
+
 	applySplit();
 })();
 		</script>
 
-		<!-- Research interests panel -->
 		<script>
 (function () {
-
-	/* Tap-to-flip education cards on touch devices */
 	document.querySelectorAll('.edu-card').forEach(function (card) {
 		card.addEventListener('click', function () {
 			card.classList.toggle('flipped');
 		});
 	});
 
-	/* Interest panel data */
 	var data = {
 		'drought': {
 			title: 'Drought Risk & Finance',
 			projects: [
-				{ name: 'Financial Instruments for Drought Risk', desc: 'Review paper on ex ante/ex post financial mechanisms — parametric insurance, drought bonds, contingent credit — targeting Nature Water.', target: 'work', type: 'project' },
-				{ name: 'CA 5th Climate Change Assessment', desc: 'Characterising drought risk and uncertainty across multi-decadal agricultural and urban datasets for state-level adaptation planning.', target: 'work', type: 'project' }
+				{ name: 'Financial Instruments for Drought Risk', desc: 'Review paper on ex ante and ex post financial mechanisms for drought risk management.', target: 'work', type: 'project' },
+				{ name: 'CA 5th Climate Change Assessment', desc: 'Characterising drought risk and uncertainty across agricultural and urban water datasets.', target: 'work', type: 'project' }
 			],
 			blogs: [
-				{ name: 'Why Drought Finance Lags Behind Flood Insurance', desc: 'A reflection on the structural gap between physical drought risk science and financial risk management practice.', target: 'blog', type: 'blog' },
-				{ name: 'Parametric Insurance & the Colorado River Basin', desc: 'Commentary on how index-based instruments could work for western US water systems.', target: 'blog', type: 'blog' }
+				{ name: 'Why Drought Finance Lags Behind Flood Insurance', desc: 'A reflection on the gap between drought science and financial risk management.', target: 'blog', type: 'blog' }
 			]
 		},
 		'water-quality': {
 			title: 'Water Quality Trading',
 			projects: [
-				{ name: 'Water Quality Trading as Risk Management', desc: 'Mathematical optimization model in GAMS simulating nutrient loading and market-based trading — 3 peer-reviewed publications.', target: 'work', type: 'project' },
-				{ name: 'Nutrient Neutrality & Urban Development', desc: 'Housing demand forecasts coupled with nutrient risk constraints across ~120,000 population scenarios in the UK.', target: 'work', type: 'project' }
+				{ name: 'Water Quality Trading as Risk Management', desc: 'Optimization-based evaluation of nutrient trading and market-based water quality policy.', target: 'work', type: 'project' },
+				{ name: 'Nutrient Neutrality & Urban Development', desc: 'Development scenarios under nutrient risk constraints in the UK.', target: 'work', type: 'project' }
 			],
 			blogs: [
-				{ name: 'Do Water Quality Markets Actually Work?', desc: 'A critical look at the evidence base for trading schemes in the UK and US, drawing on modelling experience.', target: 'blog', type: 'blog' }
+				{ name: 'Do Water Quality Markets Actually Work?', desc: 'A critical look at trading schemes and environmental outcomes.', target: 'blog', type: 'blog' }
 			]
 		},
 		'climate': {
 			title: 'Climate Change Assessment',
 			projects: [
-				{ name: 'CA 5th Climate Change Assessment', desc: 'Data-driven analysis of multi-decadal water demand datasets; policy narratives and visualizations for non-technical audiences.', target: 'work', type: 'project' }
+				{ name: 'CA 5th Climate Change Assessment', desc: 'Policy-facing analysis of drought risk, uncertainty, and adaptation planning.', target: 'work', type: 'project' }
 			],
 			blogs: [
-				{ name: 'What California\'s Climate Assessment Gets Right (and Wrong)', desc: 'Field notes from contributing to the 5th Assessment — on the challenge of communicating uncertainty to policymakers.', target: 'blog', type: 'blog' },
-				{ name: 'Communicating Climate Risk Without Losing Nuance', desc: 'Reflections on translating hydro-economic modelling results into policy-relevant narratives.', target: 'blog', type: 'blog' }
+				{ name: 'Communicating Climate Risk Without Losing Nuance', desc: 'Notes on translating hydro-economic modelling into policy narratives.', target: 'blog', type: 'blog' }
 			]
 		},
 		'wash': {
 			title: 'WASH & Development',
 			projects: [
-				{ name: 'WASH Access & Human Development — Urban India', desc: 'DHS panel data (2005–2021) analysing water, sanitation, and hygiene access and human development outcomes in Indian cities.', target: 'work', type: 'project' }
+				{ name: 'WASH Access & Human Development — Urban India', desc: 'Analysis of WASH access, development outcomes, and urban inequality.', target: 'work', type: 'project' }
 			],
 			blogs: [
-				{ name: 'Water Access as a Development Indicator', desc: 'Essay on what DHS data reveals about the relationship between WASH infrastructure and human development in rapidly urbanising India.', target: 'blog', type: 'blog' }
+				{ name: 'Water Access as a Development Indicator', desc: 'Essay on WASH infrastructure and development outcomes.', target: 'blog', type: 'blog' }
 			]
 		},
 		'watershed': {
 			title: 'Watershed Management',
 			projects: [
-				{ name: 'Bumbu Watershed — Papua New Guinea', desc: 'Water quality monitoring and phytoremediation assessment for watershed-scale risk mitigation; funded by Australia and PNG governments.', target: 'work', type: 'project' }
+				{ name: 'Bumbu Watershed — Papua New Guinea', desc: 'Water quality monitoring and phytoremediation assessment for watershed-scale risk mitigation.', target: 'work', type: 'project' }
 			],
 			blogs: [
-				{ name: 'Field Notes: Watershed Risk in Papua New Guinea', desc: 'Reflections on synthesising risk evidence across cultures, governments, and scales in a UNEP-affiliated mandate.', target: 'blog', type: 'blog' }
+				{ name: 'Field Notes: Watershed Risk in Papua New Guinea', desc: 'Reflections on watershed risk across institutions and scales.', target: 'blog', type: 'blog' }
 			]
 		}
 	};
 
-	var panel     = document.getElementById('interest-panel');
-	var backdrop  = document.getElementById('panel-backdrop');
-	var titleEl   = document.getElementById('panel-title');
+	var panel = document.getElementById('interest-panel');
+	var backdrop = document.getElementById('panel-backdrop');
+	var titleEl = document.getElementById('panel-title');
 	var projectsEl = document.getElementById('panel-projects');
-	var closeBtn  = document.getElementById('panel-close');
+	var closeBtn = document.getElementById('panel-close');
 	var activeTag = null;
 
 	function makeItem(entry) {
 		var item = document.createElement('div');
 		item.className = 'panel-project-item';
+
 		var arrow = entry.type === 'blog' ? '→ View in Blog' : '→ View in Work';
 		var badge = entry.type === 'blog'
 			? '<span class="proj-badge proj-badge-blog">Blog</span>'
 			: '<span class="proj-badge proj-badge-project">Project</span>';
+
 		item.innerHTML =
 			'<div class="proj-name">' + badge + entry.name + '</div>' +
 			'<div class="proj-desc">' + entry.desc + '</div>' +
@@ -762,6 +805,7 @@
 				if (link) link.click();
 			}, 350);
 		});
+
 		return item;
 	}
 
@@ -777,6 +821,7 @@
 			pLabel.className = 'panel-section-label';
 			pLabel.textContent = 'Projects';
 			projectsEl.appendChild(pLabel);
+
 			d.projects.forEach(function (proj) {
 				projectsEl.appendChild(makeItem(proj));
 			});
@@ -787,6 +832,7 @@
 			bLabel.className = 'panel-section-label';
 			bLabel.textContent = 'Blog Posts';
 			projectsEl.appendChild(bLabel);
+
 			d.blogs.forEach(function (blog) {
 				projectsEl.appendChild(makeItem(blog));
 			});
@@ -799,16 +845,24 @@
 	function closePanel() {
 		panel.classList.remove('open');
 		backdrop.classList.remove('active');
-		if (activeTag) { activeTag.classList.remove('active'); activeTag = null; }
+
+		if (activeTag) {
+			activeTag.classList.remove('active');
+			activeTag = null;
+		}
 	}
 
 	document.querySelectorAll('.interest-tag').forEach(function (tag) {
 		tag.addEventListener('click', function () {
 			var interest = tag.getAttribute('data-interest');
+
 			if (activeTag === tag && panel.classList.contains('open')) {
-				closePanel(); return;
+				closePanel();
+				return;
 			}
+
 			if (activeTag) activeTag.classList.remove('active');
+
 			activeTag = tag;
 			tag.classList.add('active');
 			openPanel(interest);
@@ -817,7 +871,6 @@
 
 	closeBtn.addEventListener('click', closePanel);
 	backdrop.addEventListener('click', closePanel);
-
 })();
 		</script>
 
