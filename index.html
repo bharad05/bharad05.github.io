@@ -41,175 +41,190 @@
 			box-shadow: 0 18px 40px rgba(0,0,0,0.35);
 		}
 
-		.edu-section {
-			margin-bottom: 2.6rem;
-		}
+		/* ── 3D Education Carousel ── */
 
-		.edu-cards {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 0.8rem;
-			perspective: 1300px;
-			transform-style: preserve-3d;
-		}
+.edu-section {
+	margin-bottom: 2.8rem;
+}
 
-		.edu-card {
-			width: 31%;
-			min-width: 0;
-			height: 190px;
-			perspective: 1000px;
-			cursor: pointer;
-			transform-style: preserve-3d;
-			transition: transform 0.35s ease, opacity 0.35s ease;
-		}
+.edu-cards {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0;
+	perspective: 1400px;
+	min-height: 240px;
+	margin-top: 1.5rem;
+	transform-style: preserve-3d;
+}
 
-		.edu-card:nth-child(1) {
-			transform: rotateY(16deg) translateX(10px) scale(0.94);
-			opacity: 0.92;
-		}
+.edu-card {
+	width: 190px;
+	height: 215px;
+	position: relative;
+	cursor: pointer;
+	transform-style: preserve-3d;
+	transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
+}
 
-		.edu-card:nth-child(2) {
-			transform: translateY(-10px) scale(1.04);
-			z-index: 2;
-		}
+.edu-card:nth-child(1) {
+	transform: translateX(48px) rotateY(36deg) scale(0.86);
+	opacity: 0.78;
+	z-index: 1;
+}
 
-		.edu-card:nth-child(3) {
-			transform: rotateY(-16deg) translateX(-10px) scale(0.94);
-			opacity: 0.92;
-		}
+.edu-card:nth-child(2) {
+	transform: translateY(-12px) translateZ(80px) scale(1.08);
+	opacity: 1;
+	z-index: 3;
+}
 
-		.edu-card:hover {
-			transform: translateY(-12px) scale(1.04);
-			opacity: 1;
-			z-index: 3;
-		}
+.edu-card:nth-child(3) {
+	transform: translateX(-48px) rotateY(-36deg) scale(0.86);
+	opacity: 0.78;
+	z-index: 1;
+}
 
-		.edu-card-inner {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			transform-style: preserve-3d;
-			transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-		}
+.edu-card:hover {
+	transform: translateY(-16px) scale(1.08);
+	opacity: 1;
+	filter: none;
+	z-index: 5;
+}
 
-		.edu-card:hover .edu-card-inner,
-		.edu-card.flipped .edu-card-inner {
-			transform: rotateY(180deg);
-		}
+.edu-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-		.edu-card-front,
-		.edu-card-back {
-			position: absolute;
-			inset: 0;
-			backface-visibility: hidden;
-			-webkit-backface-visibility: hidden;
-			border-radius: 18px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			padding: 1rem 0.75rem;
-			text-align: center;
-			background:
-				linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.035));
-			border: 1px solid rgba(255,255,255,0.18);
-			box-shadow: 0 24px 55px rgba(0,0,0,0.34);
-			backdrop-filter: blur(13px);
-			-webkit-backdrop-filter: blur(13px);
-		}
+.edu-card:hover .edu-card-inner,
+.edu-card.flipped .edu-card-inner {
+	transform: rotateY(180deg);
+}
 
-		.edu-card-back {
-			transform: rotateY(180deg);
-			background:
-				linear-gradient(145deg, rgba(255,255,255,0.14), rgba(255,255,255,0.055));
-			border-color: rgba(255,255,255,0.25);
-		}
+.edu-card-front,
+.edu-card-back {
+	position: absolute;
+	inset: 0;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	border-radius: 26px;
+	padding: 1.1rem 0.85rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background:
+		radial-gradient(circle at 25% 18%, rgba(255,255,255,0.22), transparent 36%),
+		linear-gradient(145deg, rgba(255,255,255,0.16), rgba(255,255,255,0.045));
+	border: 1px solid rgba(255,255,255,0.24);
+	box-shadow:
+		0 30px 65px rgba(0,0,0,0.44),
+		inset 0 0 35px rgba(255,255,255,0.05);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+}
 
-		.edu-logo {
-			width: 66px;
-			height: 66px;
-			border-radius: 18px;
-			background: rgba(255,255,255,0.1);
-			border: 1px solid rgba(255,255,255,0.2);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-bottom: 0.75rem;
-			overflow: hidden;
-			box-shadow: inset 0 0 25px rgba(255,255,255,0.06), 0 14px 35px rgba(0,0,0,0.28);
-		}
+.edu-card-back {
+	transform: rotateY(180deg);
+	background:
+		radial-gradient(circle at 70% 25%, rgba(255,255,255,0.18), transparent 38%),
+		linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+	border-color: rgba(255,255,255,0.3);
+}
 
-		.edu-logo img {
-			width: 82%;
-			height: 82%;
-			object-fit: contain;
-			display: block;
-		}
+.edu-logo {
+	width: 86px;
+	height: 86px;
+	border-radius: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 0.85rem;
+	background: rgba(255,255,255,0.92);
+	border: 1px solid rgba(255,255,255,0.5);
+	box-shadow:
+		0 18px 35px rgba(0,0,0,0.34),
+		inset 0 0 18px rgba(255,255,255,0.35);
+	overflow: hidden;
+}
 
-		.edu-degree-short {
-			font-size: 0.95rem;
-			font-weight: 700;
-			color: #fff;
-			letter-spacing: 0.1rem;
-		}
+.edu-logo img {
+	width: 76%;
+	height: 76%;
+	object-fit: contain;
+	display: block;
+}
 
-		.edu-uni-short {
-			font-size: 0.5rem;
-			color: rgba(255,255,255,0.52);
-			letter-spacing: 0.08rem;
-			text-transform: uppercase;
-			margin-top: 0.25rem;
-			line-height: 1.4;
-		}
+/* UCL logo needs wider framing */
+.edu-logo.ucl-logo-img img {
+	width: 94%;
+	height: auto;
+	max-height: 70%;
+	object-fit: contain;
+}
 
-		.edu-card-front::after {
-			content: 'hover / tap';
-			position: absolute;
-			bottom: 8px;
-			font-size: 0.42rem;
-			letter-spacing: 0.1rem;
-			text-transform: uppercase;
-			color: rgba(255,255,255,0.25);
-		}
+.edu-degree-short {
+	font-size: 1rem;
+	font-weight: 700;
+	color: #fff;
+	letter-spacing: 0.12rem;
+}
 
-		.edu-back-degree {
-			font-size: 0.68rem;
-			font-weight: 700;
-			color: #fff;
-			letter-spacing: 0.06rem;
-			text-transform: uppercase;
-			margin-bottom: 0.25rem;
-		}
+.edu-uni-short {
+	font-size: 0.52rem;
+	color: rgba(255,255,255,0.62);
+	letter-spacing: 0.09rem;
+	text-transform: uppercase;
+	line-height: 1.45;
+	margin-top: 0.3rem;
+}
 
-		.edu-back-field {
-			font-size: 0.6rem;
-			color: rgba(255,255,255,0.78);
-			margin-bottom: 0.35rem;
-			line-height: 1.4;
-		}
+.edu-card-front::after {
+	content: 'hover / tap';
+	position: absolute;
+	bottom: 8px;
+	font-size: 0.42rem;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.25);
+}
 
-		.edu-back-years {
-			font-size: 0.55rem;
-			color: rgba(255,255,255,0.5);
-			letter-spacing: 0.12rem;
-			margin-bottom: 0.45rem;
-			font-style: italic;
-		}
+.edu-back-degree {
+	font-size: 0.68rem;
+	font-weight: 700;
+	color: #fff;
+	letter-spacing: 0.07rem;
+	text-transform: uppercase;
+	margin-bottom: 0.25rem;
+}
 
-		.edu-back-detail {
-			font-size: 0.52rem;
-			color: rgba(255,255,255,0.58);
-			line-height: 1.55;
-			margin-bottom: 0.35rem;
-		}
+.edu-back-field {
+	font-size: 0.6rem;
+	color: rgba(255,255,255,0.82);
+	margin-bottom: 0.4rem;
+	line-height: 1.4;
+}
 
-		.edu-back-advisor {
-			font-size: 0.5rem;
-			color: rgba(255,255,255,0.4);
-			font-style: italic;
-			line-height: 1.4;
-		}
+.edu-back-years {
+	font-size: 0.55rem;
+	color: rgba(255,255,255,0.55);
+	letter-spacing: 0.12rem;
+	margin-bottom: 0.45rem;
+	font-style: italic;
+}
+
+.edu-back-detail,
+.edu-back-advisor {
+	font-size: 0.52rem;
+	color: rgba(255,255,255,0.62);
+	line-height: 1.55;
+}
 
 		.research-section {
 			margin-bottom: 1rem;
@@ -395,31 +410,37 @@
 		}
 
 		@media screen and (max-width: 736px) {
-			.edu-cards {
-				flex-direction: column;
-				gap: 0.85rem;
-			}
+	.edu-cards {
+		flex-direction: column;
+		min-height: auto;
+		gap: 1rem;
+	}
 
-			.edu-card,
-			.edu-card:nth-child(1),
-			.edu-card:nth-child(2),
-			.edu-card:nth-child(3),
-			.edu-card:hover {
-				width: 100%;
-				height: 165px;
-				transform: none;
-				opacity: 1;
-			}
+	.edu-card,
+	.edu-card:nth-child(1),
+	.edu-card:nth-child(2),
+	.edu-card:nth-child(3),
+	.edu-card:hover {
+		width: 100%;
+		height: 180px;
+		transform: none;
+		opacity: 1;
+		filter: none;
+	}
 
-			.edu-card-front::after {
-				display: none;
-			}
+	.edu-card-front::after {
+		display: none;
+	}
 
-			.interest-panel {
-				width: 88vw;
-				right: -90vw;
-			}
-		}
+	.interest-panel {
+		width: 88vw;
+		right: -90vw;
+	}
+
+	.interest-panel.open {
+		right: 0;
+	}
+}
 		</style>
 	</head>
 
@@ -486,8 +507,8 @@
 							<div class="edu-card">
 								<div class="edu-card-inner">
 									<div class="edu-card-front">
-										<div class="edu-logo">
-											<img src="images/ucl-logo.png" alt="UCL logo" />
+										<div class="edu-logo ucl-logo-img">
+										<img src="images/ucl-logo.png" alt="UCL logo" />
 										</div>
 										<div class="edu-degree-short">MRes</div>
 										<div class="edu-uni-short">University College London</div>
