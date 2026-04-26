@@ -1,769 +1,648 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Bharadwaj's personal website</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css?v=3" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<head>
+	<title>Bharadwaj's personal website</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css?v=5" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<style>
-		.about-intro {
-			font-size: 0.95rem;
-			line-height: 1.85;
-			color: rgba(255,255,255,0.88);
-			margin-bottom: 2rem;
-		}
+	<style>
+	.about-intro {
+		font-size: 0.95rem;
+		line-height: 1.85;
+		color: rgba(255,255,255,0.88);
+		margin-bottom: 2rem;
+	}
 
-		.about-subhead {
-			font-size: 0.6rem;
-			letter-spacing: 0.3rem;
-			text-transform: uppercase;
-			color: rgba(255,255,255,0.45);
-			border-bottom: 1px solid rgba(255,255,255,0.14);
-			padding-bottom: 0.5rem;
-			margin-bottom: 1.4rem;
-			font-weight: 400;
-		}
+	.about-subhead {
+		font-size: 0.6rem;
+		letter-spacing: 0.3rem;
+		text-transform: uppercase;
+		color: rgba(255,255,255,0.45);
+		border-bottom: 1px solid rgba(255,255,255,0.14);
+		padding-bottom: 0.5rem;
+		margin-bottom: 1.4rem;
+		font-weight: 400;
+	}
 
-		.about-photo-wrap {
-			display: flex;
-			justify-content: center;
-			margin-bottom: 2rem;
-		}
+	.about-photo-wrap {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 2rem;
+	}
 
-		.about-photo {
-			width: 132px;
-			height: 132px;
-			border-radius: 50%;
-			object-fit: cover;
-			border: 2px solid rgba(255,255,255,0.32);
-			box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-		}
+	.about-photo {
+		width: 132px;
+		height: 132px;
+		border-radius: 50%;
+		object-fit: cover;
+		border: 2px solid rgba(255,255,255,0.32);
+		box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+	}
 
-		/* ── 3D Education Carousel ── */
+	.about-fold {
+		margin: 2.5rem 0;
+		padding-top: 1.25rem;
+		border-top: 1px solid rgba(255,255,255,0.09);
+	}
 
-.edu-section {
-	margin-bottom: 2.8rem;
-}
+	/* 3D Education Carousel */
+	.edu-section {
+		margin-bottom: 2.8rem;
+	}
 
-.edu-cards {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0;
-	perspective: 1400px;
-	min-height: 240px;
-	margin-top: 1.5rem;
-	transform-style: preserve-3d;
-}
-
-.edu-card {
-	width: 190px;
-	height: 215px;
-	position: relative;
-	cursor: pointer;
-	transform-style: preserve-3d;
-	transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
-}
-
-.edu-card:nth-child(1) {
-	transform: translateX(48px) rotateY(36deg) scale(0.86);
-	opacity: 0.78;
-	z-index: 1;
-}
-
-.edu-card:nth-child(2) {
-	transform: translateY(-12px) translateZ(80px) scale(1.08);
-	opacity: 1;
-	z-index: 3;
-}
-
-.edu-card:nth-child(3) {
-	transform: translateX(-48px) rotateY(-36deg) scale(0.86);
-	opacity: 0.78;
-	z-index: 1;
-}
-
-.edu-card:hover {
-	transform: translateY(-16px) scale(1.08);
-	opacity: 1;
-	filter: none;
-	z-index: 5;
-}
-
-.edu-card-inner {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	transform-style: preserve-3d;
-	transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.edu-card:hover .edu-card-inner,
-.edu-card.flipped .edu-card-inner {
-	transform: rotateY(180deg);
-}
-
-.edu-card-front,
-.edu-card-back {
-	position: absolute;
-	inset: 0;
-	backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	border-radius: 26px;
-	padding: 1.1rem 0.85rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	background:
-		radial-gradient(circle at 25% 18%, rgba(255,255,255,0.22), transparent 36%),
-		linear-gradient(145deg, rgba(255,255,255,0.16), rgba(255,255,255,0.045));
-	border: 1px solid rgba(255,255,255,0.24);
-	box-shadow:
-		0 30px 65px rgba(0,0,0,0.44),
-		inset 0 0 35px rgba(255,255,255,0.05);
-	backdrop-filter: blur(16px);
-	-webkit-backdrop-filter: blur(16px);
-}
-
-.edu-card-back {
-	transform: rotateY(180deg);
-	background:
-		radial-gradient(circle at 70% 25%, rgba(255,255,255,0.18), transparent 38%),
-		linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
-	border-color: rgba(255,255,255,0.3);
-}
-
-.edu-logo {
-	width: 86px;
-	height: 86px;
-	border-radius: 24px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 0.85rem;
-	background: rgba(255,255,255,0.92);
-	border: 1px solid rgba(255,255,255,0.5);
-	box-shadow:
-		0 18px 35px rgba(0,0,0,0.34),
-		inset 0 0 18px rgba(255,255,255,0.35);
-	overflow: hidden;
-}
-
-.edu-logo img {
-	width: 76%;
-	height: 76%;
-	object-fit: contain;
-	display: block;
-}
-
-/* UCL logo needs wider framing */
-.edu-logo.ucl-logo-img img {
-	width: 94%;
-	height: auto;
-	max-height: 70%;
-	object-fit: contain;
-}
-
-.edu-degree-short {
-	font-size: 1rem;
-	font-weight: 700;
-	color: #fff;
-	letter-spacing: 0.12rem;
-}
-
-.edu-uni-short {
-	font-size: 0.52rem;
-	color: rgba(255,255,255,0.62);
-	letter-spacing: 0.09rem;
-	text-transform: uppercase;
-	line-height: 1.45;
-	margin-top: 0.3rem;
-}
-
-.edu-card-front::after {
-	content: 'hover / tap';
-	position: absolute;
-	bottom: 8px;
-	font-size: 0.42rem;
-	letter-spacing: 0.1rem;
-	text-transform: uppercase;
-	color: rgba(255,255,255,0.25);
-}
-
-.edu-back-degree {
-	font-size: 0.68rem;
-	font-weight: 700;
-	color: #fff;
-	letter-spacing: 0.07rem;
-	text-transform: uppercase;
-	margin-bottom: 0.25rem;
-}
-
-.edu-back-field {
-	font-size: 0.6rem;
-	color: rgba(255,255,255,0.82);
-	margin-bottom: 0.4rem;
-	line-height: 1.4;
-}
-
-.edu-back-years {
-	font-size: 0.55rem;
-	color: rgba(255,255,255,0.55);
-	letter-spacing: 0.12rem;
-	margin-bottom: 0.45rem;
-	font-style: italic;
-}
-
-.edu-back-detail,
-.edu-back-advisor {
-	font-size: 0.52rem;
-	color: rgba(255,255,255,0.62);
-	line-height: 1.55;
-}
-
-		.research-section {
-			margin-bottom: 1rem;
-			position: relative;
-		}
-
-		.interest-tags {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.55rem;
-		}
-
-		.interest-tag {
-			background: transparent;
-			border: 1px solid rgba(255,255,255,0.25);
-			color: rgba(255,255,255,0.75);
-			padding: 0.4rem 0.9rem;
-			border-radius: 2rem;
-			font-size: 0.58rem;
-			letter-spacing: 0.13rem;
-			text-transform: uppercase;
-			cursor: pointer;
-			transition: all 0.2s ease;
-			font-family: "Source Sans Pro", sans-serif;
-			box-shadow: none;
-			height: auto;
-			line-height: 1.4;
-		}
-
-		.interest-tag:hover,
-		.interest-tag.active {
-			background: rgba(255,255,255,0.12);
-			border-color: rgba(255,255,255,0.6);
-			color: #fff;
-		}
-
-		.interest-panel {
-			position: fixed;
-			top: 0;
-			right: -360px;
-			width: 330px;
-			height: 100vh;
-			background: rgba(18, 22, 26, 0.97);
-			border-left: 1px solid rgba(255,255,255,0.12);
-			z-index: 10000;
-			padding: 2.5rem 1.6rem 2rem;
-			transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-			overflow-y: auto;
-			backdrop-filter: blur(16px);
-			-webkit-backdrop-filter: blur(16px);
-		}
-
-		.interest-panel.open {
-			right: 0;
-		}
-
-		.panel-backdrop {
-			display: none;
-			position: fixed;
-			inset: 0;
-			z-index: 9999;
-			background: rgba(0,0,0,0.15);
-		}
-
-		.panel-backdrop.active {
-			display: block;
-		}
-
-		.panel-close {
-			position: absolute;
-			top: 1rem;
-			right: 1rem;
-			background: transparent;
-			border: 1px solid rgba(255,255,255,0.18);
-			color: rgba(255,255,255,0.55);
-			width: 28px;
-			height: 28px;
-			border-radius: 50%;
-			font-size: 0.6rem;
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 0;
-			box-shadow: none;
-			line-height: 1;
-		}
-
-		.panel-close:hover {
-			background: rgba(255,255,255,0.1);
-			color: #fff;
-		}
-
-		.panel-title {
-			font-size: 0.62rem;
-			letter-spacing: 0.25rem;
-			text-transform: uppercase;
-			color: rgba(255,255,255,0.5);
-			border-bottom: 1px solid rgba(255,255,255,0.08);
-			padding-bottom: 0.75rem;
-			margin-bottom: 1.5rem;
-			padding-right: 2rem;
-			line-height: 1.5;
-		}
-
-		.panel-section-label {
-			font-size: 0.5rem;
-			letter-spacing: 0.25rem;
-			text-transform: uppercase;
-			color: rgba(255,255,255,0.28);
-			margin: 1.2rem 0 0.6rem;
-			padding-bottom: 0.3rem;
-			border-bottom: 1px solid rgba(255,255,255,0.06);
-		}
-
-		.panel-section-label:first-child {
-			margin-top: 0;
-		}
-
-		.panel-project-item {
-			margin-bottom: 1.1rem;
-			padding-bottom: 1.1rem;
-			border-bottom: 1px solid rgba(255,255,255,0.06);
-			cursor: pointer;
-			transition: all 0.2s ease;
-		}
-
-		.panel-project-item:last-child {
-			border-bottom: none;
-		}
-
-		.proj-name {
-			font-size: 0.65rem;
-			font-weight: 600;
-			color: rgba(255,255,255,0.84);
-			letter-spacing: 0.07rem;
-			text-transform: uppercase;
-			margin-bottom: 0.3rem;
-		}
-
-		.panel-project-item:hover .proj-name {
-			color: #fff;
-		}
-
-		.proj-desc {
-			font-size: 0.58rem;
-			color: rgba(255,255,255,0.46);
-			line-height: 1.65;
-		}
-
-		.proj-arrow {
-			font-size: 0.52rem;
-			color: rgba(255,255,255,0.32);
-			margin-top: 0.35rem;
-			letter-spacing: 0.1rem;
-			text-transform: uppercase;
-		}
-
-		.proj-badge {
-			display: inline-block;
-			font-size: 0.42rem;
-			letter-spacing: 0.1rem;
-			text-transform: uppercase;
-			padding: 0.15rem 0.45rem;
-			border-radius: 2rem;
-			margin-right: 0.4rem;
-			vertical-align: middle;
-			font-weight: 600;
-			position: relative;
-			top: -1px;
-		}
-
-		.proj-badge-project {
-			background: rgba(74,144,217,0.2);
-			color: rgba(130,185,240,0.95);
-			border: 1px solid rgba(74,144,217,0.3);
-		}
-
-		.proj-badge-blog {
-			background: rgba(180,120,60,0.22);
-			color: rgba(230,170,95,0.95);
-			border: 1px solid rgba(180,120,60,0.35);
-		}
-
-		@media screen and (max-width: 736px) {
 	.edu-cards {
-		flex-direction: column;
-		min-height: auto;
-		gap: 1rem;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		perspective: 1600px;
+		min-height: 270px;
+		margin-top: 1.5rem;
+		transform-style: preserve-3d;
 	}
 
-	.edu-card,
-	.edu-card:nth-child(1),
-	.edu-card:nth-child(2),
-	.edu-card:nth-child(3),
-	.edu-card:hover {
-		width: 100%;
-		height: 180px;
-		transform: none;
+	.edu-card {
+		position: relative;
+		width: 195px;
+		height: 225px;
+		margin: 0 -22px;
+		cursor: pointer;
+		transform-style: preserve-3d;
+		transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
+	}
+
+	.edu-card:nth-child(1) {
+		transform: rotateY(42deg) translateX(36px) scale(0.84);
+		opacity: 0.72;
+		z-index: 1;
+	}
+
+	.edu-card:nth-child(2) {
+		transform: translateY(-16px) translateZ(90px) scale(1.12);
 		opacity: 1;
-		filter: none;
+		z-index: 4;
 	}
 
-	.edu-card-front::after {
-		display: none;
+	.edu-card:nth-child(3) {
+		transform: rotateY(-42deg) translateX(-36px) scale(0.84);
+		opacity: 0.72;
+		z-index: 1;
 	}
 
+	.edu-card:hover,
+	.edu-card.active-card {
+		transform: translateY(-20px) scale(1.14) !important;
+		opacity: 1 !important;
+		filter: none !important;
+		z-index: 20 !important;
+	}
+
+	.edu-card-inner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transform-style: preserve-3d;
+		transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.edu-card:hover .edu-card-inner,
+	.edu-card.flipped .edu-card-inner {
+		transform: rotateY(180deg);
+	}
+
+	.edu-card-front,
+	.edu-card-back {
+		position: absolute;
+		inset: 0;
+		border-radius: 28px;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 1rem;
+		background:
+			radial-gradient(circle at 25% 20%, rgba(255,255,255,0.25), transparent 35%),
+			linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05));
+		border: 1px solid rgba(255,255,255,0.25);
+		box-shadow: 0 32px 75px rgba(0,0,0,0.48);
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
+	}
+
+	.edu-card-back {
+		transform: rotateY(180deg);
+		background:
+			radial-gradient(circle at 70% 25%, rgba(255,255,255,0.18), transparent 38%),
+			linear-gradient(145deg, rgba(255,255,255,0.19), rgba(255,255,255,0.065));
+	}
+
+	.edu-logo {
+		width: 90px;
+		height: 90px;
+		border-radius: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 0.85rem;
+		background: rgba(255,255,255,0.94);
+		overflow: hidden;
+		box-shadow: 0 18px 35px rgba(0,0,0,0.35);
+	}
+
+	.edu-logo img {
+		width: 78%;
+		height: 78%;
+		object-fit: contain;
+		display: block;
+	}
+
+	.edu-logo.ucl-logo-img {
+		background: #500778;
+	}
+
+	.edu-logo.ucl-logo-img img {
+		width: 94%;
+		height: auto;
+		max-height: 74%;
+		object-fit: contain;
+	}
+
+	.edu-degree-short {
+		font-size: 1rem;
+		font-weight: 700;
+		letter-spacing: 0.12rem;
+		color: #fff;
+	}
+
+	.edu-uni-short {
+		font-size: 0.52rem;
+		color: rgba(255,255,255,0.62);
+		letter-spacing: 0.08rem;
+		text-transform: uppercase;
+		line-height: 1.45;
+		margin-top: 0.3rem;
+	}
+
+	.edu-back-degree {
+		font-size: 0.66rem;
+		font-weight: 700;
+		color: #fff;
+		text-transform: uppercase;
+		letter-spacing: 0.07rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.edu-back-field,
+	.edu-back-years,
+	.edu-back-detail,
+	.edu-back-advisor {
+		font-size: 0.54rem;
+		line-height: 1.55;
+		color: rgba(255,255,255,0.72);
+	}
+
+	.edu-back-years {
+		font-style: italic;
+		color: rgba(255,255,255,0.52);
+		margin: 0.35rem 0;
+	}
+
+	/* Research interests */
+	.interest-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.55rem;
+	}
+
+	.interest-tag {
+		background: transparent;
+		border: 1px solid rgba(255,255,255,0.25);
+		color: rgba(255,255,255,0.75);
+		padding: 0.4rem 0.9rem;
+		border-radius: 2rem;
+		font-size: 0.58rem;
+		letter-spacing: 0.13rem;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		font-family: "Source Sans Pro", sans-serif;
+		box-shadow: none;
+		height: auto;
+		line-height: 1.4;
+	}
+
+	.interest-tag:hover,
+	.interest-tag.active {
+		background: rgba(255,255,255,0.12);
+		border-color: rgba(255,255,255,0.6);
+		color: #fff;
+	}
+
+	/* Side panel: hidden until click */
 	.interest-panel {
-		width: 88vw;
-		right: -90vw;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 340px;
+		height: 100vh;
+		background: rgba(18,22,26,0.98);
+		border-left: 1px solid rgba(255,255,255,0.12);
+		z-index: 10000;
+		padding: 2.5rem 1.6rem 2rem;
+		overflow-y: auto;
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		box-shadow: -24px 0 60px rgba(0,0,0,0.45);
+		transform: translateX(110%);
+		visibility: hidden;
+		pointer-events: none;
+		transition: transform 0.35s ease, visibility 0.35s ease;
 	}
 
 	.interest-panel.open {
-		right: 0;
+		transform: translateX(0);
+		visibility: visible;
+		pointer-events: auto;
 	}
-}
-		</style>
-	</head>
 
-	<body class="is-preload">
+	.panel-backdrop {
+		display: none;
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		background: rgba(0,0,0,0.18);
+	}
 
-		<div id="wrapper">
+	.panel-backdrop.active {
+		display: block;
+	}
 
-			<header id="header">
-				<div class="content">
-					<div class="inner">
-						<h1>Bharadwaj's Personal Website</h1>
-						<p>PhD. Student, Graduate Student Researcher in Department of Civil &amp; Environmental Engineering</p>
-						<h3>University of California, Davis</h3>
-					</div>
+	.panel-close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		background: transparent;
+		border: 1px solid rgba(255,255,255,0.18);
+		color: rgba(255,255,255,0.55);
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		font-size: 0.6rem;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		box-shadow: none;
+		line-height: 1;
+	}
+
+	.panel-title {
+		font-size: 0.62rem;
+		letter-spacing: 0.25rem;
+		text-transform: uppercase;
+		color: rgba(255,255,255,0.5);
+		border-bottom: 1px solid rgba(255,255,255,0.08);
+		padding-bottom: 0.75rem;
+		margin-bottom: 1.5rem;
+		padding-right: 2rem;
+		line-height: 1.5;
+	}
+
+	.panel-section-label {
+		font-size: 0.5rem;
+		letter-spacing: 0.25rem;
+		text-transform: uppercase;
+		color: rgba(255,255,255,0.28);
+		margin: 1.2rem 0 0.6rem;
+		padding-bottom: 0.3rem;
+		border-bottom: 1px solid rgba(255,255,255,0.06);
+	}
+
+	.panel-project-item {
+		margin-bottom: 1.1rem;
+		padding-bottom: 1.1rem;
+		border-bottom: 1px solid rgba(255,255,255,0.06);
+		cursor: pointer;
+	}
+
+	.proj-name {
+		font-size: 0.65rem;
+		font-weight: 600;
+		color: rgba(255,255,255,0.84);
+		letter-spacing: 0.07rem;
+		text-transform: uppercase;
+		margin-bottom: 0.3rem;
+	}
+
+	.proj-desc {
+		font-size: 0.58rem;
+		color: rgba(255,255,255,0.46);
+		line-height: 1.65;
+	}
+
+	.proj-arrow {
+		font-size: 0.52rem;
+		color: rgba(255,255,255,0.32);
+		margin-top: 0.35rem;
+		letter-spacing: 0.1rem;
+		text-transform: uppercase;
+	}
+
+	.proj-badge {
+		display: inline-block;
+		font-size: 0.42rem;
+		letter-spacing: 0.1rem;
+		text-transform: uppercase;
+		padding: 0.15rem 0.45rem;
+		border-radius: 2rem;
+		margin-right: 0.4rem;
+		font-weight: 600;
+	}
+
+	.proj-badge-project {
+		background: rgba(74,144,217,0.2);
+		color: rgba(130,185,240,0.95);
+		border: 1px solid rgba(74,144,217,0.3);
+	}
+
+	.proj-badge-blog {
+		background: rgba(180,120,60,0.22);
+		color: rgba(230,170,95,0.95);
+		border: 1px solid rgba(180,120,60,0.35);
+	}
+
+	@media screen and (max-width: 736px) {
+		.edu-cards {
+			flex-direction: column;
+			min-height: auto;
+			gap: 1rem;
+		}
+
+		.edu-card,
+		.edu-card:nth-child(1),
+		.edu-card:nth-child(2),
+		.edu-card:nth-child(3),
+		.edu-card:hover {
+			width: 100%;
+			height: 185px;
+			margin: 0;
+			transform: none !important;
+			opacity: 1 !important;
+		}
+
+		.interest-panel {
+			width: 88vw;
+		}
+	}
+	</style>
+</head>
+
+<body class="is-preload">
+
+<div id="wrapper">
+
+	<header id="header">
+		<div class="content">
+			<div class="inner">
+				<h1>Bharadwaj's Personal Website</h1>
+				<p>PhD. Student, Graduate Student Researcher in Department of Civil &amp; Environmental Engineering</p>
+				<h3>University of California, Davis</h3>
+			</div>
+		</div>
+
+		<nav>
+			<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#work">Work</a></li>
+				<li><a href="#blog">Blog</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="main">
+
+		<article id="about">
+			<h2 class="major">About</h2>
+
+			<div class="about-fold">
+				<p class="about-intro">
+					I am a PhD researcher at UC Davis working at the intersection of water systems, hydrologic risk, and climate risk finance. My work translates complex drought and water-scarcity data into actionable insights for policymakers, insurers, and vulnerable communities.
+				</p>
+
+				<div class="about-photo-wrap">
+					<img class="about-photo" src="images/IMG_1955.jpeg" alt="Bharadwaj Vangipuram" />
 				</div>
-
-				<nav>
-					<ul>
-						<li><a href="#about">About</a></li>
-						<li><a href="#work">Work</a></li>
-						<li><a href="#blog">Blog</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</nav>
-			</header>
-
-			<div id="main">
-
-				<article id="about">
-					<h2 class="major">About</h2>
-
-					<p class="about-intro">
-						I am a PhD researcher at UC Davis working at the intersection of water systems, hydrologic risk, and climate risk finance. My work translates complex drought and water-scarcity data into actionable insights for policymakers, insurers, and vulnerable communities — bridging the gap between physical hydrology and real-world financial decision-making.
-					</p>
-
-					<div class="about-photo-wrap">
-						<img class="about-photo" src="images/IMG_1955.jpeg" alt="Bharadwaj Vangipuram" />
-					</div>
-
-					<div class="edu-section">
-						<p class="about-subhead">Education</p>
-
-						<div class="edu-cards">
-
-							<div class="edu-card">
-								<div class="edu-card-inner">
-									<div class="edu-card-front">
-										<div class="edu-logo">
-											<img src="images/ucdavis-logo.png" alt="UC Davis logo" />
-										</div>
-										<div class="edu-degree-short">PhD</div>
-										<div class="edu-uni-short">University of California, Davis</div>
-									</div>
-									<div class="edu-card-back">
-										<div class="edu-back-degree">Doctor of Philosophy</div>
-										<div class="edu-back-field">Civil &amp; Environmental Engineering</div>
-										<div class="edu-back-years">2025 — Present</div>
-										<div class="edu-back-detail">Hydrologic risk · Climate risk finance · Water systems modeling</div>
-										<div class="edu-back-advisor">Advisor: Prof. Alvar Escriva-Bou</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="edu-card">
-								<div class="edu-card-inner">
-									<div class="edu-card-front">
-										<div class="edu-logo ucl-logo-img">
-										<img src="images/ucl-logo.png" alt="UCL logo" />
-										</div>
-										<div class="edu-degree-short">MRes</div>
-										<div class="edu-uni-short">University College London</div>
-									</div>
-									<div class="edu-card-back">
-										<div class="edu-back-degree">Master of Research</div>
-										<div class="edu-back-field">Urban Sustainability &amp; Resilience</div>
-										<div class="edu-back-years">2020 — 2022</div>
-										<div class="edu-back-detail">Water quality trading · Market-based instruments · Optimization modeling</div>
-										<div class="edu-back-advisor">Centre for Urban Sustainability &amp; Resilience</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="edu-card">
-								<div class="edu-card-inner">
-									<div class="edu-card-front">
-										<div class="edu-logo">
-											<img src="images/jntuh-logo.png" alt="JNTUH logo" />
-										</div>
-										<div class="edu-degree-short">BTech</div>
-										<div class="edu-uni-short">JNTU Hyderabad</div>
-									</div>
-									<div class="edu-card-back">
-										<div class="edu-back-degree">Bachelor of Technology</div>
-										<div class="edu-back-field">Civil Engineering</div>
-										<div class="edu-back-years">2016 — 2020</div>
-										<div class="edu-back-detail">Structural engineering · Environmental systems · Urban flooding</div>
-										<div class="edu-back-advisor">Jawaharlal Nehru Technological University</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-					<div class="research-section">
-						<p class="about-subhead">Research Interests</p>
-						<div class="interest-tags">
-							<button class="interest-tag" data-interest="drought">Drought Risk &amp; Finance</button>
-							<button class="interest-tag" data-interest="water-quality">Water Quality Trading</button>
-							<button class="interest-tag" data-interest="climate">Climate Change Assessment</button>
-							<button class="interest-tag" data-interest="wash">WASH &amp; Development</button>
-							<button class="interest-tag" data-interest="watershed">Watershed Management</button>
-						</div>
-					</div>
-
-					<div class="interest-panel" id="interest-panel">
-						<button class="panel-close" id="panel-close">✕</button>
-						<div class="panel-title" id="panel-title"></div>
-						<div class="panel-projects" id="panel-projects"></div>
-					</div>
-
-					<div class="panel-backdrop" id="panel-backdrop"></div>
-				</article>
-
-				<article id="work">
-					<h2 class="major">Work</h2>
-
-					<h3 class="major">Projects</h3>
-
-					<h4>California 5th Climate Change Assessment</h4>
-					<p>This project focuses on characterising drought risk and uncertainty for California's state-level climate adaptation planning. Working as a Graduate Student Researcher at UC Davis, I conduct data-driven analysis of multi-decadal agricultural and urban datasets, translate hydro-economic modeling results into evidence-based policy narratives, and develop data visualizations to communicate complex water demand trade-offs and climate risks to non-technical policy audiences.</p>
-
-					<h4>Water Quality Trading as a Risk Management Instrument</h4>
-					<p>This project developed a mathematical optimization model in GAMS to simulate nutrient loading and evaluate water quality trading as a risk management instrument. I coupled hydrologic constraints with economic variables to assess the effectiveness of market-based mechanisms in reducing nitrogen concentrations under alternative regulatory scenarios, visualizing and interpreting model outputs to communicate environmental risk–tradeoff dynamics to researchers and policy-relevant audiences.</p>
-
-					<h4>Nutrient Neutrality &amp; Urban Development Trade-offs</h4>
-					<p>This project integrated housing demand forecasts with nutrient risk constraints to model development scenarios affecting a population of approximately 120,000. I analysed time-series environmental data to quantify trade-offs between urban growth, regulatory compliance, and water quality protection.</p>
-
-					<h4>Bumbu Watershed Water Quality — Papua New Guinea</h4>
-					<p>Working with the Morobe Development Foundation under a UNEP-affiliated mandate, I collaborated with international partners to interpret water quality monitoring data and evaluate phytoremediation options for watershed-scale risk mitigation.</p>
-
-					<hr />
-
-					<h3 class="major">Selected Papers</h3>
-
-					<p>Bharadwaj Vangipuram, Gonzalez Zapata, J., and Erfani, T., 2025: <a href="https://doi.org/10.1016/j.watres.2025.123959">Making waves: Is water quality trading a false promise for balancing ecology and economy?</a> <i>Water Research</i>, Vol. 284, 123959.</p>
-
-					<p>Gonzalez Zapata, J., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="#">Can market-based models be used to improve water quality policies in addressing Food and Water Security?</a> <i>ACS ES&amp;T Water</i>, Vol. 4(4).</p>
-
-					<p>Gonzalez Zapata, G., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="#">Harnessing market-based mechanisms to improve water quality: Water Quality Trading Policies in the River Alde.</a> <i>Journal of Environmental Management</i>, Vol. 357.</p>
-
-					<p>Gonzalez Zapata, G., Bharadwaj Vangipuram, Dalin, C., and Erfani, T., 2023: <a href="#">Water quality and pollution trading: A sustainable solution for future food production.</a> <i>Environmental Science &amp; Technology Engineering</i>, American Chemical Society, 3(8).</p>
-
-					<p>Sharief, Md. A. J., Bharadwaj Vangipuram, 2020: <a href="#">Assessment of Socio-Economic Impact of Urban Flooding in Indian City of Hyderabad due to Climate Change.</a> In: Ghosh, C., Kolathayar, S. (eds) <i>A System Engineering Approach to Disaster Resilience</i>, Lecture Notes in Civil Engineering, Vol. 205.</p>
-				</article>
-
-				<article id="blog">
-					<h2 class="major">Blog</h2>
-
-					<p>This section will feature short essays, research reflections, field notes, and commentary on water governance, hydrologic risk, environmental policy, and the interface between systems modeling and public decision-making.</p>
-
-					<h4>Planned Themes</h4>
-					<p>Topics will include drought risk in California, water markets and financial instruments, transboundary water governance, climate adaptation, infrastructure policy, and lessons from ongoing research projects.</p>
-
-					<h4>Coming Soon</h4>
-					<p>I will be adding posts here regularly as the site develops. This space is intended to make academic work more accessible, concise, and policy-relevant.</p>
-				</article>
-
-				<article id="contact">
-					<h2 class="major">Contact</h2>
-
-					<form method="post" action="https://formspree.io/f/maneddgj">
-						<div class="fields">
-							<div class="field half">
-								<label for="name">Name</label>
-								<input type="text" name="name" id="name" />
-							</div>
-							<div class="field half">
-								<label for="email">Email</label>
-								<input type="text" name="email" id="email" />
-							</div>
-							<div class="field">
-								<label for="message">Message</label>
-								<textarea name="message" id="message" rows="4"></textarea>
-							</div>
-						</div>
-
-						<ul class="actions">
-							<li><input type="submit" value="Send Message" class="primary" /></li>
-							<li><input type="reset" value="Reset" /></li>
-						</ul>
-					</form>
-
-					<ul class="icons">
-						<li><a href="https://github.com/bharad05" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://scholar.google.com/citations?user=YOUR_ID" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
-						<li><a href="https://linkedin.com/in/YOUR_PROFILE" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					</ul>
-				</article>
-
 			</div>
 
-			<footer id="footer">
-				<p class="copyright">&copy; Bharadwaj Vangipuram. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-			</footer>
+			<div class="about-fold edu-section">
+				<p class="about-subhead">Education</p>
 
-		</div>
+				<div class="edu-cards">
 
-		<div id="bg">
-			<div id="bg-2000"></div>
-			<div id="bg-2022"></div>
-			<div id="bg-label-left">Lake Mead 2000</div>
-			<div id="bg-label-right">Lake Mead 2022</div>
-			<div id="bg-overlay"></div>
-		</div>
+					<div class="edu-card">
+						<div class="edu-card-inner">
+							<div class="edu-card-front">
+								<div class="edu-logo">
+									<img src="images/ucdavis-logo.png" alt="UC Davis logo" />
+								</div>
+								<div class="edu-degree-short">PhD</div>
+								<div class="edu-uni-short">University of California, Davis</div>
+							</div>
+							<div class="edu-card-back">
+								<div class="edu-back-degree">Doctor of Philosophy</div>
+								<div class="edu-back-field">Civil &amp; Environmental Engineering</div>
+								<div class="edu-back-years">2025 — Present</div>
+								<div class="edu-back-detail">Hydrologic risk · Climate risk finance · Water systems modeling</div>
+								<div class="edu-back-advisor">Advisor: Prof. Alvar Escriva-Bou</div>
+							</div>
+						</div>
+					</div>
 
-		<script src="assets/js/jquery.min.js?v=3"></script>
-		<script src="assets/js/browser.min.js?v=3"></script>
-		<script src="assets/js/breakpoints.min.js?v=3"></script>
-		<script src="assets/js/util.js?v=3"></script>
-		<script src="assets/js/main.js?v=3"></script>
+					<div class="edu-card">
+						<div class="edu-card-inner">
+							<div class="edu-card-front">
+								<div class="edu-logo ucl-logo-img">
+									<img src="images/ucl-logo.png" alt="UCL logo" />
+								</div>
+								<div class="edu-degree-short">MRes</div>
+								<div class="edu-uni-short">University College London</div>
+							</div>
+							<div class="edu-card-back">
+								<div class="edu-back-degree">Master of Research</div>
+								<div class="edu-back-field">Urban Sustainability &amp; Resilience</div>
+								<div class="edu-back-years">2020 — 2022</div>
+								<div class="edu-back-detail">Water quality trading · Market-based instruments · Optimization modeling</div>
+								<div class="edu-back-advisor">Centre for Urban Sustainability &amp; Resilience</div>
+							</div>
+						</div>
+					</div>
 
-		<script>
+					<div class="edu-card">
+						<div class="edu-card-inner">
+							<div class="edu-card-front">
+								<div class="edu-logo">
+									<img src="images/jntuh-logo.png" alt="JNTUH logo" />
+								</div>
+								<div class="edu-degree-short">BTech</div>
+								<div class="edu-uni-short">JNTU Hyderabad</div>
+							</div>
+							<div class="edu-card-back">
+								<div class="edu-back-degree">Bachelor of Technology</div>
+								<div class="edu-back-field">Civil Engineering</div>
+								<div class="edu-back-years">2016 — 2020</div>
+								<div class="edu-back-detail">Structural engineering · Environmental systems · Urban flooding</div>
+								<div class="edu-back-advisor">Jawaharlal Nehru Technological University</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="about-fold">
+				<p class="about-subhead">Research Interests</p>
+
+				<div class="interest-tags">
+					<button class="interest-tag" data-interest="drought">Drought Risk &amp; Finance</button>
+					<button class="interest-tag" data-interest="water-quality">Water Quality Trading</button>
+					<button class="interest-tag" data-interest="climate">Climate Change Assessment</button>
+					<button class="interest-tag" data-interest="wash">WASH &amp; Development</button>
+					<button class="interest-tag" data-interest="watershed">Watershed Management</button>
+				</div>
+			</div>
+
+			<div class="interest-panel" id="interest-panel">
+				<button class="panel-close" id="panel-close">✕</button>
+				<div class="panel-title" id="panel-title"></div>
+				<div class="panel-projects" id="panel-projects"></div>
+			</div>
+
+			<div class="panel-backdrop" id="panel-backdrop"></div>
+		</article>
+
+		<article id="work">
+			<h2 class="major">Work</h2>
+
+			<h3 class="major">Projects</h3>
+
+			<h4>California 5th Climate Change Assessment</h4>
+			<p>This project focuses on characterising drought risk and uncertainty for California's state-level climate adaptation planning.</p>
+
+			<h4>Water Quality Trading as a Risk Management Instrument</h4>
+			<p>This project developed a mathematical optimization model in GAMS to simulate nutrient loading and evaluate water quality trading as a risk management instrument.</p>
+
+			<h4>Nutrient Neutrality &amp; Urban Development Trade-offs</h4>
+			<p>This project integrated housing demand forecasts with nutrient risk constraints to model development scenarios.</p>
+
+			<h4>Bumbu Watershed Water Quality — Papua New Guinea</h4>
+			<p>Water quality monitoring and phytoremediation assessment for watershed-scale risk mitigation.</p>
+
+			<hr />
+
+			<h3 class="major">Selected Papers</h3>
+			<p>Bharadwaj Vangipuram, Gonzalez Zapata, J., and Erfani, T., 2025: <a href="https://doi.org/10.1016/j.watres.2025.123959">Making waves: Is water quality trading a false promise for balancing ecology and economy?</a> <i>Water Research</i>, Vol. 284, 123959.</p>
+			<p>Gonzalez Zapata, J., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="#">Can market-based models be used to improve water quality policies in addressing Food and Water Security?</a> <i>ACS ES&amp;T Water</i>, Vol. 4(4).</p>
+			<p>Gonzalez Zapata, G., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="#">Harnessing market-based mechanisms to improve water quality: Water Quality Trading Policies in the River Alde.</a> <i>Journal of Environmental Management</i>, Vol. 357.</p>
+		</article>
+
+		<article id="blog">
+			<h2 class="major">Blog</h2>
+			<p>This section will feature short essays, research reflections, field notes, and commentary on water governance, hydrologic risk, environmental policy, and systems modeling.</p>
+			<h4>Coming Soon</h4>
+			<p>I will be adding posts here regularly as the site develops.</p>
+		</article>
+
+		<article id="contact">
+			<h2 class="major">Contact</h2>
+			<form method="post" action="https://formspree.io/f/maneddgj">
+				<div class="fields">
+					<div class="field half">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" />
+					</div>
+					<div class="field half">
+						<label for="email">Email</label>
+						<input type="text" name="email" id="email" />
+					</div>
+					<div class="field">
+						<label for="message">Message</label>
+						<textarea name="message" id="message" rows="4"></textarea>
+					</div>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="primary" /></li>
+					<li><input type="reset" value="Reset" /></li>
+				</ul>
+			</form>
+		</article>
+
+	</div>
+
+	<footer id="footer">
+		<p class="copyright">&copy; Bharadwaj Vangipuram. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+	</footer>
+
+</div>
+
+<div id="bg">
+	<div id="bg-2000"></div>
+	<div id="bg-2022"></div>
+	<div id="bg-label-left">Lake Mead 2000</div>
+	<div id="bg-label-right">Lake Mead 2022</div>
+	<div id="bg-overlay"></div>
+</div>
+
+<script src="assets/js/jquery.min.js?v=5"></script>
+<script src="assets/js/browser.min.js?v=5"></script>
+<script src="assets/js/breakpoints.min.js?v=5"></script>
+<script src="assets/js/util.js?v=5"></script>
+<script src="assets/js/main.js?v=5"></script>
+
+<script>
 (function () {
-	var bg2022 = document.getElementById('bg-2022');
-	var labelL = document.getElementById('bg-label-left');
-	var labelR = document.getElementById('bg-label-right');
+	document.querySelectorAll('.edu-card').forEach(function(card) {
+		card.addEventListener('mouseenter', function() {
+			document.querySelectorAll('.edu-card').forEach(function(c) {
+				c.classList.remove('active-card');
+			});
+			card.classList.add('active-card');
+		});
 
-	var pos = 50;
-	var target = 50;
-	var ticking = false;
+		card.addEventListener('mouseleave', function() {
+			card.classList.remove('active-card');
+		});
 
-	function getClientXFromTouchEvent(e) {
-		if (e.touches && e.touches.length > 0) return e.touches[0].clientX;
-		if (e.changedTouches && e.changedTouches.length > 0) return e.changedTouches[0].clientX;
-		return null;
-	}
-
-	function update(x) {
-		if (typeof x !== 'number') return;
-		target = Math.max(0, Math.min(100, (x / window.innerWidth) * 100));
-
-		if (!ticking) {
-			ticking = true;
-			requestAnimationFrame(animateStep);
-		}
-	}
-
-	function applySplit() {
-		var pct = pos.toFixed(3) + '%';
-
-		if (bg2022) {
-			bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
-			bg2022.style.webkitClipPath = 'inset(0 0 0 ' + pct + ')';
-		}
-
-		if (labelL) {
-			labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
-		}
-
-		if (labelR) {
-			labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
-		}
-	}
-
-	function animateStep() {
-		pos += (target - pos) * 0.12;
-		applySplit();
-
-		if (Math.abs(target - pos) > 0.1) {
-			requestAnimationFrame(animateStep);
-		} else {
-			pos = target;
-			applySplit();
-			ticking = false;
-		}
-	}
-
-	document.addEventListener('mousemove', function (e) {
-		update(e.clientX);
-	});
-
-	document.addEventListener('touchstart', function (e) {
-		update(getClientXFromTouchEvent(e));
-	}, { passive: true });
-
-	document.addEventListener('touchmove', function (e) {
-		update(getClientXFromTouchEvent(e));
-	}, { passive: true });
-
-	window.addEventListener('resize', function () {
-		target = Math.max(0, Math.min(100, target));
-		applySplit();
-	});
-
-	applySplit();
-})();
-		</script>
-
-		<script>
-(function () {
-	document.querySelectorAll('.edu-card').forEach(function (card) {
-		card.addEventListener('click', function () {
+		card.addEventListener('click', function() {
 			card.classList.toggle('flipped');
 		});
 	});
+})();
+</script>
 
+<script>
+(function () {
 	var data = {
 		'drought': {
 			title: 'Drought Risk & Finance',
 			projects: [
 				{ name: 'Financial Instruments for Drought Risk', desc: 'Review paper on ex ante and ex post financial mechanisms for drought risk management.', target: 'work', type: 'project' },
-				{ name: 'CA 5th Climate Change Assessment', desc: 'Characterising drought risk and uncertainty across agricultural and urban water datasets.', target: 'work', type: 'project' }
+				{ name: 'CA 5th Climate Change Assessment', desc: 'Characterising drought risk and uncertainty across water datasets.', target: 'work', type: 'project' }
 			],
 			blogs: [
-				{ name: 'Why Drought Finance Lags Behind Flood Insurance', desc: 'A reflection on the gap between drought science and financial risk management.', target: 'blog', type: 'blog' }
+				{ name: 'Why Drought Finance Lags Behind Flood Insurance', desc: 'A reflection on drought science and financial risk management.', target: 'blog', type: 'blog' }
 			]
 		},
 		'water-quality': {
 			title: 'Water Quality Trading',
 			projects: [
-				{ name: 'Water Quality Trading as Risk Management', desc: 'Optimization-based evaluation of nutrient trading and market-based water quality policy.', target: 'work', type: 'project' },
-				{ name: 'Nutrient Neutrality & Urban Development', desc: 'Development scenarios under nutrient risk constraints in the UK.', target: 'work', type: 'project' }
+				{ name: 'Water Quality Trading as Risk Management', desc: 'Optimization-based evaluation of nutrient trading and market-based policy.', target: 'work', type: 'project' }
 			],
 			blogs: [
 				{ name: 'Do Water Quality Markets Actually Work?', desc: 'A critical look at trading schemes and environmental outcomes.', target: 'blog', type: 'blog' }
@@ -790,7 +669,7 @@
 		'watershed': {
 			title: 'Watershed Management',
 			projects: [
-				{ name: 'Bumbu Watershed — Papua New Guinea', desc: 'Water quality monitoring and phytoremediation assessment for watershed-scale risk mitigation.', target: 'work', type: 'project' }
+				{ name: 'Bumbu Watershed — Papua New Guinea', desc: 'Water quality monitoring and phytoremediation assessment.', target: 'work', type: 'project' }
 			],
 			blogs: [
 				{ name: 'Field Notes: Watershed Risk in Papua New Guinea', desc: 'Reflections on watershed risk across institutions and scales.', target: 'blog', type: 'blog' }
@@ -809,7 +688,6 @@
 		var item = document.createElement('div');
 		item.className = 'panel-project-item';
 
-		var arrow = entry.type === 'blog' ? '→ View in Blog' : '→ View in Work';
 		var badge = entry.type === 'blog'
 			? '<span class="proj-badge proj-badge-blog">Blog</span>'
 			: '<span class="proj-badge proj-badge-project">Project</span>';
@@ -817,14 +695,14 @@
 		item.innerHTML =
 			'<div class="proj-name">' + badge + entry.name + '</div>' +
 			'<div class="proj-desc">' + entry.desc + '</div>' +
-			'<div class="proj-arrow">' + arrow + '</div>';
+			'<div class="proj-arrow">→ View in ' + (entry.type === 'blog' ? 'Blog' : 'Work') + '</div>';
 
 		item.addEventListener('click', function () {
 			closePanel();
 			setTimeout(function () {
 				var link = document.querySelector('a[href="#' + entry.target + '"]');
 				if (link) link.click();
-			}, 350);
+			}, 300);
 		});
 
 		return item;
@@ -842,7 +720,6 @@
 			pLabel.className = 'panel-section-label';
 			pLabel.textContent = 'Projects';
 			projectsEl.appendChild(pLabel);
-
 			d.projects.forEach(function (proj) {
 				projectsEl.appendChild(makeItem(proj));
 			});
@@ -853,7 +730,6 @@
 			bLabel.className = 'panel-section-label';
 			bLabel.textContent = 'Blog Posts';
 			projectsEl.appendChild(bLabel);
-
 			d.blogs.forEach(function (blog) {
 				projectsEl.appendChild(makeItem(blog));
 			});
@@ -866,7 +742,6 @@
 	function closePanel() {
 		panel.classList.remove('open');
 		backdrop.classList.remove('active');
-
 		if (activeTag) {
 			activeTag.classList.remove('active');
 			activeTag = null;
@@ -883,7 +758,6 @@
 			}
 
 			if (activeTag) activeTag.classList.remove('active');
-
 			activeTag = tag;
 			tag.classList.add('active');
 			openPanel(interest);
@@ -893,7 +767,60 @@
 	closeBtn.addEventListener('click', closePanel);
 	backdrop.addEventListener('click', closePanel);
 })();
-		</script>
+</script>
 
-	</body>
+<script>
+(function () {
+	var bg2022 = document.getElementById('bg-2022');
+	var labelL = document.getElementById('bg-label-left');
+	var labelR = document.getElementById('bg-label-right');
+	var pos = 50;
+	var target = 50;
+	var ticking = false;
+
+	function getX(e) {
+		if (e.touches && e.touches.length > 0) return e.touches[0].clientX;
+		if (e.changedTouches && e.changedTouches.length > 0) return e.changedTouches[0].clientX;
+		return null;
+	}
+
+	function update(x) {
+		if (typeof x !== 'number') return;
+		target = Math.max(0, Math.min(100, (x / window.innerWidth) * 100));
+		if (!ticking) {
+			ticking = true;
+			requestAnimationFrame(step);
+		}
+	}
+
+	function apply() {
+		var pct = pos.toFixed(3) + '%';
+		if (bg2022) {
+			bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
+			bg2022.style.webkitClipPath = 'inset(0 0 0 ' + pct + ')';
+		}
+		if (labelL) labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
+		if (labelR) labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
+	}
+
+	function step() {
+		pos += (target - pos) * 0.12;
+		apply();
+		if (Math.abs(target - pos) > 0.1) {
+			requestAnimationFrame(step);
+		} else {
+			pos = target;
+			apply();
+			ticking = false;
+		}
+	}
+
+	document.addEventListener('mousemove', function(e) { update(e.clientX); });
+	document.addEventListener('touchstart', function(e) { update(getX(e)); }, { passive: true });
+	document.addEventListener('touchmove', function(e) { update(getX(e)); }, { passive: true });
+	apply();
+})();
+</script>
+
+</body>
 </html>
