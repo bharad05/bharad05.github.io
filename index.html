@@ -36,145 +36,6 @@
 		margin-bottom: 1.2rem;
 	}
 
-	/* ── Education cards: flat side-by-side flip ── */
-	.edu-cards {
-		display: flex;
-		gap: 0.75rem;
-	}
-
-	.edu-card {
-		flex: 1;
-		height: 190px;
-		cursor: pointer;
-		perspective: 1000px;
-	}
-
-	.edu-card-inner {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		transform-style: preserve-3d;
-		transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
-	}
-
-	.edu-card.flipped .edu-card-inner {
-		transform: rotateY(180deg);
-	}
-
-	.edu-card-front,
-	.edu-card-back {
-		position: absolute;
-		inset: 0;
-		border-radius: 10px;
-		backface-visibility: hidden;
-		-webkit-backface-visibility: hidden;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 0.9rem 0.7rem;
-		text-align: center;
-		border: 1px solid rgba(255,255,255,0.13);
-		background: rgba(255,255,255,0.05);
-	}
-
-	.edu-card-back {
-		transform: rotateY(180deg);
-		background: rgba(255,255,255,0.09);
-		border-color: rgba(255,255,255,0.2);
-	}
-
-	.edu-logo {
-		width: 52px;
-		height: 52px;
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-bottom: 0.55rem;
-		overflow: hidden;
-		flex-shrink: 0;
-	}
-
-	.edu-logo img {
-		width: 90%;
-		height: 90%;
-		object-fit: contain;
-	}
-
-	.ucd-logo  { background: #002855; border: 2px solid #DAAA00; }
-	.ucl-logo  { background: #500778; border: 2px solid #9b30d9; }
-	.jntu-logo { background: #1a3a5c; border: 2px solid #4a90d9; }
-
-	/* fallback text logos */
-	.edu-logo-text {
-		font-size: 0.72rem;
-		font-weight: 800;
-		color: #fff;
-		line-height: 1.2;
-	}
-
-	.edu-degree-short {
-		font-size: 0.92rem;
-		font-weight: 700;
-		color: #fff;
-		letter-spacing: 0.08rem;
-	}
-
-	.edu-uni-short {
-		font-size: 0.49rem;
-		color: rgba(255,255,255,0.45);
-		letter-spacing: 0.06rem;
-		text-transform: uppercase;
-		margin-top: 0.2rem;
-		line-height: 1.4;
-	}
-
-	.edu-flip-hint {
-		font-size: 0.4rem;
-		color: rgba(255,255,255,0.2);
-		letter-spacing: 0.1rem;
-		text-transform: uppercase;
-		margin-top: 0.4rem;
-	}
-
-	.edu-back-degree {
-		font-size: 0.62rem;
-		font-weight: 700;
-		color: #fff;
-		text-transform: uppercase;
-		letter-spacing: 0.06rem;
-		margin-bottom: 0.2rem;
-	}
-
-	.edu-back-field {
-		font-size: 0.57rem;
-		color: rgba(255,255,255,0.72);
-		line-height: 1.45;
-		margin-bottom: 0.3rem;
-	}
-
-	.edu-back-years {
-		font-size: 0.52rem;
-		font-style: italic;
-		color: rgba(255,255,255,0.42);
-		margin-bottom: 0.35rem;
-	}
-
-	.edu-back-detail {
-		font-size: 0.5rem;
-		color: rgba(255,255,255,0.52);
-		line-height: 1.55;
-		margin-bottom: 0.3rem;
-	}
-
-	.edu-back-advisor {
-		font-size: 0.48rem;
-		color: rgba(255,255,255,0.32);
-		font-style: italic;
-		line-height: 1.4;
-	}
-
 	/* ── Research interests ── */
 	.interest-tags {
 		display: flex;
@@ -343,7 +204,7 @@
 		display: block;
 		border-radius: 8px;
 		margin-bottom: 0;
-		max-height: 380px;
+		max-height: 600px;
 		object-fit: cover;
 		object-position: center top;
 	}
@@ -386,84 +247,12 @@
 
 			<!-- 1. Intro panel -->
 			<div class="about-panel">
-				<p class="about-subhead">Introduction</p>
 				<p class="about-intro">
 					I am a PhD researcher at UC Davis working at the intersection of water systems, hydrologic risk, and climate risk finance. My work translates complex drought and water-scarcity data into actionable insights for policymakers, insurers, and vulnerable communities — bridging the gap between physical hydrology and real-world financial decision-making.
 				</p>
 			</div>
 
-			<!-- 2. Education panel -->
-			<div class="about-panel edu-section">
-				<p class="about-subhead">Education</p>
-				<div class="edu-cards">
-
-					<!-- UC Davis -->
-					<div class="edu-card" id="card-ucd">
-						<div class="edu-card-inner">
-							<div class="edu-card-front">
-								<div class="edu-logo ucd-logo">
-									<span class="edu-logo-text">UC<br>Davis</span>
-								</div>
-								<div class="edu-degree-short">PhD</div>
-								<div class="edu-uni-short">University of California, Davis</div>
-								<div class="edu-flip-hint">tap to flip</div>
-							</div>
-							<div class="edu-card-back">
-								<div class="edu-back-degree">Doctor of Philosophy</div>
-								<div class="edu-back-field">Civil &amp; Environmental Engineering</div>
-								<div class="edu-back-years">2022 — Present</div>
-								<div class="edu-back-detail">Hydrologic risk · Climate risk finance · Water systems modeling</div>
-								<div class="edu-back-advisor">Advisor: Prof. Alvar Escriva-Bou</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- UCL -->
-					<div class="edu-card" id="card-ucl">
-						<div class="edu-card-inner">
-							<div class="edu-card-front">
-								<div class="edu-logo ucl-logo">
-									<span class="edu-logo-text">UCL</span>
-								</div>
-								<div class="edu-degree-short">MRes</div>
-								<div class="edu-uni-short">University College London</div>
-								<div class="edu-flip-hint">tap to flip</div>
-							</div>
-							<div class="edu-card-back">
-								<div class="edu-back-degree">Master of Research</div>
-								<div class="edu-back-field">Urban Sustainability &amp; Resilience</div>
-								<div class="edu-back-years">2020 — 2022</div>
-								<div class="edu-back-detail">Water quality trading · Market-based instruments · Optimization modeling</div>
-								<div class="edu-back-advisor">Centre for Urban Sustainability &amp; Resilience</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- JNTU H -->
-					<div class="edu-card" id="card-jntu">
-						<div class="edu-card-inner">
-							<div class="edu-card-front">
-								<div class="edu-logo jntu-logo">
-									<span class="edu-logo-text">JNTU<br>H</span>
-								</div>
-								<div class="edu-degree-short">BTech</div>
-								<div class="edu-uni-short">JNTU Hyderabad</div>
-								<div class="edu-flip-hint">tap to flip</div>
-							</div>
-							<div class="edu-card-back">
-								<div class="edu-back-degree">Bachelor of Technology</div>
-								<div class="edu-back-field">Civil Engineering</div>
-								<div class="edu-back-years">2016 — 2020</div>
-								<div class="edu-back-detail">Structural engineering · Environmental systems · Urban flooding</div>
-								<div class="edu-back-advisor">Jawaharlal Nehru Technological University</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<!-- 3. Research interests panel -->
+			<!-- 2. Research interests panel -->
 			<div class="about-panel research-panel-wrap">
 				<p class="about-subhead">Research Interests</p>
 				<div class="interest-tags">
@@ -579,16 +368,6 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- Education card flip (click only, no hover conflict) -->
-<script>
-(function () {
-	document.querySelectorAll('.edu-card').forEach(function (card) {
-		card.addEventListener('click', function () {
-			card.classList.toggle('flipped');
-		});
-	});
-})();
-</script>
 
 <!-- Research interest side panel -->
 <script>
