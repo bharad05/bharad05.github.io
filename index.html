@@ -1,18 +1,34 @@
+```html
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Bharadwaj's personal website</title>
+	<title>Bharadwaj's Personal Website</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 	<style>
+	/* ── Wider About section fix ── */
+	#main article#about {
+		width: 64rem;
+		max-width: 92vw;
+		padding: 3.2rem 3.4rem 2.4rem;
+	}
+
+	#about .about-panel {
+		padding: 1.8rem 2rem 1.6rem;
+	}
+
 	/* ── About section globals ── */
 	.about-intro {
-		font-size: 0.9rem;
+		font-size: 0.92rem;
 		line-height: 1.85;
 		color: rgba(255,255,255,0.85);
+		margin: 0 0 1.05rem 0;
+	}
+
+	.about-intro:last-child {
 		margin-bottom: 0;
 	}
 
@@ -32,7 +48,6 @@
 		background: rgba(255,255,255,0.04);
 		border: 1px solid rgba(255,255,255,0.09);
 		border-radius: 10px;
-		padding: 1.4rem 1.4rem 1.2rem;
 		margin-bottom: 1.2rem;
 	}
 
@@ -67,7 +82,6 @@
 		color: #fff;
 	}
 
-	/* ── Side panel — anchored below research section ── */
 	.research-panel-wrap {
 		position: relative;
 	}
@@ -112,7 +126,10 @@
 		margin-bottom: 0.5rem;
 	}
 
-	.panel-close:hover { background: rgba(255,255,255,0.1); color: #fff; }
+	.panel-close:hover {
+		background: rgba(255,255,255,0.1);
+		color: #fff;
+	}
 
 	.panel-title {
 		font-size: 0.58rem;
@@ -136,8 +153,6 @@
 		border-bottom: 1px solid rgba(255,255,255,0.05);
 	}
 
-	.panel-section-label:first-child { margin-top: 0; }
-
 	.panel-project-item {
 		margin-bottom: 0.85rem;
 		padding-bottom: 0.85rem;
@@ -146,8 +161,15 @@
 		transition: opacity 0.15s ease;
 	}
 
-	.panel-project-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-	.panel-project-item:hover { opacity: 0.8; }
+	.panel-project-item:last-child {
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.panel-project-item:hover {
+		opacity: 0.8;
+	}
 
 	.proj-name {
 		font-size: 0.62rem;
@@ -198,7 +220,6 @@
 		border: 1px solid rgba(180,120,60,0.3);
 	}
 
-	/* ── Full-width photo at bottom ── */
 	.about-photo-full {
 		width: 100%;
 		display: block;
@@ -209,11 +230,46 @@
 		object-position: center top;
 	}
 
+	/* ── Tablet ── */
+	@media screen and (max-width: 980px) {
+		#main article#about {
+			width: 56rem;
+			max-width: 94vw;
+			padding: 2.7rem 2.3rem 2rem;
+		}
+	}
+
 	/* ── Mobile ── */
 	@media screen and (max-width: 736px) {
-		.edu-cards { flex-direction: column; gap: 0.6rem; }
-		.edu-card  { height: 160px; }
-		.interest-panel { position: relative; top: auto; margin-top: 0.6rem; }
+		#main article#about {
+			width: 100%;
+			max-width: 100%;
+			padding: 2.2rem 1.4rem 1.7rem;
+		}
+
+		#about .about-panel {
+			padding: 1.35rem 1.2rem;
+		}
+
+		#about .about-intro {
+			font-size: 0.88rem;
+			line-height: 1.75;
+		}
+
+		.edu-cards {
+			flex-direction: column;
+			gap: 0.6rem;
+		}
+
+		.edu-card {
+			height: 160px;
+		}
+
+		.interest-panel {
+			position: relative;
+			top: auto;
+			margin-top: 0.6rem;
+		}
 	}
 	</style>
 </head>
@@ -225,7 +281,7 @@
 		<div class="content">
 			<div class="inner">
 				<h1>Bharadwaj's Personal Website</h1>
-				<p>PhD. Student &amp; Graduate Student Researcher in Department of Civil &amp; Environmental Engineering</p>
+				<p>PhD Student &amp; Graduate Student Researcher in the Department of Civil &amp; Environmental Engineering</p>
 				<h3>University of California, Davis</h3>
 			</div>
 		</div>
@@ -245,26 +301,23 @@
 		<article id="about">
 			<h2 class="major">About</h2>
 
-			<!-- 1. Intro panel -->
 			<div class="about-panel">
 				<p class="about-intro">
-					<p class="about-intro">
-	I am a PhD researcher and Graduate Student Researcher (GSR) in Civil and Environmental Engineering at UC Davis, advised by Prof. Alvar Escriva-Bou. My broader research lies at the intersection of environmental economics, climate finance, and water resources systems engineering. My dissertation focuses on drought risk and explores how economic and financial tools can strengthen the resilience of water systems and support climate adaptation in an increasingly uncertain future.
-</p>
+					I am a PhD researcher and Graduate Student Researcher (GSR) in Civil and Environmental Engineering at UC Davis, advised by Prof. Alvar Escriva-Bou. My broader research lies at the intersection of environmental economics, climate finance, and water resources systems engineering. My dissertation focuses on drought risk and explores how economic and financial tools can strengthen the resilience of water systems and support climate adaptation in an increasingly uncertain future.
+				</p>
 
-<p class="about-intro">
-	My research explores how hydrologic uncertainty evolves into institutional, financial, and policy risk in water-scarce regions such as California. I integrate water resources modeling, climate science, environmental economics, and risk analysis to translate complex datasets into actionable insights for drought planning and climate adaptation. More broadly, I am interested in developing decision-support frameworks, financial instruments, and market-based approaches that enable governments, utilities, and communities to manage drought proactively rather than simply respond to its impacts.
-</p>
+				<p class="about-intro">
+					My research explores how hydrologic uncertainty evolves into institutional, financial, and policy risk in water-scarce regions such as California. I integrate water resources modeling, climate science, environmental economics, and risk analysis to translate complex datasets into actionable insights for drought planning and climate adaptation. More broadly, I am interested in developing decision-support frameworks, financial instruments, and market-based approaches that enable governments, utilities, and communities to manage drought proactively rather than simply respond to its impacts.
+				</p>
 
-<p class="about-intro">
-	Experiences across research, engineering, and international development have shaped my interest in developing practical solutions to water-related risks. I earned my Bachelor's degree in Civil Engineering from Jawaharlal Nehru Technological University Hyderabad (JNTUH) before working with the Morobe Development Foundation on United Nations-supported watershed and environmental management initiatives in Papua New Guinea. I later completed my Master's degree at University College London (UCL), where I continued as a Graduate Student Researcher, developing optimization models for water quality trading while evaluating their economic and policy implications for farming communities in the United Kingdom. During this time, I also contributed to research on sustainable housing and urban development in Greater London. These experiences reinforced my belief that addressing water challenges requires integrating engineering with economics, finance, and policy. My long-term goal is to develop practical, evidence-based solutions that make drought risk more measurable, water systems more resilient, and climate adaptation more effective for the communities and institutions that depend on them.
-</p>
+				<p class="about-intro">
+					Experiences across research, engineering, and international development have shaped my interest in developing practical solutions to water-related risks. I earned my Bachelor's degree in Civil Engineering from Jawaharlal Nehru Technological University Hyderabad (JNTUH) before working with the Morobe Development Foundation on United Nations-supported watershed and environmental management initiatives in Papua New Guinea. I later completed my Master's degree at University College London (UCL), where I continued as a Graduate Student Researcher, developing optimization models for water quality trading while evaluating their economic and policy implications for farming communities in the United Kingdom. During this time, I also contributed to research on sustainable housing and urban development in Greater London. These experiences reinforced my belief that addressing water challenges requires integrating engineering with economics, finance, and policy. My long-term goal is to develop practical, evidence-based solutions that make drought risk more measurable, water systems more resilient, and climate adaptation more effective for the communities and institutions that depend on them.
 				</p>
 			</div>
 
-			<!-- 2. Research interests panel -->
 			<div class="about-panel research-panel-wrap">
 				<p class="about-subhead">Research Interests</p>
+
 				<div class="interest-tags">
 					<button class="interest-tag" data-interest="drought">Drought Risk &amp; Finance</button>
 					<button class="interest-tag" data-interest="water-quality">Water Quality Trading</button>
@@ -273,7 +326,6 @@
 					<button class="interest-tag" data-interest="watershed">Watershed Management</button>
 				</div>
 
-				<!-- Panel opens inline below tags -->
 				<div class="interest-panel" id="interest-panel">
 					<button class="panel-close" id="panel-close">✕</button>
 					<div class="panel-title" id="panel-title"></div>
@@ -281,11 +333,9 @@
 				</div>
 			</div>
 
-			<!-- 4. Photo panel — full width at bottom -->
 			<div class="about-panel" style="padding: 0; overflow: hidden;">
 				<img class="about-photo-full" src="images/IMG_1955.jpeg" alt="Bharadwaj Vangipuram" />
 			</div>
-
 		</article>
 
 		<!-- ══════════════ WORK ══════════════ -->
@@ -297,11 +347,29 @@
 			<h4>California 5th Climate Change Assessment</h4>
 			<p>This project focuses on characterising drought risk and uncertainty for California's state-level climate adaptation planning. Working as a Graduate Student Researcher at UC Davis, I conduct data-driven analysis of multi-decadal agricultural and urban datasets, translate hydro-economic modeling results into evidence-based policy narratives, and develop data visualizations to communicate complex water demand trade-offs and climate risks to non-technical policy audiences.</p>
 
-			<h4>Water Quality Trading as a Risk Management Instrument</h4>
-			<p>This project developed a mathematical optimization model in GAMS to simulate nutrient loading and evaluate water quality trading as a risk management instrument. I coupled hydrologic constraints with economic variables to assess the effectiveness of market-based mechanisms in reducing nitrogen concentrations under alternative regulatory scenarios. This work produced three peer-reviewed publications in <i>Water Research</i>, <i>ACS ES&amp;T Engineering</i>, and the <i>Journal of Environmental Management</i>.</p>
+			<h4>Water Quality Trading and Market-Based Environmental Policy</h4>
+			<p>Agricultural runoff is one of the largest sources of freshwater pollution worldwide, threatening ecosystems, drinking water supplies, food production, and long-term environmental sustainability. This project investigated whether Water Quality Trading (WQT)—a market-based environmental policy—can provide a more effective way of achieving water quality goals while maintaining agricultural productivity and supporting rural economies.</p>
+
+			<p>Using the River Alde catchment in Suffolk, United Kingdom, we developed optimization-based decision-support models that combine environmental economics, systems engineering, and water policy to evaluate how financial incentives can encourage farmers to collectively reduce nitrogen pollution at the lowest possible economic cost.</p>
+
+			<p>Across four peer-reviewed publications, the project progressed from developing one of the first optimization-based WQT frameworks for an agricultural catchment in the United Kingdom to testing policy scenarios, evaluating economic outcomes, and critically assessing the institutional and regulatory challenges that determine whether environmental markets succeed in practice.</p>
+
+			<h5>Research Innovations</h5>
+			<ul>
+				<li>Developed one of the first optimization-based Water Quality Trading frameworks for managing agricultural non-point source pollution within a UK river catchment.</li>
+				<li>Demonstrated how collaborative pollution trading can reduce nitrogen pollution, lower compliance costs, and improve overall economic outcomes across a watershed.</li>
+				<li>Evaluated multiple regulatory and management scenarios to understand how policy design influences farmer behaviour, environmental performance, and market efficiency.</li>
+				<li>Identified barriers to large-scale implementation, including uncertainty in pollution monitoring, transaction costs, market participation, and regulatory oversight.</li>
+				<li>Proposed next-generation WQT frameworks incorporating AI-assisted monitoring, digital verification systems, and strengthened governance.</li>
+			</ul>
+
+			<p><strong>Principal Investigator:</strong> Prof. Tohid Erfani<br />
+			<strong>Lead Author:</strong> Jamie Gonzalez Zapata<br />
+			<strong>Graduate Student Researcher:</strong> Bharadwaj Vangipuram<br />
+			<strong>Funding:</strong> Supported by a UK Research and Innovation (UKRI) studentship through the Environmental Systems, Data and Analytics Group at University College London.</p>
 
 			<h4>Nutrient Neutrality &amp; Urban Development Trade-offs</h4>
-			<p>This project integrated housing demand forecasts with nutrient risk constraints to model development scenarios affecting a population of approximately 120,000. I analysed time-series environmental data (~700 observations) to quantify trade-offs between urban growth, regulatory compliance, and water quality protection.</p>
+			<p>This project integrated housing demand forecasts with nutrient risk constraints to model development scenarios affecting a population of approximately 120,000. I analysed time-series environmental data to quantify trade-offs between urban growth, regulatory compliance, and water quality protection.</p>
 
 			<h4>Bumbu Watershed Water Quality — Papua New Guinea</h4>
 			<p>Working with the Morobe Development Foundation under a UNEP-affiliated mandate, I collaborated with international partners to interpret water quality monitoring data and evaluate phytoremediation options for watershed-scale risk mitigation. Findings were synthesised into a policy-oriented report funded by the Governments of Australia and Papua New Guinea.</p>
@@ -309,10 +377,15 @@
 			<hr />
 
 			<h3 class="major">Selected Papers</h3>
+
 			<p>Bharadwaj Vangipuram, Gonzalez Zapata, J., and Erfani, T., 2025: <a href="https://doi.org/10.1016/j.watres.2025.123959">Making waves: Is water quality trading a false promise for balancing ecology and economy?</a> <i>Water Research</i>, Vol. 284, 123959.</p>
-			<p>Gonzalez Zapata, J., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="#">Can market-based models be used to improve water quality policies in addressing Food and Water Security?</a> <i>ACS ES&amp;T Water</i>, Vol. 4(4).</p>
-			<p>Gonzalez Zapata, G., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="#">Harnessing market-based mechanisms to improve water quality: Water Quality Trading Policies in the River Alde.</a> <i>Journal of Environmental Management</i>, Vol. 357.</p>
-			<p>Gonzalez Zapata, G., Bharadwaj Vangipuram, Dalin, C., and Erfani, T., 2023: <a href="#">Water quality and pollution trading: A sustainable solution for future food production.</a> <i>Environmental Science &amp; Technology Engineering</i>, American Chemical Society, 3(8).</p>
+
+			<p>Gonzalez Zapata, J., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="https://doi.org/10.1021/acsestwater.4c00064">Can market-based models be used to improve water quality policies in addressing food and water security?</a> <i>ACS ES&amp;T Water</i>, Vol. 4(4).</p>
+
+			<p>Gonzalez Zapata, J., Bharadwaj Vangipuram, and Erfani, T., 2024: <a href="https://doi.org/10.1016/j.jenvman.2024.120771">Harnessing market-based mechanisms to improve water quality: Water Quality Trading Policies in the River Alde, UK.</a> <i>Journal of Environmental Management</i>, Vol. 357.</p>
+
+			<p>Gonzalez Zapata, J., Bharadwaj Vangipuram, Dalin, C., and Erfani, T., 2023: <a href="https://doi.org/10.1021/acsestengg.2c00383">Water quality and pollution trading: A sustainable solution for future food production.</a> <i>ACS ES&amp;T Engineering</i>, Vol. 3(8).</p>
+
 			<p>Sharief, Md. A. J., Bharadwaj Vangipuram, 2020: <a href="#">Assessment of Socio-Economic Impact of Urban Flooding in Indian City of Hyderabad due to Climate Change.</a> In: Ghosh, C., Kolathayar, S. (eds) <i>A System Engineering Approach to Disaster Resilience</i>, Lecture Notes in Civil Engineering, Vol. 205.</p>
 		</article>
 
@@ -320,8 +393,10 @@
 		<article id="blog">
 			<h2 class="major">Blog</h2>
 			<p>This section will feature short essays, research reflections, field notes, and commentary on water governance, hydrologic risk, environmental policy, and the interface between systems modeling and public decision-making.</p>
+
 			<h4>Planned Themes</h4>
 			<p>Topics will include drought risk in California, water markets and financial instruments, transboundary water governance, climate adaptation, infrastructure policy, and lessons from ongoing research projects.</p>
+
 			<h4>Coming Soon</h4>
 			<p>I will be adding posts here regularly as the site develops. This space is intended to make academic work more accessible, concise, and policy-relevant.</p>
 		</article>
@@ -329,26 +404,31 @@
 		<!-- ══════════════ CONTACT ══════════════ -->
 		<article id="contact">
 			<h2 class="major">Contact</h2>
+
 			<form method="post" action="https://formspree.io/f/maneddgj">
 				<div class="fields">
 					<div class="field half">
 						<label for="name">Name</label>
 						<input type="text" name="name" id="name" />
 					</div>
+
 					<div class="field half">
 						<label for="email">Email</label>
 						<input type="text" name="email" id="email" />
 					</div>
+
 					<div class="field">
 						<label for="message">Message</label>
 						<textarea name="message" id="message" rows="4"></textarea>
 					</div>
 				</div>
+
 				<ul class="actions">
 					<li><input type="submit" value="Send Message" class="primary" /></li>
 					<li><input type="reset" value="Reset" /></li>
 				</ul>
 			</form>
+
 			<ul class="icons">
 				<li><a href="https://github.com/bharad05" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 				<li><a href="https://scholar.google.com/citations?user=YOUR_ID" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
@@ -378,8 +458,6 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-
-<!-- Research interest side panel -->
 <script>
 (function () {
 	var data = {
@@ -397,7 +475,7 @@
 		'water-quality': {
 			title: 'Water Quality Trading',
 			projects: [
-				{ name: 'Water Quality Trading as Risk Management', desc: 'Optimization-based evaluation of nutrient trading — 3 peer-reviewed publications.', target: 'work', type: 'project' },
+				{ name: 'Water Quality Trading and Market-Based Environmental Policy', desc: 'Optimization-based evaluation of nutrient trading and market-based environmental policy in the UK.', target: 'work', type: 'project' },
 				{ name: 'Nutrient Neutrality & Urban Development', desc: 'Housing demand forecasts coupled with nutrient risk constraints in the UK.', target: 'work', type: 'project' }
 			],
 			blogs: [
@@ -411,13 +489,13 @@
 			],
 			blogs: [
 				{ name: 'Communicating Climate Risk Without Losing Nuance', desc: 'Notes on translating hydro-economic modelling into policy narratives.', target: 'blog', type: 'blog' },
-				{ name: 'What California\'s Climate Assessment Gets Right', desc: 'Field notes on the challenge of communicating uncertainty to policymakers.', target: 'blog', type: 'blog' }
+				{ name: 'What California Climate Assessment Gets Right', desc: 'Field notes on the challenge of communicating uncertainty to policymakers.', target: 'blog', type: 'blog' }
 			]
 		},
 		'wash': {
 			title: 'WASH & Development',
 			projects: [
-				{ name: 'WASH Access & Human Development — Urban India', desc: 'DHS panel data (2005–2021) on water, sanitation, hygiene access and human development outcomes.', target: 'work', type: 'project' }
+				{ name: 'WASH Access & Human Development — Urban India', desc: 'DHS panel data from 2005 to 2021 on water, sanitation, hygiene access and human development outcomes.', target: 'work', type: 'project' }
 			],
 			blogs: [
 				{ name: 'Water Access as a Development Indicator', desc: 'Essay on what DHS data reveals about WASH infrastructure and human development in urban India.', target: 'blog', type: 'blog' }
@@ -434,35 +512,41 @@
 		}
 	};
 
-	var panel      = document.getElementById('interest-panel');
-	var titleEl    = document.getElementById('panel-title');
+	var panel = document.getElementById('interest-panel');
+	var titleEl = document.getElementById('panel-title');
 	var projectsEl = document.getElementById('panel-projects');
-	var closeBtn   = document.getElementById('panel-close');
-	var activeTag  = null;
+	var closeBtn = document.getElementById('panel-close');
+	var activeTag = null;
 
 	function makeItem(entry) {
 		var item = document.createElement('div');
 		item.className = 'panel-project-item';
+
 		var badge = entry.type === 'blog'
 			? '<span class="proj-badge proj-badge-blog">Blog</span>'
 			: '<span class="proj-badge proj-badge-project">Project</span>';
+
 		item.innerHTML =
 			'<div class="proj-name">' + badge + entry.name + '</div>' +
 			'<div class="proj-desc">' + entry.desc + '</div>' +
 			'<div class="proj-arrow">→ View in ' + (entry.type === 'blog' ? 'Blog' : 'Work') + '</div>';
+
 		item.addEventListener('click', function () {
 			closePanel();
+
 			setTimeout(function () {
 				var link = document.querySelector('a[href="#' + entry.target + '"]');
 				if (link) link.click();
 			}, 300);
 		});
+
 		return item;
 	}
 
 	function openPanel(interest) {
 		var d = data[interest];
 		if (!d) return;
+
 		titleEl.textContent = d.title;
 		projectsEl.innerHTML = '';
 
@@ -471,28 +555,44 @@
 			pl.className = 'panel-section-label';
 			pl.textContent = 'Projects';
 			projectsEl.appendChild(pl);
-			d.projects.forEach(function (p) { projectsEl.appendChild(makeItem(p)); });
+			d.projects.forEach(function (p) {
+				projectsEl.appendChild(makeItem(p));
+			});
 		}
+
 		if (d.blogs && d.blogs.length) {
 			var bl = document.createElement('div');
 			bl.className = 'panel-section-label';
 			bl.textContent = 'Blog Posts';
 			projectsEl.appendChild(bl);
-			d.blogs.forEach(function (b) { projectsEl.appendChild(makeItem(b)); });
+			d.blogs.forEach(function (b) {
+				projectsEl.appendChild(makeItem(b));
+			});
 		}
+
 		panel.classList.add('open');
 	}
 
 	function closePanel() {
 		panel.classList.remove('open');
-		if (activeTag) { activeTag.classList.remove('active'); activeTag = null; }
+
+		if (activeTag) {
+			activeTag.classList.remove('active');
+			activeTag = null;
+		}
 	}
 
 	document.querySelectorAll('.interest-tag').forEach(function (tag) {
 		tag.addEventListener('click', function () {
 			var interest = tag.getAttribute('data-interest');
-			if (activeTag === tag && panel.classList.contains('open')) { closePanel(); return; }
+
+			if (activeTag === tag && panel.classList.contains('open')) {
+				closePanel();
+				return;
+			}
+
 			if (activeTag) activeTag.classList.remove('active');
+
 			activeTag = tag;
 			tag.classList.add('active');
 			openPanel(interest);
@@ -503,13 +603,14 @@
 })();
 </script>
 
-<!-- Lake Mead split background -->
 <script>
 (function () {
 	var bg2022 = document.getElementById('bg-2022');
 	var labelL = document.getElementById('bg-label-left');
 	var labelR = document.getElementById('bg-label-right');
-	var pos = 50, target = 50, ticking = false;
+	var pos = 50;
+	var target = 50;
+	var ticking = false;
 
 	function getX(e) {
 		if (e.touches && e.touches.length > 0) return e.touches[0].clientX;
@@ -519,13 +620,23 @@
 
 	function update(x) {
 		if (typeof x !== 'number') return;
+
 		target = Math.max(0, Math.min(100, (x / window.innerWidth) * 100));
-		if (!ticking) { ticking = true; requestAnimationFrame(step); }
+
+		if (!ticking) {
+			ticking = true;
+			requestAnimationFrame(step);
+		}
 	}
 
 	function apply() {
 		var pct = pos.toFixed(3) + '%';
-		if (bg2022) { bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')'; bg2022.style.webkitClipPath = 'inset(0 0 0 ' + pct + ')'; }
+
+		if (bg2022) {
+			bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
+			bg2022.style.webkitClipPath = 'inset(0 0 0 ' + pct + ')';
+		}
+
 		if (labelL) labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
 		if (labelR) labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
 	}
@@ -533,15 +644,32 @@
 	function step() {
 		pos += (target - pos) * 0.12;
 		apply();
-		if (Math.abs(target - pos) > 0.1) { requestAnimationFrame(step); } else { pos = target; apply(); ticking = false; }
+
+		if (Math.abs(target - pos) > 0.1) {
+			requestAnimationFrame(step);
+		} else {
+			pos = target;
+			apply();
+			ticking = false;
+		}
 	}
 
-	document.addEventListener('mousemove', function (e) { update(e.clientX); });
-	document.addEventListener('touchstart', function (e) { update(getX(e)); }, { passive: true });
-	document.addEventListener('touchmove', function (e) { update(getX(e)); }, { passive: true });
+	document.addEventListener('mousemove', function (e) {
+		update(e.clientX);
+	});
+
+	document.addEventListener('touchstart', function (e) {
+		update(getX(e));
+	}, { passive: true });
+
+	document.addEventListener('touchmove', function (e) {
+		update(getX(e));
+	}, { passive: true });
+
 	apply();
 })();
 </script>
 
 </body>
 </html>
+```
