@@ -1,0 +1,312 @@
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Water Quality Trading | Bharadwaj Vangipuram</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+	<style>
+		body {
+			background: #1b1f22;
+		}
+
+		.project-page-wrapper {
+			position: relative;
+			z-index: 3;
+			width: min(82rem, 94vw);
+			margin: 4rem auto;
+			background: rgba(24, 28, 33, 0.92);
+			border: 1px solid rgba(255,255,255,0.10);
+			border-radius: 16px;
+			padding: 4rem 5rem;
+			box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+			backdrop-filter: blur(16px);
+			-webkit-backdrop-filter: blur(16px);
+		}
+
+		.project-top-link {
+			display: inline-block;
+			font-size: 0.65rem;
+			letter-spacing: 0.16rem;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.65);
+			border-bottom: dotted 1px rgba(255,255,255,0.4);
+			margin-bottom: 2rem;
+		}
+
+		.project-page-title {
+			font-size: 1.65rem;
+			line-height: 1.35;
+			letter-spacing: 0.32rem;
+			margin-bottom: 1rem;
+		}
+
+		.project-keywords {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.55rem;
+			margin: 0 0 2.2rem 0;
+		}
+
+		.project-keywords span {
+			border: 1px solid rgba(255,255,255,0.18);
+			border-radius: 2rem;
+			padding: 0.35rem 0.8rem;
+			font-size: 0.55rem;
+			letter-spacing: 0.12rem;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.68);
+			background: rgba(255,255,255,0.035);
+		}
+
+		.project-hero-images {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+			margin: 2rem 0 2.5rem;
+		}
+
+		.project-hero-images img {
+			width: 100%;
+			height: 300px;
+			object-fit: cover;
+			border-radius: 12px;
+			border: 1px solid rgba(255,255,255,0.12);
+		}
+
+		.project-section {
+			margin-top: 2.1rem;
+		}
+
+		.project-section h2 {
+			font-size: 0.95rem;
+			letter-spacing: 0.22rem;
+			margin-bottom: 1rem;
+			border-bottom: solid 1px rgba(255,255,255,0.75);
+			width: max-content;
+			padding-bottom: 0.45rem;
+		}
+
+		.project-section p,
+		.project-section li {
+			font-size: 0.95rem;
+			line-height: 1.9;
+			color: rgba(255,255,255,0.84);
+		}
+
+		.project-section ul {
+			margin-bottom: 0;
+		}
+
+		.project-meta {
+			background: rgba(255,255,255,0.045);
+			border: 1px solid rgba(255,255,255,0.09);
+			border-radius: 12px;
+			padding: 1.4rem 1.6rem;
+			margin-top: 2.2rem;
+		}
+
+		.project-meta p {
+			margin-bottom: 0.6rem;
+		}
+
+		.project-meta p:last-child {
+			margin-bottom: 0;
+		}
+
+		@media screen and (max-width: 736px) {
+			.project-page-wrapper {
+				width: 94vw;
+				margin: 2rem auto;
+				padding: 3rem 1.5rem 2rem;
+			}
+
+			.project-page-title {
+				font-size: 1.15rem;
+				letter-spacing: 0.22rem;
+			}
+
+			.project-hero-images {
+				grid-template-columns: 1fr;
+			}
+
+			.project-hero-images img {
+				height: 220px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="bg">
+		<div id="bg-2000"></div>
+		<div id="bg-2022"></div>
+		<div id="bg-label-left">Lake Mead 2000</div>
+		<div id="bg-label-right">Lake Mead 2022</div>
+		<div id="bg-overlay"></div>
+	</div>
+
+	<main class="project-page-wrapper">
+
+		<a href="../index.html#work" class="project-top-link">← Back to Work</a>
+
+		<h1 class="project-page-title">Water Quality Trading and Market-Based Environmental Policy</h1>
+
+		<div class="project-keywords">
+			<span>Water Quality Trading</span>
+			<span>Market-Based Policy</span>
+			<span>Sustainable Agriculture</span>
+			<span>Water Security</span>
+			<span>Non-Point Source Pollution</span>
+			<span>Decision Support</span>
+		</div>
+
+		<div class="project-hero-images">
+			<img src="../images/wqt-1.jpg" alt="Water Quality Trading framework">
+			<img src="../images/wqt-2.jpg" alt="River Alde catchment and trading model">
+		</div>
+
+		<section class="project-section">
+			<h2>Project Overview</h2>
+
+			<p>
+				Agricultural runoff is one of the largest sources of freshwater pollution worldwide, threatening ecosystems, drinking water supplies, food production, and long-term environmental sustainability. While governments have traditionally relied on regulations to reduce nutrient pollution, these approaches often impose significant costs on farmers and can be difficult to implement effectively at watershed scales.
+			</p>
+
+			<p>
+				This research project investigated whether <strong>Water Quality Trading (WQT)</strong>—a market-based environmental policy—can provide a more effective way of achieving water quality goals while maintaining agricultural productivity and supporting rural economies. Using the River Alde catchment in Suffolk, United Kingdom, we developed optimization-based decision-support models that combine environmental economics, systems engineering, and water policy to evaluate how financial incentives can encourage farmers to collectively reduce nitrogen pollution at the lowest possible economic cost.
+			</p>
+
+			<p>
+				Rather than viewing pollution control solely as an engineering problem, this project reframed it as a systems problem requiring the integration of engineering, economics, policy, and environmental science. Across four peer-reviewed publications, the research progressed from developing one of the first optimization-based Water Quality Trading frameworks for an agricultural catchment in the United Kingdom to testing policy scenarios, evaluating economic outcomes, and critically assessing the institutional and regulatory challenges that determine whether environmental markets succeed in practice.
+			</p>
+		</section>
+
+		<section class="project-section">
+			<h2>Research Innovations</h2>
+
+			<ul>
+				<li>Developed one of the first optimization-based Water Quality Trading frameworks for managing agricultural non-point source pollution within a UK river catchment.</li>
+				<li>Demonstrated how collaborative pollution trading can simultaneously reduce nitrogen pollution, lower compliance costs, and improve overall economic outcomes across an entire watershed.</li>
+				<li>Evaluated multiple regulatory and management scenarios to understand how policy design influences farmer behaviour, environmental performance, and market efficiency.</li>
+				<li>Identified the technical, economic, and institutional barriers limiting large-scale implementation, including uncertainty in pollution monitoring, transaction costs, market participation, and regulatory oversight.</li>
+				<li>Proposed next-generation Water Quality Trading frameworks incorporating AI-assisted environmental monitoring, digital verification systems, and strengthened governance to improve transparency, accountability, and environmental integrity.</li>
+			</ul>
+		</section>
+
+		<section class="project-section">
+			<h2>Key Findings</h2>
+
+			<p>
+				Across four studies, the research demonstrates that environmental protection and economic development do not need to be competing objectives. Well-designed market-based policies can reduce agricultural pollution more efficiently than conventional command-and-control regulation while creating incentives for collaboration among farmers and regulators. However, the research also shows that Water Quality Trading is not a universal solution. Long-term success depends on credible monitoring systems, transparent governance, strong regulatory oversight, and equitable participation among stakeholders.
+			</p>
+		</section>
+
+		<section class="project-section">
+			<h2>Why It Matters</h2>
+
+			<p>
+				Water quality is becoming one of the defining environmental challenges of the twenty-first century. As agriculture faces increasing pressure from population growth, climate change, and stricter environmental standards, policymakers require solutions that protect both freshwater ecosystems and food production. This research provides an evidence-based framework for designing market-based environmental policies that support sustainable agriculture, improve water quality, and strengthen long-term water security.
+			</p>
+
+			<p>
+				The project contributes to international discussions surrounding the future of environmental markets and demonstrates how engineering, environmental economics, and public policy can be integrated to develop smarter, more adaptive solutions for managing water resources under increasing environmental uncertainty.
+			</p>
+		</section>
+
+		<section class="project-section">
+			<h2>Project Team</h2>
+
+			<div class="project-meta">
+				<p><strong>Principal Investigator:</strong> Prof. Tohid Erfani</p>
+				<p><strong>Lead Author:</strong> Jamie Gonzalez Zapata</p>
+				<p><strong>Graduate Student Researcher:</strong> Bharadwaj Vangipuram</p>
+			</div>
+		</section>
+
+		<section class="project-section">
+			<h2>Funding</h2>
+
+			<p>
+				This research was supported by a UK Research and Innovation (UKRI) studentship through the Environmental Systems, Data and Analytics Group, Department of Civil, Environmental and Geomatic Engineering, University College London.
+			</p>
+		</section>
+
+	</main>
+
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+
+	<script>
+	(function () {
+		var bg2022 = document.getElementById('bg-2022');
+		var labelL = document.getElementById('bg-label-left');
+		var labelR = document.getElementById('bg-label-right');
+		var pos = 50;
+		var target = 50;
+		var ticking = false;
+
+		function getX(e) {
+			if (e.touches && e.touches.length > 0) return e.touches[0].clientX;
+			if (e.changedTouches && e.changedTouches.length > 0) return e.changedTouches[0].clientX;
+			return null;
+		}
+
+		function update(x) {
+			if (typeof x !== 'number') return;
+			target = Math.max(0, Math.min(100, (x / window.innerWidth) * 100));
+			if (!ticking) {
+				ticking = true;
+				requestAnimationFrame(step);
+			}
+		}
+
+		function apply() {
+			var pct = pos.toFixed(3) + '%';
+			if (bg2022) {
+				bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
+				bg2022.style.webkitClipPath = 'inset(0 0 0 ' + pct + ')';
+			}
+			if (labelL) labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
+			if (labelR) labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
+		}
+
+		function step() {
+			pos += (target - pos) * 0.12;
+			apply();
+
+			if (Math.abs(target - pos) > 0.1) {
+				requestAnimationFrame(step);
+			} else {
+				pos = target;
+				apply();
+				ticking = false;
+			}
+		}
+
+		document.addEventListener('mousemove', function (e) {
+			update(e.clientX);
+		});
+
+		document.addEventListener('touchstart', function (e) {
+			update(getX(e));
+		}, { passive: true });
+
+		document.addEventListener('touchmove', function (e) {
+			update(getX(e));
+		}, { passive: true });
+
+		apply();
+	})();
+	</script>
+
+</body>
+</html>
+```
