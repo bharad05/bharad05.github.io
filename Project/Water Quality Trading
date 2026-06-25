@@ -1,442 +1,297 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Bharadwaj's Personal Website</title>
+	<title>Water Quality Trading | Bharadwaj Vangipuram</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-</head>
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
-<body class="is-preload">
-<div id="wrapper">
-
-	<header id="header">
-		<div class="content">
-			<div class="inner">
-				<h1>Bharadwaj's Personal Website</h1>
-				<p>PhD Student &amp; Graduate Student Researcher in the Department of Civil &amp; Environmental Engineering</p>
-				<h3>University of California, Davis</h3>
-			</div>
-		</div>
-
-		<nav>
-			<ul>
-				<li><a href="#about">About</a></li>
-				<li><a href="#work">Work</a></li>
-				<li><a href="#blog">Blog</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
-
-	<div id="main">
-
-		<!-- ══════════════ ABOUT ══════════════ -->
-		<article id="about">
-			<h2 class="major">About</h2>
-
-			<div class="about-panel">
-				<p class="about-intro">
-					I am a PhD researcher and Graduate Student Researcher (GSR) in Civil and Environmental Engineering at UC Davis, advised by Prof. Alvar Escriva-Bou. My broader research lies at the intersection of environmental economics, climate finance, and water resources systems engineering. My dissertation focuses on drought risk and explores how economic and financial tools can strengthen the resilience of water systems and support climate adaptation in an increasingly uncertain future.
-				</p>
-
-				<p class="about-intro">
-					My research explores how hydrologic uncertainty evolves into institutional, financial, and policy risk in water-scarce regions such as California. I integrate water resources modeling, climate science, environmental economics, and risk analysis to translate complex datasets into actionable insights for drought planning and climate adaptation. More broadly, I am interested in developing decision-support frameworks, financial instruments, and market-based approaches that enable governments, utilities, and communities to manage drought proactively rather than simply respond to its impacts.
-				</p>
-
-				<p class="about-intro">
-					Experiences across research, engineering, and international development have shaped my interest in developing practical solutions to water-related risks. I earned my Bachelor's degree in Civil Engineering from Jawaharlal Nehru Technological University Hyderabad (JNTUH) before working with the Morobe Development Foundation on United Nations-supported watershed and environmental management initiatives in Papua New Guinea. I later completed my Master's degree at University College London (UCL), where I continued as a Graduate Student Researcher, developing optimization models for water quality trading while evaluating their economic and policy implications for farming communities in the United Kingdom. During this time, I also contributed to research on sustainable housing and urban development in Greater London. These experiences reinforced my belief that addressing water challenges requires integrating engineering with economics, finance, and policy. My long-term goal is to develop practical, evidence-based solutions that make drought risk more measurable, water systems more resilient, and climate adaptation more effective for the communities and institutions that depend on them.
-				</p>
-			</div>
-
-			<div class="about-panel research-panel-wrap">
-				<p class="about-subhead">Research Interests</p>
-
-				<div class="interest-tags">
-					<button class="interest-tag" data-interest="drought">Drought Risk &amp; Finance</button>
-					<button class="interest-tag" data-interest="water-quality">Water Quality Trading</button>
-					<button class="interest-tag" data-interest="climate">Climate Change Assessment</button>
-					<button class="interest-tag" data-interest="wash">WASH &amp; Development</button>
-					<button class="interest-tag" data-interest="watershed">Watershed Management</button>
-				</div>
-
-				<div class="interest-panel" id="interest-panel">
-					<button class="panel-close" id="panel-close">✕</button>
-					<div class="panel-title" id="panel-title"></div>
-					<div id="panel-projects"></div>
-				</div>
-			</div>
-
-			<div class="about-panel about-photo-panel">
-				<img class="about-photo-full" src="images/IMG_1955.jpeg" alt="Bharadwaj Vangipuram" />
-			</div>
-		</article>
-
-		<!-- ══════════════ WORK ══════════════ -->
-		<article id="work">
-			<h2 class="major">Work</h2>
-
-			<div class="project-list">
-
-				<a href="Project/Water Quality Trading.html" class="project-tile">
-					<div class="project-tile-text">
-						<p class="project-label">Water Quality Trading · Market-Based Policy · Sustainable Agriculture · Water Security</p>
-						<h3>Water Quality Trading and Market-Based Environmental Policy</h3>
-						<p>
-							Optimization-based decision-support models evaluating Water Quality Trading as a market-based policy tool for reducing agricultural nitrogen pollution while supporting farm productivity and rural economies.
-						</p>
-						<span>View Project →</span>
-					</div>
-
-					<div class="project-tile-images">
-						<img src="images/wqt-1.jpg" alt="Water Quality Trading framework">
-						<img src="images/wqt-2.jpg" alt="River Alde catchment">
-					</div>
-				</a>
-
-				<a href="Project/California Climate Assessment.html" class="project-tile">
-					<div class="project-tile-text">
-						<p class="project-label">Drought Risk · Climate Adaptation · Water Systems · California</p>
-						<h3>California 5th Climate Change Assessment</h3>
-						<p>
-							Research on future drought risk, water supply uncertainty, agricultural adaptation, and hydro-economic impacts to support California’s state-level climate adaptation planning.
-						</p>
-						<span>View Project →</span>
-					</div>
-
-					<div class="project-tile-images">
-						<img src="images/ca-climate-1.jpg" alt="California drought risk analysis">
-						<img src="images/ca-climate-2.jpg" alt="California water systems">
-					</div>
-				</a>
-
-				<a href="Project/Nutrient Neutrality.html" class="project-tile">
-					<div class="project-tile-text">
-						<p class="project-label">Nutrient Neutrality · Urban Development · Water Quality · Policy</p>
-						<h3>Nutrient Neutrality and Urban Development Trade-offs</h3>
-						<p>
-							Integrated housing demand forecasts with nutrient risk constraints to examine how urban growth, environmental regulation, and water quality protection interact.
-						</p>
-						<span>View Project →</span>
-					</div>
-
-					<div class="project-tile-images">
-						<img src="images/nutrient-1.jpg" alt="Nutrient neutrality modelling">
-						<img src="images/nutrient-2.jpg" alt="Urban development tradeoffs">
-					</div>
-				</a>
-
-				<a href="Project/Bumbu Watershed.html" class="project-tile">
-					<div class="project-tile-text">
-						<p class="project-label">Watershed Management · Water Quality · Field Evidence · Papua New Guinea</p>
-						<h3>Bumbu Watershed Water Quality</h3>
-						<p>
-							Watershed risk evidence, water quality monitoring interpretation, and phytoremediation assessment for environmental management in Papua New Guinea.
-						</p>
-						<span>View Project →</span>
-					</div>
-
-					<div class="project-tile-images">
-						<img src="images/bumbu-1.jpg" alt="Bumbu watershed">
-						<img src="images/bumbu-2.jpg" alt="Papua New Guinea watershed management">
-					</div>
-				</a>
-
-			</div>
-		</article>
-
-		<!-- ══════════════ BLOG ══════════════ -->
-		<article id="blog">
-			<h2 class="major">Blog</h2>
-
-			<p>
-				This section will feature short essays, research reflections, field notes, and commentary on water governance, hydrologic risk, environmental policy, and the interface between systems modeling and public decision-making.
-			</p>
-
-			<h4>Planned Themes</h4>
-			<p>
-				Topics will include drought risk in California, water markets and financial instruments, transboundary water governance, climate adaptation, infrastructure policy, and lessons from ongoing research projects.
-			</p>
-
-			<h4>Coming Soon</h4>
-			<p>
-				I will be adding posts here regularly as the site develops. This space is intended to make academic work more accessible, concise, and policy-relevant.
-			</p>
-		</article>
-
-		<!-- ══════════════ CONTACT ══════════════ -->
-		<article id="contact">
-			<h2 class="major">Contact</h2>
-
-			<form method="post" action="https://formspree.io/f/maneddgj">
-				<div class="fields">
-					<div class="field half">
-						<label for="name">Name</label>
-						<input type="text" name="name" id="name" />
-					</div>
-
-					<div class="field half">
-						<label for="email">Email</label>
-						<input type="text" name="email" id="email" />
-					</div>
-
-					<div class="field">
-						<label for="message">Message</label>
-						<textarea name="message" id="message" rows="4"></textarea>
-					</div>
-				</div>
-
-				<ul class="actions">
-					<li><input type="submit" value="Send Message" class="primary" /></li>
-					<li><input type="reset" value="Reset" /></li>
-				</ul>
-			</form>
-
-			<ul class="icons">
-				<li><a href="https://github.com/bharad05" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-				<li><a href="https://scholar.google.com/citations?user=YOUR_ID" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
-				<li><a href="https://linkedin.com/in/YOUR_PROFILE" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-			</ul>
-		</article>
-
-	</div>
-
-	<footer id="footer">
-		<p class="copyright">&copy; Bharadwaj Vangipuram. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-	</footer>
-
-</div>
-
-<!-- Lake Mead split background -->
-<div id="bg">
-	<div id="bg-2000"></div>
-	<div id="bg-2022"></div>
-	<div id="bg-label-left">Lake Mead 2000</div>
-	<div id="bg-label-right">Lake Mead 2022</div>
-	<div id="bg-overlay"></div>
-</div>
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-<script>
-(function () {
-	var data = {
-		'drought': {
-			title: 'Drought Risk & Finance',
-			projects: [
-				{ name: 'Financial Instruments for Drought Risk', desc: 'Review paper on parametric insurance, drought bonds, and contingent credit targeting Nature Water.', target: 'work', type: 'project' },
-				{ name: 'California 5th Climate Change Assessment', desc: 'Characterising drought risk and uncertainty across multi-decadal agricultural and urban datasets.', target: 'work', type: 'project' }
-			],
-			blogs: [
-				{ name: 'Why Drought Finance Lags Behind Flood Insurance', desc: 'A reflection on the structural gap between physical drought science and financial risk management.', target: 'blog', type: 'blog' },
-				{ name: 'Parametric Insurance & the Colorado River Basin', desc: 'Commentary on index-based instruments for western US water systems.', target: 'blog', type: 'blog' }
-			]
-		},
-		'water-quality': {
-			title: 'Water Quality Trading',
-			projects: [
-				{ name: 'Water Quality Trading and Market-Based Environmental Policy', desc: 'Market-based policy and decision-support modelling for agricultural nitrogen pollution.', target: 'work', type: 'project' },
-				{ name: 'Nutrient Neutrality & Urban Development', desc: 'Housing demand forecasts coupled with nutrient risk constraints in the UK.', target: 'work', type: 'project' }
-			],
-			blogs: [
-				{ name: 'Do Water Quality Markets Actually Work?', desc: 'A critical look at trading schemes and environmental outcomes in the UK and US.', target: 'blog', type: 'blog' }
-			]
-		},
-		'climate': {
-			title: 'Climate Change Assessment',
-			projects: [
-				{ name: 'California 5th Climate Change Assessment', desc: 'Policy-facing analysis of drought risk, uncertainty, and adaptation planning for California.', target: 'work', type: 'project' }
-			],
-			blogs: [
-				{ name: 'Communicating Climate Risk Without Losing Nuance', desc: 'Notes on translating hydro-economic modelling into policy narratives.', target: 'blog', type: 'blog' },
-				{ name: 'What California Climate Assessment Gets Right', desc: 'Field notes on communicating uncertainty to policymakers.', target: 'blog', type: 'blog' }
-			]
-		},
-		'wash': {
-			title: 'WASH & Development',
-			projects: [
-				{ name: 'WASH Access & Human Development — Urban India', desc: 'DHS panel data from 2005 to 2021 on WASH access and human development outcomes.', target: 'work', type: 'project' }
-			],
-			blogs: [
-				{ name: 'Water Access as a Development Indicator', desc: 'Essay on WASH infrastructure and human development in urban India.', target: 'blog', type: 'blog' }
-			]
-		},
-		'watershed': {
-			title: 'Watershed Management',
-			projects: [
-				{ name: 'Bumbu Watershed — Papua New Guinea', desc: 'Water quality monitoring and phytoremediation assessment funded by Australia and PNG governments.', target: 'work', type: 'project' }
-			],
-			blogs: [
-				{ name: 'Field Notes: Watershed Risk in Papua New Guinea', desc: 'Reflections on synthesising risk evidence across cultures, governments, and scales.', target: 'blog', type: 'blog' }
-			]
-		}
-	};
-
-	var panel = document.getElementById('interest-panel');
-	var titleEl = document.getElementById('panel-title');
-	var projectsEl = document.getElementById('panel-projects');
-	var closeBtn = document.getElementById('panel-close');
-	var activeTag = null;
-
-	function makeItem(entry) {
-		var item = document.createElement('div');
-		item.className = 'panel-project-item';
-
-		var badge = entry.type === 'blog'
-			? '<span class="proj-badge proj-badge-blog">Blog</span>'
-			: '<span class="proj-badge proj-badge-project">Project</span>';
-
-		item.innerHTML =
-			'<div class="proj-name">' + badge + entry.name + '</div>' +
-			'<div class="proj-desc">' + entry.desc + '</div>' +
-			'<div class="proj-arrow">→ View in ' + (entry.type === 'blog' ? 'Blog' : 'Work') + '</div>';
-
-		item.addEventListener('click', function () {
-			closePanel();
-			setTimeout(function () {
-				var link = document.querySelector('a[href="#' + entry.target + '"]');
-				if (link) link.click();
-			}, 300);
-		});
-
-		return item;
-	}
-
-	function openPanel(interest) {
-		var d = data[interest];
-		if (!d) return;
-
-		titleEl.textContent = d.title;
-		projectsEl.innerHTML = '';
-
-		if (d.projects && d.projects.length) {
-			var pl = document.createElement('div');
-			pl.className = 'panel-section-label';
-			pl.textContent = 'Projects';
-			projectsEl.appendChild(pl);
-
-			d.projects.forEach(function (p) {
-				projectsEl.appendChild(makeItem(p));
-			});
+	<style>
+		body {
+			background: #1b1f22;
 		}
 
-		if (d.blogs && d.blogs.length) {
-			var bl = document.createElement('div');
-			bl.className = 'panel-section-label';
-			bl.textContent = 'Blog Posts';
-			projectsEl.appendChild(bl);
-
-			d.blogs.forEach(function (b) {
-				projectsEl.appendChild(makeItem(b));
-			});
+		.project-page {
+			position: relative;
+			z-index: 3;
+			width: min(82rem, 94vw);
+			margin: 4rem auto;
+			padding: 4rem 5rem;
+			background: rgba(27, 31, 34, 0.62);
+			border-radius: 10px;
 		}
 
-		panel.classList.add('open');
-	}
-
-	function closePanel() {
-		panel.classList.remove('open');
-
-		if (activeTag) {
-			activeTag.classList.remove('active');
-			activeTag = null;
+		.project-page h1 {
+			font-size: 1.7rem;
+			letter-spacing: 0.32rem;
+			line-height: 1.35;
+			margin-bottom: 1rem;
 		}
-	}
 
-	document.querySelectorAll('.interest-tag').forEach(function (tag) {
-		tag.addEventListener('click', function () {
-			var interest = tag.getAttribute('data-interest');
+		.project-tagline {
+			font-size: 0.9rem;
+			line-height: 1.8;
+			color: rgba(255,255,255,0.78);
+			margin-bottom: 1.4rem;
+		}
 
-			if (activeTag === tag && panel.classList.contains('open')) {
-				closePanel();
-				return;
+		.project-keywords {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			margin-bottom: 2.5rem;
+		}
+
+		.project-keywords span {
+			border: 1px solid rgba(255,255,255,0.2);
+			border-radius: 2rem;
+			padding: 0.35rem 0.8rem;
+			font-size: 0.55rem;
+			letter-spacing: 0.12rem;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.72);
+		}
+
+		.back-link {
+			display: inline-block;
+			margin-bottom: 2rem;
+			font-size: 0.65rem;
+			letter-spacing: 0.16rem;
+			text-transform: uppercase;
+		}
+
+		.project-section {
+			margin-top: 2.4rem;
+		}
+
+		.project-section h2 {
+			font-size: 0.95rem;
+			letter-spacing: 0.22rem;
+			border-bottom: 1px solid #fff;
+			width: max-content;
+			padding-bottom: 0.45rem;
+			margin-bottom: 1.1rem;
+		}
+
+		.project-section p,
+		.project-section li {
+			font-size: 0.95rem;
+			line-height: 1.9;
+			color: rgba(255,255,255,0.84);
+		}
+
+		.figure-placeholder {
+			margin: 2rem 0;
+			padding: 2.2rem;
+			border: 1px dashed rgba(255,255,255,0.35);
+			border-radius: 12px;
+			background: rgba(255,255,255,0.035);
+			text-align: center;
+		}
+
+		.figure-placeholder p {
+			margin: 0;
+			font-size: 0.8rem;
+			letter-spacing: 0.14rem;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.62);
+		}
+
+		.figure-slot {
+			margin: 2rem 0;
+		}
+
+		.figure-slot img {
+			width: 100%;
+			border-radius: 12px;
+			border: 1px solid rgba(255,255,255,0.12);
+		}
+
+		.figure-caption {
+			font-size: 0.72rem !important;
+			line-height: 1.6 !important;
+			color: rgba(255,255,255,0.58) !important;
+			margin-top: 0.65rem;
+		}
+
+		.project-meta {
+			background: rgba(255,255,255,0.04);
+			border: 1px solid rgba(255,255,255,0.10);
+			border-radius: 10px;
+			padding: 1.4rem 1.6rem;
+			margin-top: 1.5rem;
+		}
+
+		.project-meta p {
+			margin-bottom: 0.55rem;
+		}
+
+		.project-meta p:last-child {
+			margin-bottom: 0;
+		}
+
+		@media screen and (max-width: 736px) {
+			.project-page {
+				width: 94vw;
+				margin: 2rem auto;
+				padding: 3rem 1.5rem 2rem;
 			}
 
-			if (activeTag) activeTag.classList.remove('active');
-
-			activeTag = tag;
-			tag.classList.add('active');
-			openPanel(interest);
-		});
-	});
-
-	closeBtn.addEventListener('click', closePanel);
-})();
-</script>
-
-<script>
-(function () {
-	var bg2022 = document.getElementById('bg-2022');
-	var labelL = document.getElementById('bg-label-left');
-	var labelR = document.getElementById('bg-label-right');
-	var pos = 50;
-	var target = 50;
-	var ticking = false;
-
-	function getX(e) {
-		if (e.touches && e.touches.length > 0) return e.touches[0].clientX;
-		if (e.changedTouches && e.changedTouches.length > 0) return e.changedTouches[0].clientX;
-		return null;
-	}
-
-	function update(x) {
-		if (typeof x !== 'number') return;
-
-		target = Math.max(0, Math.min(100, (x / window.innerWidth) * 100));
-
-		if (!ticking) {
-			ticking = true;
-			requestAnimationFrame(step);
+			.project-page h1 {
+				font-size: 1.2rem;
+				letter-spacing: 0.22rem;
+			}
 		}
-	}
+	</style>
+</head>
 
-	function apply() {
-		var pct = pos.toFixed(3) + '%';
+<body>
 
-		if (bg2022) {
-			bg2022.style.clipPath = 'inset(0 0 0 ' + pct + ')';
-			bg2022.style.webkitClipPath = 'inset(0 0 0 ' + pct + ')';
-		}
+	<div id="bg">
+		<div id="bg-2000"></div>
+		<div id="bg-2022"></div>
+		<div id="bg-label-left">Lake Mead 2000</div>
+		<div id="bg-label-right">Lake Mead 2022</div>
+		<div id="bg-overlay"></div>
+	</div>
 
-		if (labelL) labelL.style.opacity = pos < 15 ? (pos / 15).toFixed(2) : '1';
-		if (labelR) labelR.style.opacity = pos > 85 ? ((100 - pos) / 15).toFixed(2) : '1';
-	}
+	<main class="project-page">
 
-	function step() {
-		pos += (target - pos) * 0.12;
-		apply();
+		<a href="../index.html#work" class="back-link">← Back to Work</a>
 
-		if (Math.abs(target - pos) > 0.1) {
-			requestAnimationFrame(step);
-		} else {
-			pos = target;
-			apply();
-			ticking = false;
-		}
-	}
+		<h1>Water Quality Trading and Market-Based Environmental Policy</h1>
 
-	document.addEventListener('mousemove', function (e) {
-		update(e.clientX);
-	});
+		<p class="project-tagline">
+			A market-based environmental policy project investigating how economic incentives, optimization models, and water governance can reduce agricultural nutrient pollution while supporting sustainable farming systems.
+		</p>
 
-	document.addEventListener('touchstart', function (e) {
-		update(getX(e));
-	}, { passive: true });
+		<div class="project-keywords">
+			<span>Water Quality Trading</span>
+			<span>Market-Based Policy</span>
+			<span>Sustainable Agriculture</span>
+			<span>Water Security</span>
+			<span>Non-Point Source Pollution</span>
+			<span>Decision Support</span>
+		</div>
 
-	document.addEventListener('touchmove', function (e) {
-		update(getX(e));
-	}, { passive: true });
+		<div class="figure-placeholder">
+			<p>Figure 1 Placeholder — Add River Alde Catchment Map or Project Hero Image Here</p>
+		</div>
 
-	apply();
-})();
-</script>
+		<!-- Replace the placeholder above with this when your image is ready:
+		<div class="figure-slot">
+			<img src="../images/YOUR-FIGURE-NAME.jpg" alt="River Alde Catchment Map">
+			<p class="figure-caption">Figure 1. River Alde catchment and agricultural water quality context.</p>
+		</div>
+		-->
+
+		<section class="project-section">
+			<h2>Project Overview</h2>
+
+			<p>
+				Agricultural runoff is one of the largest sources of freshwater pollution worldwide, threatening ecosystems, drinking water supplies, food production, and long-term environmental sustainability. While governments have traditionally relied on regulations to reduce nutrient pollution, these approaches often impose significant costs on farmers and can be difficult to implement effectively at watershed scales.
+			</p>
+
+			<p>
+				This research project investigated whether <strong>Water Quality Trading (WQT)</strong>—a market-based environmental policy—can provide a more effective way of achieving water quality goals while maintaining agricultural productivity and supporting rural economies. Using the River Alde catchment in Suffolk, United Kingdom, we developed optimization-based decision-support models that combine environmental economics, systems engineering, and water policy to evaluate how financial incentives can encourage farmers to collectively reduce nitrogen pollution at the lowest possible economic cost.
+			</p>
+
+			<p>
+				Rather than viewing pollution control solely as an engineering problem, this project reframed it as a systems problem requiring the integration of engineering, economics, policy, and environmental science. Across four peer-reviewed publications, the research progressed from developing one of the first optimization-based Water Quality Trading frameworks for an agricultural catchment in the United Kingdom to testing policy scenarios, evaluating economic outcomes, and critically assessing the institutional and regulatory challenges that determine whether environmental markets succeed in practice.
+			</p>
+		</section>
+
+		<div class="figure-placeholder">
+			<p>Figure 2 Placeholder — Add Optimization / Trading Framework Diagram Here</p>
+		</div>
+
+		<!-- Replace the placeholder above with this when your image is ready:
+		<div class="figure-slot">
+			<img src="../images/YOUR-FIGURE-NAME.jpg" alt="Water Quality Trading Optimization Framework">
+			<p class="figure-caption">Figure 2. Optimization-based Water Quality Trading framework used to evaluate trading, pollution reduction, and economic outcomes.</p>
+		</div>
+		-->
+
+		<section class="project-section">
+			<h2>Research Innovations</h2>
+
+			<ul>
+				<li>Developed one of the first optimization-based Water Quality Trading frameworks for managing agricultural non-point source pollution within a UK river catchment.</li>
+				<li>Demonstrated how collaborative pollution trading can simultaneously reduce nitrogen pollution, lower compliance costs, and improve overall economic outcomes across an entire watershed.</li>
+				<li>Evaluated multiple regulatory and management scenarios to understand how policy design influences farmer behaviour, environmental performance, and market efficiency.</li>
+				<li>Identified the technical, economic, and institutional barriers limiting large-scale implementation, including uncertainty in pollution monitoring, transaction costs, market participation, and regulatory oversight.</li>
+				<li>Proposed next-generation Water Quality Trading frameworks incorporating AI-assisted environmental monitoring, digital verification systems, and strengthened governance to improve transparency, accountability, and environmental integrity.</li>
+			</ul>
+		</section>
+
+		<div class="figure-placeholder">
+			<p>Figure 3 Placeholder — Add Results Figure / Nitrogen Reduction / Economic Outcomes Here</p>
+		</div>
+
+		<!-- Replace the placeholder above with this when your image is ready:
+		<div class="figure-slot">
+			<img src="../images/YOUR-FIGURE-NAME.jpg" alt="Water Quality Trading Results">
+			<p class="figure-caption">Figure 3. Example results showing nitrogen reduction, economic benefits, or trading outcomes across policy scenarios.</p>
+		</div>
+		-->
+
+		<section class="project-section">
+			<h2>Key Findings</h2>
+
+			<p>
+				Across four studies, the research demonstrates that environmental protection and economic development do not need to be competing objectives. Well-designed market-based policies can reduce agricultural pollution more efficiently than conventional command-and-control regulation while creating incentives for collaboration among farmers and regulators. However, the research also shows that Water Quality Trading is not a universal solution. Long-term success depends on credible monitoring systems, transparent governance, strong regulatory oversight, and equitable participation among stakeholders.
+			</p>
+		</section>
+
+		<div class="figure-placeholder">
+			<p>Figure 4 Placeholder — Add Policy Implications / Governance Framework Figure Here</p>
+		</div>
+
+		<!-- Replace the placeholder above with this when your image is ready:
+		<div class="figure-slot">
+			<img src="../images/YOUR-FIGURE-NAME.jpg" alt="Policy Implications of Water Quality Trading">
+			<p class="figure-caption">Figure 4. Policy and governance considerations for implementing Water Quality Trading in agricultural watersheds.</p>
+		</div>
+		-->
+
+		<section class="project-section">
+			<h2>Why It Matters</h2>
+
+			<p>
+				Water quality is becoming one of the defining environmental challenges of the twenty-first century. As agriculture faces increasing pressure from population growth, climate change, and stricter environmental standards, policymakers require solutions that protect both freshwater ecosystems and food production. This research provides an evidence-based framework for designing market-based environmental policies that support sustainable agriculture, improve water quality, and strengthen long-term water security.
+			</p>
+
+			<p>
+				The project contributes to international discussions surrounding the future of environmental markets and demonstrates how engineering, environmental economics, and public policy can be integrated to develop smarter, more adaptive solutions for managing water resources under increasing environmental uncertainty.
+			</p>
+		</section>
+
+		<section class="project-section">
+			<h2>Project Team</h2>
+
+			<div class="project-meta">
+				<p><strong>Principal Investigator:</strong> Prof. Tohid Erfani</p>
+				<p><strong>Lead Author:</strong> Jamie Gonzalez Zapata</p>
+				<p><strong>Graduate Student Researcher:</strong> Bharadwaj Vangipuram</p>
+			</div>
+		</section>
+
+		<section class="project-section">
+			<h2>Funding</h2>
+
+			<p>
+				This research was supported by a UK Research and Innovation (UKRI) studentship through the Environmental Systems, Data and Analytics Group, Department of Civil, Environmental and Geomatic Engineering, University College London.
+			</p>
+		</section>
+
+	</main>
+
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
 
 </body>
 </html>
-```
