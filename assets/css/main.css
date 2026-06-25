@@ -1,257 +1,19 @@
-```css
-/* =========================================================
-   CUSTOM WEBSITE OVERRIDES
-   Bharadwaj Vangipuram Portfolio
-   ========================================================= */
-
-/* Wider About section */
-#main article#about {
-	width: min(82rem, 96vw);
-	padding: 4rem 5rem 2.75rem;
-}
-
 /* Wider Work section */
 #main article#work {
 	width: min(88rem, 96vw);
 	padding: 4rem 5rem 3rem;
 }
 
-/* About panels */
-.about-panel {
-	background: rgba(255,255,255,0.04);
-	border: 1px solid rgba(255,255,255,0.09);
-	border-radius: 10px;
-	padding: 1.8rem 2rem 1.6rem;
-	margin-bottom: 1.2rem;
-}
-
-.about-intro {
-	font-size: 0.92rem;
-	line-height: 1.85;
-	color: rgba(255,255,255,0.85);
-	margin: 0 0 1.05rem 0;
-}
-
-.about-intro:last-child {
-	margin-bottom: 0;
-}
-
-.about-subhead {
-	font-size: 0.55rem;
-	letter-spacing: 0.3rem;
-	text-transform: uppercase;
-	color: rgba(255,255,255,0.38);
-	padding-bottom: 0.5rem;
-	margin-bottom: 1.2rem;
-	font-weight: 400;
-	border: none;
-}
-
-.about-photo-full {
-	width: 100%;
-	display: block;
-	border-radius: 8px;
-	margin-bottom: 0;
-	max-height: 600px;
-	object-fit: cover;
-	object-position: center top;
-}
-
-/* Research interest tags */
-.interest-tags {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-}
-
-.interest-tag {
-	background: transparent;
-	border: 1px solid rgba(255,255,255,0.22);
-	color: rgba(255,255,255,0.7);
-	padding: 0.38rem 0.85rem;
-	border-radius: 2rem;
-	font-size: 0.56rem;
-	letter-spacing: 0.13rem;
-	text-transform: uppercase;
-	cursor: pointer;
-	transition: all 0.2s ease;
-	font-family: "Source Sans Pro", sans-serif;
-	box-shadow: none;
-	height: auto;
-	line-height: 1.4;
-}
-
-.interest-tag:hover,
-.interest-tag.active {
-	background: rgba(255,255,255,0.11);
-	border-color: rgba(255,255,255,0.55);
-	color: #fff;
-}
-
-/* Interest panel */
-.research-panel-wrap {
-	position: relative;
-}
-
-.interest-panel {
-	position: relative;
-	background: rgba(18,22,26,0.97);
-	border: 1px solid rgba(255,255,255,0.11);
-	border-radius: 10px;
-	padding: 1.2rem 1.3rem;
-	backdrop-filter: blur(16px);
-	-webkit-backdrop-filter: blur(16px);
-	box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-	z-index: 100;
-	display: none;
-	margin-top: 0.75rem;
-}
-
-.interest-panel.open {
-	display: block;
-}
-
-.panel-close {
-	float: right;
-	background: transparent;
-	border: 1px solid rgba(255,255,255,0.16);
-	color: rgba(255,255,255,0.5);
-	width: 24px;
-	height: 24px;
-	border-radius: 50%;
-	font-size: 0.55rem;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0;
-	box-shadow: none;
-	line-height: 1;
-	margin-bottom: 0.5rem;
-}
-
-.panel-close:hover {
-	background: rgba(255,255,255,0.1);
-	color: #fff;
-}
-
-.panel-title {
-	font-size: 0.58rem;
-	letter-spacing: 0.22rem;
-	text-transform: uppercase;
-	color: rgba(255,255,255,0.45);
-	border-bottom: 1px solid rgba(255,255,255,0.08);
-	padding-bottom: 0.6rem;
-	margin-bottom: 1rem;
-	clear: both;
-	line-height: 1.5;
-}
-
-.panel-section-label {
-	font-size: 0.46rem;
-	letter-spacing: 0.22rem;
-	text-transform: uppercase;
-	color: rgba(255,255,255,0.25);
-	margin: 0.9rem 0 0.5rem;
-	padding-bottom: 0.25rem;
-	border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.panel-project-item {
-	margin-bottom: 0.85rem;
-	padding-bottom: 0.85rem;
-	border-bottom: 1px solid rgba(255,255,255,0.05);
-	cursor: pointer;
-	transition: opacity 0.15s ease;
-}
-
-.panel-project-item:last-child {
-	border-bottom: none;
-	margin-bottom: 0;
-	padding-bottom: 0;
-}
-
-.panel-project-item:hover {
-	opacity: 0.8;
-}
-
-.proj-name {
-	font-size: 0.62rem;
-	font-weight: 600;
-	color: rgba(255,255,255,0.82);
-	letter-spacing: 0.06rem;
-	text-transform: uppercase;
-	margin-bottom: 0.25rem;
-}
-
-.proj-desc {
-	font-size: 0.56rem;
-	color: rgba(255,255,255,0.42);
-	line-height: 1.6;
-}
-
-.proj-arrow {
-	font-size: 0.49rem;
-	color: rgba(255,255,255,0.28);
-	margin-top: 0.3rem;
-	letter-spacing: 0.1rem;
-	text-transform: uppercase;
-}
-
-.proj-badge {
-	display: inline-block;
-	font-size: 0.4rem;
-	letter-spacing: 0.08rem;
-	text-transform: uppercase;
-	padding: 0.12rem 0.4rem;
-	border-radius: 2rem;
-	margin-right: 0.35rem;
-	font-weight: 600;
-	vertical-align: middle;
-	position: relative;
-	top: -1px;
-}
-
-.proj-badge-project {
-	background: rgba(74,144,217,0.18);
-	color: rgba(130,185,240,0.9);
-	border: 1px solid rgba(74,144,217,0.28);
-}
-
-.proj-badge-blog {
-	background: rgba(180,120,60,0.2);
-	color: rgba(230,170,95,0.9);
-	border: 1px solid rgba(180,120,60,0.3);
-}
-
-/* Work intro */
-.work-intro {
-	background: rgba(255,255,255,0.04);
-	border: 1px solid rgba(255,255,255,0.08);
-	border-radius: 12px;
-	padding: 1.5rem 1.7rem;
-	margin-bottom: 2rem;
-}
-
-.work-intro p {
-	margin-bottom: 0;
-	font-size: 0.9rem;
-	line-height: 1.85;
-	color: rgba(255,255,255,0.82);
-}
-
 /* Stacked project tiles */
 .project-list {
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
+	gap: 1.6rem;
 }
 
+/* Full-width project tile */
 .project-tile {
-	display: grid;
-	grid-template-columns: 1.45fr 1fr;
-	gap: 1.6rem;
-	align-items: center;
+	display: block;
 	background: rgba(255,255,255,0.045);
 	border: 1px solid rgba(255,255,255,0.10);
 	border-radius: 16px;
@@ -269,6 +31,10 @@
 	box-shadow: 0 18px 45px rgba(0,0,0,0.35);
 }
 
+.project-tile-text {
+	width: 100%;
+}
+
 .project-label {
 	font-size: 0.52rem !important;
 	letter-spacing: 0.16rem;
@@ -278,7 +44,7 @@
 }
 
 .project-tile-text h3 {
-	font-size: 1.05rem;
+	font-size: 1.08rem;
 	letter-spacing: 0.18rem;
 	margin-bottom: 0.8rem;
 	line-height: 1.45;
@@ -292,60 +58,50 @@
 }
 
 .project-tile-text span {
+	display: inline-block;
 	font-size: 0.62rem;
 	letter-spacing: 0.16rem;
 	text-transform: uppercase;
 	color: rgba(255,255,255,0.68);
+	margin-bottom: 1.2rem;
 }
 
+/* Images below text */
 .project-tile-images {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 0.75rem;
+	gap: 0.8rem;
+	margin-top: 0.4rem;
 }
 
 .project-tile-images img {
 	width: 100%;
-	height: 185px;
+	height: 210px;
 	object-fit: cover;
 	border-radius: 12px;
 	border: 1px solid rgba(255,255,255,0.12);
 }
 
-/* Better paragraph readability */
-#about p,
-#work p {
-	line-height: 1.85;
-}
-
 /* Mobile */
 @media screen and (max-width: 736px) {
-	#main article#about,
 	#main article#work {
 		width: 95vw;
 		padding: 3rem 1.5rem 1.8rem;
 	}
 
-	.about-panel {
-		padding: 1.35rem 1.2rem;
-	}
-
-	.about-intro {
-		font-size: 0.88rem;
-		line-height: 1.75;
-	}
-
 	.project-tile {
-		grid-template-columns: 1fr;
 		padding: 1.4rem;
 	}
 
+	.project-tile-images {
+		grid-template-columns: 1fr;
+	}
+
 	.project-tile-images img {
-		height: 120px;
+		height: 170px;
 	}
 
 	.project-tile-text h3 {
-		font-size: 0.9rem;
+		font-size: 0.95rem;
 	}
 }
-```
