@@ -1704,3 +1704,162 @@ body.is-article-visible #bg-2022 {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+/* =========================================================
+   Custom About Section Layout
+   Wider About modal + balanced panels
+   ========================================================= */
+
+/* Make only the About article wider than the default 40rem modal */
+#main article#about {
+	width: 64rem;
+	max-width: 92vw;
+	padding: 3.2rem 3.4rem 2.4rem;
+}
+
+/* About text panels */
+#about .about-panel {
+	background: rgba(255,255,255,0.04);
+	border: 1px solid rgba(255,255,255,0.09);
+	border-radius: 10px;
+	padding: 1.8rem 2rem 1.6rem;
+	margin-bottom: 1.2rem;
+}
+
+/* About paragraph styling */
+#about .about-intro {
+	font-size: 0.92rem;
+	line-height: 1.85;
+	color: rgba(255,255,255,0.85);
+	margin: 0 0 1.05rem 0;
+	max-width: 100%;
+}
+
+#about .about-intro:last-child {
+	margin-bottom: 0;
+}
+
+/* Research interests heading */
+#about .about-subhead {
+	font-size: 0.55rem;
+	letter-spacing: 0.3rem;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.38);
+	padding-bottom: 0.5rem;
+	margin-bottom: 1.2rem;
+	font-weight: 400;
+	border: none;
+}
+
+/* Interest tag layout */
+#about .interest-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+/* Interest tag buttons */
+#about .interest-tag {
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.22);
+	color: rgba(255,255,255,0.7);
+	padding: 0.38rem 0.85rem;
+	border-radius: 2rem;
+	font-size: 0.56rem;
+	letter-spacing: 0.13rem;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-family: "Source Sans Pro", sans-serif;
+	box-shadow: none;
+	height: auto;
+	line-height: 1.4;
+}
+
+#about .interest-tag:hover,
+#about .interest-tag.active {
+	background: rgba(255,255,255,0.11);
+	border-color: rgba(255,255,255,0.55);
+	color: #fff;
+}
+
+/* Inline expandable research panel */
+#about .research-panel-wrap {
+	position: relative;
+}
+
+#about .interest-panel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(18,22,26,0.97);
+	border: 1px solid rgba(255,255,255,0.11);
+	border-radius: 10px;
+	padding: 1.2rem 1.3rem;
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+	z-index: 100;
+	display: none;
+	margin-top: 0.75rem;
+}
+
+#about .interest-panel.open {
+	display: block;
+}
+
+/* About full-width image */
+#about .about-photo-full {
+	width: 100%;
+	display: block;
+	border-radius: 8px;
+	margin-bottom: 0;
+	max-height: 600px;
+	object-fit: cover;
+	object-position: center top;
+}
+
+/* Tablet layout */
+@media screen and (max-width: 980px) {
+	#main article#about {
+		width: 56rem;
+		max-width: 94vw;
+		padding: 2.7rem 2.3rem 2rem;
+	}
+}
+
+/* Mobile layout */
+@media screen and (max-width: 736px) {
+	#main article#about {
+		width: 100%;
+		max-width: 100%;
+		padding: 2.2rem 1.4rem 1.7rem;
+	}
+
+	#about .about-panel {
+		padding: 1.35rem 1.2rem;
+	}
+
+	#about .about-intro {
+		font-size: 0.88rem;
+		line-height: 1.75;
+	}
+
+	#about .interest-panel {
+		position: relative;
+		top: auto;
+		margin-top: 0.6rem;
+	}
+}
+
+/* Small mobile layout */
+@media screen and (max-width: 480px) {
+	#main article#about {
+		padding: 2rem 1.15rem 1.4rem;
+	}
+
+	#about .about-panel {
+		padding: 1.2rem 1rem;
+	}
+}
